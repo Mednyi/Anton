@@ -27,14 +27,14 @@ if (name === 'Alex') {
 
 // Напечаетать все степени тройки с помощью for , while
 
-for (let x = 3; x < 10000; x += 2) {
+for (let x = 1; x < 10000; x *= 3) {
   console.log(x);
 }
 
-const x = 0;
+let x = 1;
 while (x < 10000) {
-  x += 3;
   console.log(x);
+  x *= 3;
 }
 
 // Упражнение №1 Прекрасные животные
@@ -42,32 +42,33 @@ while (x < 10000) {
 const animals = ['Кот', 'Рыба', 'Лемур', 'Комодский варан'];
 
 for (let i = 0; i < animals.length; i++) {
-  animals[i] = animals[i] + '- Прекрасное животное';
+  animals[i] += '- Прекрасное животное';
   console.log(animals);
 }
 
 // Упражнение № 2 Генератопр случайных строк
+const randomStringLength = 6;
 let alphabet = 'абвгдеёжзиклмнопрстуфхцчыьъэюя';
 let randomString = '';
 
-while (randomString < 6) {
-  randomString = alphabet.Math.floor(Math.random() * alphabet.length);
+while (randomString < randomStringLength) {
+  randomString += alphabet.Math.floor(Math.random() * alphabet.length);
   console.log(randomString);
 }
 
 // Упражнение № 3 Хакерский язык
 let input = 'javascript is awesome';
-let output = ' ';
+let output = '';
 
 for (let i = 0; i < input.length; i++) {
-  if ('a') {
-    input = 'j4v4script is 4wesome';
-  } else if ('e') {
-    input = 'j4v4script is 4w3som3'
-  } else if ('i') {
-    input = 'j4v4scr1pt 1s 4w3som3'
+  if (input[i] === 'a') {
+    output += '4';
+  } else if (input[i] === 'e') {
+    output += '3'
+  } else if (input[i] === 'i') {
+    output += '1'
   } else {
-    input = 'j4v4script is 4w3s0m3';
+    output += input[i];
   }
 }
-console.log(input);
+console.log(output);
