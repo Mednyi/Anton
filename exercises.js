@@ -4,7 +4,15 @@ const newArr = [5, 1, 9 , 34 , 3];
 let max = newArr[0];
 for (let i = 0; i < newArr.length; i++) {
   if (newArr[i] > max) {
-    max = newArr[i]
+    max = newArr[i];
+  }
+}
+// Минимальный элемент из массива
+const newArr4 = [];
+let min = newArr4[0];
+for (let i = 0; i < newArr4.length; i++) {
+  if (newArr4[i] < min) {
+    min = newArr4[i];
   }
 }
 // Вывод четного чисел из массива
