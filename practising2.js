@@ -41,3 +41,53 @@
     array1[i] = array1[array1.length - 1 - i];
     array1[array1.length - 1 - i] = buffer;
   }
+
+4) const array4 = [23, 45, 10, 2, 6, 90, 13, 123, 209, 7];
+   const ith = 3;
+   const jth = 6;
+
+  console.log(array4[ith], array4[jth]);
+
+  const buffer = array4[ith];
+
+  array4[ith] = array4[jth];
+
+  array4[jth] = buffer;
+
+  // [23, 45, 10, 13, 6, 90, 2, 123, 209, 7]
+
+5) const array5 = [23, 45, 10, 2, 6, 90, 13, 123, 209, 7];
+  let min = array5[0];
+  let max = array5[0];
+  let ith = 0;
+  let jth = 0;
+ for (let i = 0; i < array5.length; i++ ) {
+  if (array5[i] < min) {
+    min = array5[i];
+    ith = i;
+  }
+  if (array5[i] > max) {
+    max = array5[i];
+    jth = i;
+  }
+}
+
+const buffer = array5[ith];
+array5[ith] = array5[jth];
+array5[jth] = buffer;
+
+6) const array6 = [23, 45, 10, 2, 6, 90, 13, 123, 209, 7, 45, 100];
+  let mostFreq = array6[0];
+  let maxFreq = 0;
+  for (let i = 0; i < array6.length; i++) {
+    let freq = 0;
+    for (let j = i; j < array6.length; j ++) {
+      if (array6[i] === array6[j]) {
+        freq++;
+      }
+    }
+    if (freq > maxFreq) {
+      maxFreq = freq;
+      mostFreq = array6[i];
+    }
+  }
