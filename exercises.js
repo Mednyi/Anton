@@ -110,7 +110,7 @@ b = 5;
 [2, -12, 150, 7, -9, -10, -20, 0] i = 3
 [2, -12, 7, -9, -10, -20, 0, 0] i = 4
 [2, -12, -9, -10, -20, 0, 0, 0] i = 5
-[2, -12, -10, -20, 0, 0, 0, 0] 
+[2, -12, -10, -20, 0, 0, 0, 0]
 */
 
 const newArr10 = [2, -12, 100, 150, 7, -9, -10, -20];
@@ -123,4 +123,53 @@ while (i >= a && i <= b) {
   }
   newArr10[j] = 0;
   i++;
+}
+
+// Сумма модулей элементов массива, расположенных после первого отрицательного
+
+const newArr11 = [101, 8, 7, 24, -5, 1, 45, 105, 50];
+let sum = 0;
+let found = false;
+for (let i = 0; i < newArr11.length; i++) {
+  if (found) {
+    sum += Math.abs(newArr11[i]);
+  }
+
+  if (newArr11[i] < 0) {
+    found = true;
+  }
+}
+
+ //  Номер минимального по модулю элемента массива
+
+ const newArr12 = [101, 8, 7, 24, -5, 1, 45, 105, 50];
+ let min = Math.abs(newArr12[0]);
+ let minIndex = 0;
+ for (let i = 0; i < newArr12.length; i++) {
+  if (Math.abs(newArr12[i]) < min) {
+    min = Math.abs(newArr12[i]);
+    minIndex = i;
+  }
+}
+
+// Сумма цифр числа
+
+let a = 1024;
+let sum = 0;
+while (a != 0) {
+  sum += a % 10;
+  a /= 10;
+  a = Math.floor(a);
+}
+
+// Сумма цифр массива
+
+const newArr13 = [101, 8, 7, 24, 5, 1, 45, 105, 50];
+let sum = 0;
+for (let i = 0; i < newArr13.length; i++) {
+  while (newArr13[i] != 0) {
+    sum += newArr13[i] % 10;
+    newArr13[i] /= 10;
+    newArr13[i] = Math.floor(newArr13[i]);
+  }
 }
