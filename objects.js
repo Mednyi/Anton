@@ -40,7 +40,7 @@ const Tank = function(ammo, armor) {
     this.fire = function () {
         this.ammo--;
     };
-}
+};
 const newTank = new Tank(100,200);
 // 'new' works next way:
 // 1. It creates new empty object {} let's call it emptyObj
