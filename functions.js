@@ -70,3 +70,15 @@ const result = (function () {
 })();
 
 // Context (this) always equals to Object which has invoked the function
+
+//Closure
+/**
+ * createClosure - new i and closure is created on every function call
+ * @returns {function(): number} - returns newly created closure
+ */
+const createClosure = () => {
+    let i = 0;
+    const closure = () => ++i;
+    return closure;
+};
+const myClosure = createClosure();
