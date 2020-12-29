@@ -6,7 +6,6 @@ const tank = {
         this.ammo--;
     }
 };
-
 // How to produce objects?
 // object factory
 /**
@@ -47,3 +46,12 @@ const newTank = new Tank(100,200);
 // 2. It calls constructor function in the context of newly created object
 //    emptyObj.Tank(100, 200)
 // 3. returns newly created object to newTank
+
+// Classes
+// Class declaration
+class Automobile {
+    constructor(maxSpeed = 100, maxFuel = 100) {
+        this.maxSpeed = maxSpeed;
+        this.maxFuel = maxFuel;
+    }
+}
