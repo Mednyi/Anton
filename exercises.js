@@ -15,13 +15,22 @@ for (let i = 0; i < newArr4.length; i++) {
     min = newArr4[i];
   }
 }
-// Вывод четного чисел из массива
+// Вывод четного чиселa из массива
 const newArr1 = [1, 2, 9, 100, 102, 7, 21, 24];
 for (let i = 0; i < newArr1.length; i++) {
   if (newArr1[i] % 2 === 0) {
     console.log(newArr1[i]);
   }
 }
+
+// Вывод нечетного числа из массива
+const trArr = [23, 290, 34, 3, 5, 8, 90, 109, 12];
+for (let i = 0; i < trArr.length; i++) {
+  if (trArr[i] % 2 !== 0) {
+    console.log(trArr[i]);
+  }
+}
+
 // Максимальный четный элемент из массива
 const newArr2 = [1, 2, 9, 100, 102, 7, 21, 24];
 let max = -Infinity;
