@@ -26,9 +26,13 @@ const buttonClickHandler = function () {
   alert('Кто-то нажал на кнопку');
 }
 
-function toSum = (firstNumber, secondNumber) {
+function getSum = (firstNumber, secondNumber) {
   return firstNumber + secondNumber;
 }
 
-toSum(10, 4);
-const result = toSum(10, 4);
+getSum(10, 4);
+const result = getSum(10, 4);
+
+const sum = function () {
+
+}
