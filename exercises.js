@@ -8,7 +8,7 @@ for (let i = 0; i < newArr.length; i++) {
   }
 }
 // Минимальный элемент из массива
-const newArr4 = [];
+const newArr4 = [5, 1, 9 , 34 , 3, 19, 190];
 let minElement = newArr4[0];
 for (let i = 0; i < newArr4.length; i++) {
   if (newArr4[i] < minElement) {
