@@ -76,7 +76,7 @@ const buffer = array5[ith];
 array5[ith] = array5[jth];
 array5[jth] = buffer;
 
-6) const array6 = [23, 45, 10, 2, 6, 90, 13, 123, 209, 7, 45, 100];
+// 6) const array6 = [23, 45, 10, 2, 6, 90, 13, 123, 209, 7, 45, 100];
   let mostFreq = array6[0];
   let maxFreq = 0;
   for (let i = 0; i < array6.length; i++) {
@@ -91,3 +91,49 @@ array5[jth] = buffer;
       mostFreq = array6[i];
     }
   }
+
+
+// Requests for server
+// First example(variation)
+const API_URL = 'https://22.javascript.pages.academy/kekstagram/data';
+const API_POST_URL = 'https://22.javascript.pages.academy/kekstagram';
+
+const getData = () => new Promise((resolve, reject) => {
+  fetch(API_URL).then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch((error) => reject(error));
+});
+
+const postData = (data) => new Promise((resolve, reject) => {
+  fetch(API_POST_URL, {
+    method: 'POST',
+    body: data,
+  }).then((response) => response.json().then((data) => {resolve(data)}))
+    .catch((error) => reject(error));
+});
+
+export default {getData, postData};
+
+// Second example
+const Urls = {
+  GET: 'https://22.javascript.pages.academy/kekstagram/data',
+  POST: 'https://22.javascript.pages.academy/kekstagram',
+}
+
+const request = (onSuccess, onError, method, data) => {
+  fetch(
+    Urls[method],
+    {
+      method: method,
+      body: data,
+    },
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      onSuccess(data)
+    }).catch(() => {
+      onError()
+    });
+}
+
+export {request}

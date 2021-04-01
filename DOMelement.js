@@ -1,8 +1,5 @@
 const myTraining = document.querySelector('.button__training');
-myTraining.addEventlistener('click', function () {
-  buttonClose();
-  myTraining.removeEventListener();
-});
+myTraining.addEventlistener('click', buttonClose());
 
 buttonClose.addEventlistener = function () {
   closeBigPicture();
