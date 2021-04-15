@@ -1,3 +1,61 @@
+/////////////////////////////////////////
+// Complex Data Types - Objects Part 2 //
+/////////////////////////////////////////
+
+// Objects: describe a peice of data in depth
+const larry = {
+    name: "larry",
+    age: 20,
+    friends: ["john", "lisa", "al"],
+    isPetOwner: true,
+    greeting: "Hello Friend!",
+    sayGreeting: function(){
+        console.log(this.greeting)
+    }
+}
+
+const german = {
+    name: "german",
+    age: 38,
+    friends: ['john', 'alice', 'ron'],
+    isPetOwner: true;
+    greeting: "Hello Friends!",
+    sayGreeting: () => {
+        console.log(this.greeting)
+    }
+}
+
+const car = {
+    model: "honda",
+    wheels: 4,
+    honkSound: "beerp",
+    registeredDrivers: ['jane', 'john'],
+    hasHadAccident: false,
+    honk: function(){
+        console.log(this.honkSound)
+    }
+}
+
+// console.log(car.model)
+// console.log(car["wheels"])
+car.honk()
+
+// console.log(larry.name)
+larry.sayGreeting()
+
+// dot notation
+// larry.age
+
+// bracket notation
+// larry["age"]
+
+// Functions & Methods
+    // Function: a type of data that allows us to execute specific code when/as needed
+        // login
+    // Method: A function that is a property of an object
+    
+// this keyword inside of an object refers to itself
+
 //Object example
 const tank = {
     ammo: 100, // property
