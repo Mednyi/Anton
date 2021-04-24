@@ -224,8 +224,5 @@ const employees = [
 ]
 
 const showEmployee = (arr) => {
-  for (let i = 0; i < arr.length; i++) {
-    arr.map((item) => `${item[i]}`)
-  }
-  return item[i];
+  return arr.map((item) => `Имя: ${item.name}, возвраст: ${item.age}`);
 }
