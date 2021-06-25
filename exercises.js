@@ -3,7 +3,7 @@
 const newArr = [5, 1, 9 , 34 , 3];
 let maxElement = newArr[0];
 for (let i = 0; i < newArr.length; i++) {
-  if (newArr[i] > max) {
+  if (newArr[i] > maxElement) {
     maxElement = newArr[i];
   }
 }
