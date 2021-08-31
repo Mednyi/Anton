@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 'use strict'
+=======
+  'use strict';
+>>>>>>> b1cc57874c5f6c009b18a1af05332803969ac766
 
 const people = {
   name1: 'Anton',
