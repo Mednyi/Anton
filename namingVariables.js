@@ -26,7 +26,7 @@ const buttonClickHandler = function () {
   alert('Кто-то нажал на кнопку');
 }
 
-function getSum = (firstNumber, secondNumber) {
+function getSum (firstNumber, secondNumber) {
   return firstNumber + secondNumber;
 }
 
