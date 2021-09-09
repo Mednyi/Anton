@@ -6,7 +6,7 @@ let salaries = {
     Pete: 130
 }
 
-const multiplySalary = (obj) => {
+const summariseSalary = (obj) => {
     return Object.values(obj).reduce((acc, item) => acc + item, 0);
 }
 
@@ -25,6 +25,8 @@ const multiplyNumeric = (obj) => {
        }
    });
 }
+
+multiplyNumeric(menu);
 
 // 3
 
