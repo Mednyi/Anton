@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 //loops and arrays part 2
 
@@ -7,49 +7,65 @@
 //Dont forget to share your code on the #share-your-code channel on discord.
 
 const nightClubRegister = [
-    {
-        name: 'Ahmed',
-        lastname: 'Abdool',
-        age: 25,
-        gender: 'male'
-    },
-    {
-        name: 'Sally',
-        lastname: 'Morgan',
-        age: 18,
-        gender: 'female'
-    },
-    {
-        name: 'Dionne',
-        lastname: 'Brown',
-        age: 29,
-        gender: 'female'
-    },
-    {
-        name: 'Max',
-        lastname: 'Forrester',
-        age: 20,
-        gender: 'male'
-    }
+  {
+    name: 'Ahmed',
+    lastname: 'Abdool',
+    age: 25,
+    gender: 'male',
+  },
+  {
+    name: 'Sally',
+    lastname: 'Morgan',
+    age: 18,
+    gender: 'female',
+  },
+  {
+    name: 'Dionne',
+    lastname: 'Brown',
+    age: 29,
+    gender: 'female',
+  },
+  {
+    name: 'Max',
+    lastname: 'Forrester',
+    age: 20,
+    gender: 'male',
+  },
 ]
 
 for (let i = 0; i < nightClubRegister.length; i++) {
-    if (nightClubRegister[i].age < 21) {
-        if (nightClubRegister[i].gender === 'male') {
-            console.log('Sorry Mr ' + nightClubRegister[i].lastname + ', you are not old enough to attend');
-        }
-        if (nightClubRegister[i].gender === 'female') {
-            console.log('Sorry Mrs/Miss ' + nightClubRegister[i].lastname + ', you are not old enough to attend');
-        }
+  if (nightClubRegister[i].age < 21) {
+    if (nightClubRegister[i].gender === 'male') {
+      console.log(
+        'Sorry Mr ' +
+          nightClubRegister[i].lastname +
+          ', you are not old enough to attend',
+      )
     }
-    if (nightClubRegister[i].age >= 21) {
-        if (nightClubRegister[i].gender === 'male') {
-            console.log('Welcome Mr ' + nightClubRegister[i].lastname + ', you are on the list!');
-        }
-        if (nightClubRegister[i].gender === 'female') {
-            console.log('Welcome Mrs/Miss ' + nightClubRegister[i].lastname + ', you are on the list!');
-        }
+    if (nightClubRegister[i].gender === 'female') {
+      console.log(
+        'Sorry Mrs/Miss ' +
+          nightClubRegister[i].lastname +
+          ', you are not old enough to attend',
+      )
     }
+  }
+  if (nightClubRegister[i].age >= 21) {
+    if (nightClubRegister[i].gender === 'male') {
+      console.log(
+        'Welcome Mr ' +
+          nightClubRegister[i].lastname +
+          ', you are on the list!',
+      )
+    }
+    if (nightClubRegister[i].gender === 'female') {
+      console.log(
+        'Welcome Mrs/Miss ' +
+          nightClubRegister[i].lastname +
+          ', you are on the list!',
+      )
+    }
+  }
 }
 
 //nested loops
@@ -58,32 +74,52 @@ for (let i = 0; i < nightClubRegister.length; i++) {
 
 const buildings = 4
 
-for (let i =0; i < buildings; i++) {
-    console.log('building ' + (i +1))
-    for (let j=0; j < 3; j++) {
-        console.log('building ' + (i +1) + ' flat ' + (j +1))
-    }
+for (let i = 0; i < buildings; i++) {
+  console.log('building ' + (i + 1))
+  for (let j = 0; j < 3; j++) {
+    console.log('building ' + (i + 1) + ' flat ' + (j + 1))
+  }
 }
-
 
 // Functions
 
-const quoteDisplay = document.querySelector('#quote');
-const button = document.querySelector('button');
+const quoteDisplay = document.querySelector('#quote')
+const button = document.querySelector('button')
 
 //Challenge: Write a function that will display a random Inspirational Quote
 //from the quotes array, when the button is pressed.
 const quotes = [
-    'Do something today that your future self will thankyou for',
-    'Dont worry, be happy!',
-    'Your limitation is only your imagination'
+  'Do something today that your future self will thankyou for',
+  'Dont worry, be happy!',
+  'Your limitation is only your imagination',
 ]
 
 function showQuote() {
-    //your code
-    let randomNumber = Math.floor(Math.random() * quotes.length);
-    let randomQuote = quotes[randomNumber];
-    quoteDisplay.innerHTML = randomQuote;
+  //your code
+  let randomNumber = Math.floor(Math.random() * quotes.length)
+  let randomQuote = quotes[randomNumber]
+  quoteDisplay.innerHTML = randomQuote
 }
 
-button.addEventListener('click', showQuote);
+button.addEventListener('click', showQuote)
+
+// Destructuring object
+
+//     **** Challenge ****
+
+//     For this challenge destruture the following object.
+// */
+
+const student = {
+  name: 'Kyle',
+  age: 24,
+  projects: {
+    diceGame: 'Two player dice game using JavaScript',
+  },
+}
+
+const {
+  name,
+  age,
+  projects: { diceGame },
+} = student
