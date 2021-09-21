@@ -214,13 +214,18 @@ console.log(
 // 25  =>  true
 // 26  =>  false
 
-var isSquare = function (n) {
-  let squareNum = n * n
-  let negativeNum = n < 0
+const isSquare = (n) => (n === 0 ? true : n > 0 && Math.sqrt(n) % 1 === 0)
 
-  if (!squareNum && negativeNum) {
-    return false
-  } else {
-    return true
+// Another way to solve it
+
+var isSquare = function (n) {
+  for (var x = 0; x <= n; x++) {
+    if (n === 0) {
+      return true
+    } else if (n / x === x) {
+      return true
+    }
   }
+
+  return false
 }
