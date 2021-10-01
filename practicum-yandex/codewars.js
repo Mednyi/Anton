@@ -256,32 +256,37 @@ const isSquare = (n) => (n === 0 ? true : n > 0 && Math.sqrt(n) % 1 === 0)
 //   return Math.max(...attempts);
 //   });
 
+// let attempts = [220, 220, 220]
+// let newArr = []
+// const middle = sortedAttempts[sortedAttempts.length - 4]
 let qualificationDistance = 200
 let attempts = [120, 150, 160, 201, 203, 180, 202]
-// let attempts = [220, 220, 220]
 let qualified = false
 let averageBest = 0
-let newArr = []
 const sortedAttempts = attempts.sort((a, b) => a - b)
-const middle = sortedAttempts[sortedAttempts.length - 4]
+const best = [sortedAttempts[0], sortedAttempts[1], sortedAttempts[2]]
 
-let getAverageBest = () => {
-  for (let i = 0; i < sortedAttempts.length; i++) {
-    if (sortedAttempts[i] > middle) {
-      newArr.push(sortedAttempts[i])
-    }
-  }
+averageBest = best.reduce((a, b) => a + b) / best.length
 
-  let b = newArr.reduce((acc, item) => acc + item, 1)
-  return Math.floor(b / newArr.length)
-}
+averageBest > qualificationDistance ? (qualified = true) : qualified
 
-averageBest = getAverageBest()
+// let getAverageBest = () => {
+//   for (let i = 0; i < sortedAttempts.length; i++) {
+//     if (sortedAttempts[i] > middle) {
+//       newArr.push(sortedAttempts[i])
+//     }
+//   }
 
-if (averageBest > qualificationDistance) {
-  qualified = true
-} else {
-  qualified = false
-}
+//   let b = newArr.reduce((acc, item) => acc + item, 1)
+//   return Math.floor(b / newArr.length)
+// }
+
+// averageBest = getAverageBest()
+
+// if (averageBest > qualificationDistance) {
+//   qualified = true
+// } else {
+//   qualified = false
+// }
 
 console.log(getAverageBest())
