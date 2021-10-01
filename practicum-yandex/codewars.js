@@ -134,8 +134,7 @@ function tickets(peopleInLine) {
   // ...
 }
 
-console.log(tickets([25,100]));
-
+console.log(tickets([25, 100]))
 
 // Given an array of integers.
 
@@ -238,3 +237,51 @@ const isSquare = (n) => (n === 0 ? true : n > 0 && Math.sqrt(n) % 1 === 0)
 
 //   return false
 // }
+
+/* Техническое задание
+
+Мяу! Я провожу тренировки и хочу понять, пройду ли квалификацию.
+
+В течение тренировки я делаю несколько прыжков, и собираю длины прыжков в массив attempts.
+
+Программа должна выбрать три лучших прыжка, а затем посчитать среднее значение этих трёх прыжков и записать его в переменную averageBest.
+
+Квалификационное значение хранится в переменной qualificationDistance.
+
+Если среднее от лучших трёх прыжков больше квалификационного значения, то я прошёл квалификацию и переменная qualified должна содержать true. Если квалификация не пройдена, то в qualified должно быть false.
+
+*/
+
+// let firstBestAttempts = attempts.reduce((a, b) => {
+//   return Math.max(...attempts);
+//   });
+
+let qualificationDistance = 200
+let attempts = [120, 150, 160, 201, 203, 180, 202]
+// let attempts = [220, 220, 220]
+let qualified = false
+let averageBest = 0
+let newArr = []
+const sortedAttempts = attempts.sort((a, b) => a - b)
+const middle = sortedAttempts[sortedAttempts.length - 4]
+
+let getAverageBest = () => {
+  for (let i = 0; i < sortedAttempts.length; i++) {
+    if (sortedAttempts[i] > middle) {
+      newArr.push(sortedAttempts[i])
+    }
+  }
+
+  let b = newArr.reduce((acc, item) => acc + item, 1)
+  return Math.floor(b / newArr.length)
+}
+
+averageBest = getAverageBest()
+
+if (averageBest > qualificationDistance) {
+  qualified = true
+} else {
+  qualified = false
+}
+
+console.log(getAverageBest())

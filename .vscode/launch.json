@@ -6,19 +6,12 @@
     "configurations": [
     {
         "name": "Launch Program",
-        "program": "${workspaceFolder}/objects.js",
+        "program": "${workspaceFolder}/practicum-yandex/codewars.js",
         "request": "launch",
         "skipFiles": [
             "<node_internals>/**"
         ],
         "type": "pwa-node"
-    },
-    {
-        "name": "Launch Chrome",
-        "request": "launch",
-        "type": "pwa-chrome",
-        "url": "http://localhost:8080",
-        "webRoot": "${workspaceRoot}/practicum-yandex/codewars.js"
-    },
+    }
     ]
 }
