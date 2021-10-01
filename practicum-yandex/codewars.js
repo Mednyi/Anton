@@ -113,9 +113,15 @@ function tickets(peopleInLine) {
   for (let i = 0; i < peopleInLine.length; i++) {
     cashBox['' + peopleInLine[i]] += 1
     if (peopleInLine[i] > 25) {
-      if (peopleInLine[i] === 100 && cashBox['25'] && cashBox['50']) {
-        cashBox['25'] -= 1
-        cashBox['50'] -= 1
+      if (peopleInLine[i] === 100) {
+        if (cashBox['25'] && cashBox['50']) {
+          cashBox['25'] -= 1
+          cashBox['50'] -= 1
+        } else if (cashBox['25'] >= 3) {
+          cashBox['25'] -= 3
+        } else {
+          return 'NO'
+        }
       } else if (peopleInLine[i] === 50 && cashBox['25']) {
         cashBox['25'] -= 1
       } else {
@@ -127,6 +133,9 @@ function tickets(peopleInLine) {
   return 'YES'
   // ...
 }
+
+console.log(tickets([25,100]));
+
 
 // Given an array of integers.
 
@@ -218,14 +227,14 @@ const isSquare = (n) => (n === 0 ? true : n > 0 && Math.sqrt(n) % 1 === 0)
 
 // Another way to solve it
 
-var isSquare = function (n) {
-  for (var x = 0; x <= n; x++) {
-    if (n === 0) {
-      return true
-    } else if (n / x === x) {
-      return true
-    }
-  }
+// var isSquare = function (n) {
+//   for (var x = 0; x <= n; x++) {
+//     if (n === 0) {
+//       return true
+//     } else if (n / x === x) {
+//       return true
+//     }
+//   }
 
-  return false
-}
+//   return false
+// }
