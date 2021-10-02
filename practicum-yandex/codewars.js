@@ -263,12 +263,12 @@ let qualificationDistance = 200
 let attempts = [120, 150, 160, 201, 203, 180, 202]
 let qualified = false
 let averageBest = 0
-const sortedAttempts = attempts.sort((a, b) => a - b)
+const sortedAttempts = attempts.sort((a, b) => b - a)
 const best = [sortedAttempts[0], sortedAttempts[1], sortedAttempts[2]]
 
-averageBest = best.reduce((a, b) => a + b) / best.length
+averageBest = best.reduce((a, b) => a + b) / best.length;
 
-averageBest > qualificationDistance ? (qualified = true) : qualified
+(averageBest > qualificationDistance) ? qualified = true : qualified
 
 // let getAverageBest = () => {
 //   for (let i = 0; i < sortedAttempts.length; i++) {
@@ -288,5 +288,3 @@ averageBest > qualificationDistance ? (qualified = true) : qualified
 // } else {
 //   qualified = false
 // }
-
-console.log(getAverageBest())
