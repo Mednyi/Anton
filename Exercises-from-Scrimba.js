@@ -2,7 +2,9 @@
 
 //loops and arrays part 2
 
-//Challenge: you are working at a very fancy new nightclub and in charge of letting people in based on their age. If they are not 21 years of age, you cannot let them in. Please send them a nice personalised message letting them know.
+//Challenge: you are working at a very fancy new nightclub and in charge of letting people in based
+//  on their age. If they are not 21 years of age, you cannot let them in. Please send them a nice
+//  personalised message letting them know.
 
 //Dont forget to share your code on the #share-your-code channel on discord.
 
@@ -70,7 +72,8 @@ for (let i = 0; i < nightClubRegister.length; i++) {
 
 //nested loops
 
-//Using nested loops to print out addresses on a street. We need to print out the building number, then the flat number. Each building has exactly 3 flats in it.
+//Using nested loops to print out addresses on a street. We need to print out the building number,
+//  then the flat number. Each building has exactly 3 flats in it.
 
 const buildings = 4
 
@@ -154,3 +157,45 @@ for (student of students) {
 const shoppingList = ['eggs', 'milk', 'butter']
 
 const shoppingBasket = [...shoppingList, 'potato', 'salad']
+
+// **Classes Challenge**:
+
+// Create a class Player with the following:
+// - Add a Name and Country properties
+// - Add a function that when it runs should print into the console ("Messi was born in Argentina");
+// - Make sure to adapt this function to receive dynamic Names and Clubs.
+
+// Create a Subclass called TennisPlayer that extends from the class Player
+// - Add a new property Age.
+// - Add a function that when it runs should print into the console something similar ("Rafael Nadal is 34 years old and knows how to play Tennis");
+// - Make sure the Name and Age are dynamic.
+
+class Player {
+  constructor(name, country) {
+    this.name = name;
+    this.country = country;
+  }
+
+  print() {
+    console.log(`${this.name} was born in ${this.country}`)
+  }
+
+  get metaData() {
+    console.log(`${this.name} was born in ${this.country}`)
+  }
+}
+
+class TennisPlayer extends Player {
+  super(age, game) {
+    this.age = age;
+    this.game = game;
+  }
+
+  print() {
+    console.log(`${this.name} is ${this.age} old and knows how to play ${this.game}`)
+  }
+
+  get metaData() {
+    console.log(`${this.name} is ${this.age} old and knows how to play ${this.game}`)
+  }
+}

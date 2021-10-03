@@ -93,3 +93,23 @@ console.log(titleCase('a clash of KINGS', 'a an the of'));
 function removeUrlAnchor(url){
   return url.split('#')[0]
 }
+
+// Task
+// Write a function dirReduc which will take an array of strings and returns an array of strings with the needless directions removed (W<->E or S<->N side by side).
+
+// The Haskell version takes a list of directions with data Direction = North | East | West | South.
+// The Clojure version returns nil when the path is reduced to nothing.
+// The Rust version takes a slice of enum Direction {North, East, West, South}.
+
+describe("Tests", () => {
+  it("test", () => {
+Test.assertSimilar(dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]), ["WEST"])
+Test.assertSimilar(dirReduc(["NORTH", "WEST", "SOUTH", "EAST"]), ["NORTH", "WEST", "SOUTH", "EAST"])
+Test.assertSimilar(dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"]), [])
+
+  });
+});
+
+function dirReduc(arr){
+  // ...
+}
