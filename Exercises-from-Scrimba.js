@@ -172,11 +172,11 @@ const shoppingBasket = [...shoppingList, 'potato', 'salad']
 
 class Player {
   constructor(name, country) {
-    this.name = name;
-    this.country = country;
+    this.name = name
+    this.country = country
   }
 
-  print() {
+  introduce() {
     console.log(`${this.name} was born in ${this.country}`)
   }
 
@@ -184,18 +184,23 @@ class Player {
     console.log(`${this.name} was born in ${this.country}`)
   }
 }
+
+const messi = new Player('Messi', 'Argentina')
 
 class TennisPlayer extends Player {
-  super(age, game) {
-    this.age = age;
-    this.game = game;
+  constructor(name, country, age) {
+    super(name, country)
+    this.age = age
   }
 
-  print() {
-    console.log(`${this.name} is ${this.age} old and knows how to play ${this.game}`)
-  }
-
-  get metaData() {
-    console.log(`${this.name} is ${this.age} old and knows how to play ${this.game}`)
+  playTennis() {
+    console.log(
+      `${this.name} is ${this.age} years old and knows how to play ${this.game}`,
+    )
   }
 }
+
+const roger = new TennisPlayer('Roger Federer', 'Spain', 38)
+
+roger.introduce()
+roger.playTennis()
