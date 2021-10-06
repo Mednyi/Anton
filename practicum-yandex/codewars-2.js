@@ -101,15 +101,26 @@ function removeUrlAnchor(url){
 // The Clojure version returns nil when the path is reduced to nothing.
 // The Rust version takes a slice of enum Direction {North, East, West, South}.
 
-describe("Tests", () => {
-  it("test", () => {
-Test.assertSimilar(dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]), ["WEST"])
-Test.assertSimilar(dirReduc(["NORTH", "WEST", "SOUTH", "EAST"]), ["NORTH", "WEST", "SOUTH", "EAST"])
-Test.assertSimilar(dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"]), [])
+// describe("Tests", () => {
+//   it("test", () => {
+// Test.assertSimilar(dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]), ["WEST"])
+// Test.assertSimilar(dirReduc(["NORTH", "WEST", "SOUTH", "EAST"]), ["NORTH", "WEST", "SOUTH", "EAST"])
+// Test.assertSimilar(dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"]), [])
 
-  });
-});
+//   });
+// });
 
 function dirReduc(arr){
-  // ...
+  for (let  i = 0;  i < arr.length - 1;  i++) {
+    if (arr[i] === 'NORTH' && arr[i + 1] === 'SOUTH' || arr[i] === 'SOUTH' && arr[i + 1] === 'NORTH') {
+      arr.splice(i, 2)
+      i = -1
+    } else if (arr[i] === 'WEST' && arr[i + 1] === 'EAST' || arr[i] === 'EAST' && arr[i + 1] === 'WEST') {
+      arr.splice(i, 2)
+      i = -1
+    }
+  }
+  return arr
 }
+
+dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"])
