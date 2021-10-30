@@ -187,14 +187,28 @@ function isIsogram(str) {
 // In the result codes and their values are in the same order as in M
 
 function stockList(listOfArt, listOfCat){
+  if (listOfArt.length === 0 || listOfCat.length === 0) {
+    return ''
+  }
   const countBooks = listOfCat.reduce((acc, cat) => {
     acc[cat] = 0;
     return acc;
   }, {})
   for (let i = 0; i < listOfArt.length; i++) {
     let [code, count] = listOfArt[i].split(' ');
-    countBooks[code] += count;
+    if (countBooks[code[0]] !== undefined) {
+      countBooks[code[0]] += +count;
+    }
   }
-
-  // Finish the task by yourself
+  let str = "";
+  const countBooksEntries = Object.entries(countBooks);
+  for (let i = 0; i < countBooksEntries.length; i++) {
+    str += `(${countBooksEntries[i][0]} : ${countBooksEntries[i][1]})`
+    if (i < countBooksEntries.length - 1) {
+      str += " - "
+    }
+  }
+  return str
 }
+
+stockList(["ABAR 200", "CDXE 500", "BKWR 250", "BTSQ 890", "DRTY 600"],["A", "B"]);
