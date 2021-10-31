@@ -6,6 +6,15 @@
     "configurations": [
     {
         "name": "Launch Program",
+        "program": "${workspaceFolder}/practicum-yandex/codewars-3.js",
+        "request": "launch",
+        "skipFiles": [
+            "<node_internals>/**"
+        ],
+        "type": "pwa-node"
+    },
+    {
+        "name": "Launch Program",
         "program": "${workspaceFolder}/practicum-yandex/codewars-2.js",
         "request": "launch",
         "skipFiles": [

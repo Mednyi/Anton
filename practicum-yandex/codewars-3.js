@@ -7,14 +7,14 @@
 
 // Empty list is considered to have zero greatest sum. Note that the empty list or array is also a valid sublist/subarray.
 
-describe( "maxSequence", function(){
-  it("should work on an empty array",function(){
-    Test.assertEquals(maxSequence([]), 0);
-  });
-  it("should work on the example",function(){
-    Test.assertEquals(maxSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4]), 6);
-  });
-});
+// describe( "maxSequence", function(){
+//   it("should work on an empty array",function(){
+//     Test.assertEquals(maxSequence([]), 0);
+//   });
+//   it("should work on the example",function(){
+//     Test.assertEquals(maxSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4]), 6);
+//   });
+// });
 
 var maxSequence = function(arr){
   // ...
@@ -23,7 +23,8 @@ var maxSequence = function(arr){
 
 
 // Create a function that accepts dimensions, of Rows x Columns, as parameters 
-// in order to create a multiplication table sized according to the given dimensions. **The return value of the function must be an array, and the numbers must be Fixnums, NOT strings.
+// in order to create a multiplication table sized according to the given dimensions. 
+// **The return value of the function must be an array, and the numbers must be Fixnums, NOT strings.
 
 // Example:
 
@@ -38,10 +39,16 @@ var maxSequence = function(arr){
 // Each value on the table should be equal to the value of multiplying the number 
 // in its first row times the number in its first column.
 
+let matrix = []
+
 function multiplicationTable(row,col){
-  for (let i = 0; i < row.length; i++) {
-    for (let j = 0; j < col.length; i++) {
-      
+  for (let i = 0; i < row; i++) {
+    matrix[i] = [];
+    for (let j = 0; j < col; i++) {
+      matrix[i][j] = (i + 1) * (j + 1)
     }
   }
+  return matrix;
 }
+
+multiplicationTable(2, 2);
