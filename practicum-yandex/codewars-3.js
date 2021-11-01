@@ -16,10 +16,24 @@
 //   });
 // });
 
+let allPositives = arr => arr.every(n => n > 0)
+let allNegatives = arr => arr.every(n => n < 0)
+let sum = arr => arr.reduce((curr_max, max_so_far) => curr_max + max_so_far, 0)
+
 var maxSequence = function(arr){
-  // ...
+  if(arr.length === 0 || allNegatives(arr)) return 0;
+  if(allPositives(arr)) return sum(arr);
+
+  var curr_max = 0, max_so_far = 0;
+
+  for(var i = 0; i < arr.length; i++){  
+    curr_max = Math.max(0, curr_max + arr[i]);
+    max_so_far = Math.max(curr_max, max_so_far);
+  }
+  return max_so_far;
 }
 
+console.log(maxSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
 
 
 // Create a function that accepts dimensions, of Rows x Columns, as parameters 
@@ -41,14 +55,14 @@ var maxSequence = function(arr){
 
 let matrix = []
 
-function multiplicationTable(row,col){
+function multiplicationTable(row, col){
   for (let i = 0; i < row; i++) {
     matrix[i] = [];
-    for (let j = 0; j < col; i++) {
+    for (let j = 0; j < col; j++) {
       matrix[i][j] = (i + 1) * (j + 1)
     }
   }
   return matrix;
 }
 
-multiplicationTable(2, 2);
+console.log(multiplicationTable(4, 5));
