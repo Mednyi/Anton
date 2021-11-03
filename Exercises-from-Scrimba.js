@@ -121,11 +121,7 @@ const student = {
   },
 }
 
-const {
-  name,
-  age,
-  projects: { diceGame },
-} = student
+const {name, age, projects: { diceGame },} = student
 
 // Challenge - For Of Loop
 
