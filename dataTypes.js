@@ -84,4 +84,4 @@ function randomInteger(min, max) {
   return Math.floor(rand);
 }
 
-alert( randomInteger(1, 3) );
+alert( randomInteger(1, 3) ); 
