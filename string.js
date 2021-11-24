@@ -82,3 +82,57 @@ function truncate(str, maxlength) {
 function extractCurrencyValue(str) {
     return +str.slice(1);
 }  
+
+
+// 6 Фильтрация по диапазону
+
+// Напишите функцию filterRange(arr, a, b), которая принимает 
+// массив arr, ищет в нём элементы между a и b и отдаёт массив этих элементов.
+
+// Функция должна возвращать новый массив и не изменять исходный.
+
+// Например:
+
+
+
+// let filtered = filterRange(arr, 1, 4);
+
+// alert( filtered ); // 3,1 (совпадающие значения)
+
+// alert( arr ); // 5,3,8,1 (без изменений)
+let arr = [5, 3, 8, 1];
+
+function filterRange(arr, a, b) {
+    const newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] >= a && arr[i] <= b) {
+            newArr.push(arr[i])
+        }
+    }
+    return newArr;
+}
+
+filterRange(arr, 1, 4);
+
+// 7 Фильтрация по диапазону "на месте"
+
+// Напишите функцию filterRangeInPlace(arr, a, b), 
+// которая принимает массив arr и удаляет из него все значения кроме тех, 
+// которые находятся между a и b. То есть, проверка имеет вид a ≤ arr[i] ≤ b.
+
+// Функция должна изменять принимаемый массив и ничего не возвращать.
+
+// Например:
+
+// filterRangeInPlace(arr, 1, 4); // удалены числа вне диапазона 1..4
+
+// alert( arr ); // [3, 1]
+let arr = [5, 3, 8, 1];
+
+function filterRangeInPlace(arr, a, b) {
+    for (i = 0; i < arr.length; i++) {
+        if (arr[i] < a || arr[i] > b) {
+            arr.splice(i, 1);
+        }
+    }
+}
