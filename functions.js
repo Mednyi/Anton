@@ -82,3 +82,17 @@ const createClosure = () => {
     return closure;
 };
 const myClosure = createClosure();
+
+const generateYear = () => {
+  const years = [
+    '1925',
+    '1945',
+    '1957',
+    '1975',
+    '1984',
+    '1998',
+  ];
+
+  const randomIndex = getRandomInteger(0, years.length - 1);
+  return years[randomIndex];
+};
