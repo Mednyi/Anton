@@ -10,17 +10,18 @@ body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
     font-size: 1.2rem;
-    background-image: url("../img/bg-desktop-light.jpg");
+    background-image: url("./img/bg-desktop-light.jpg");
     background-repeat: no-repeat;
-    background-position: 100% 400px;
+    background-position: 100% 0px;
+    background-size: 100% 30%;
 }
 
 header {
-    background-color: mediumorchid;
-    color: white;
     height: 100px;
     padding: 2rem 1rem;
     text-align: center;
+    background-color: transparent;
+    color: white;
 }
 
 h1 {
@@ -64,8 +65,8 @@ form > button:hover {
     background-color: violet;
 }
 
-.todo-list {
-    max-width: 500px;
+#todo-list {
+    max-width: 600px;
     height: 500px;
     margin: 0 auto;
     padding: 0;

@@ -10,7 +10,7 @@ let todos = [];
 let users = [];
 
 // Attach events
-document.addEventListener('DOMContentLoaded', initApp);
+document.addEventListener('DOMContentLoaded', () => initApp(userSelect, todoList, todos, users));
 form.addEventListener('submit', handleSubmit);
 
 // // Basic logic about rendering items of list todo
@@ -84,18 +84,6 @@ form.addEventListener('submit', handleSubmit);
 //         title: form.todo.value,
 //         completed: false,
 //     })
-// }
-
-// function handleTodoChange() {
-//     const todoId = this.parentElement.dataset.id;
-//     const completed = this.checked;
-
-//     toggleTodoComplete(todoId, completed);
-// }
-
-// function handleClose() {
-//     const todoId = this.parentElement.dataset.id;
-//     deleteTodo(todoId);
 // }
 
 // // Async functions

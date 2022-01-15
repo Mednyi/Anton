@@ -1,11 +1,13 @@
+import {getAllTodos, getAllUsers} from './async';
+import {printTodo, createUserOption} from './basic';
 // Event logic
-function initApp() {
+function initApp(userSelect, todoList, todos, users) {
     Promise.all([getAllTodos(), getAllUsers()]).then(values => {
         [todos, users] = values;
-
+        console.log(values);
         // Отправить в разметку
-        todos.forEach(todo => printTodo(todo));
-        users.forEach(user => createUserOption(user));
+        todos.forEach(todo => printTodo(todoList, users, todos, todo));
+        users.forEach(user => createUserOption(userSelect, user));
     })
 }
 
