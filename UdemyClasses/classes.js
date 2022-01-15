@@ -1,10 +1,22 @@
 class Player {
     static totalPlayers = 0;
 
-    constructor(login, score = 100) {
+    constructor(login, firstName, lastName, score = 100) {
         this.login = login;
         this._score = score;
+        this.firstName = firstName;
+        this.lastName = lastName;
         Player.totalPlayers++;
+    }
+
+    get fullName() {
+        return this.firstName + ' ' + this.lastName;
+    }
+
+    set fullName(name) {
+        const [f, l] = name.split(' ');
+        this.firstName = f;
+        this.lastName = l;
     }
 
     get score() {
