@@ -5,9 +5,14 @@
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    display: grid;
+    grid-template-rows: auto auto;
     margin: 0;
+    font-family: 'Open Sans', sans-serif;
     font-size: 1.2rem;
+    background-image: url("../img/bg-desktop-light.jpg");
+    background-repeat: no-repeat;
+    background-position: 100% 400px;
 }
 
 header {
@@ -19,8 +24,11 @@ header {
 }
 
 h1 {
-    font-family: 'Montserrat', sans-serif;
     margin: 0;
+    margin-right: 11rem;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
 }
 
 form {
@@ -56,11 +64,13 @@ form > button:hover {
     background-color: violet;
 }
 
-ul {
-    list-style: none;
-    width: 500px;
-    margin: 2rem auto;
+.todo-list {
+    max-width: 500px;
+    height: 500px;
+    margin: 0 auto;
     padding: 0;
+    list-style: none;
+    background-color: violet;
 }
 
 .todo-item {
