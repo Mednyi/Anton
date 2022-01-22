@@ -41,3 +41,5 @@ sortArray(arr);
 function copySorted(arr) {
   return arr.slice().sort();
 }
+
+// 6 
