@@ -53,3 +53,53 @@ const counter = {
 }
 
 // 5 Создать объект с розничной ценой и количеством продуктов. Этот объект должен содержать метод для получения общей стоимости всех товаров(цена * количество продуктов)
+
+const prod = {
+  price: 100,
+  count: 50,
+  getOverAll() {
+    return this.price * this.count;
+  }
+}
+
+// 6 Создать объект из предыдущей задачи. Создать второй объект, который описывает количество деталей и цену за одну деталь. Для второго объекта нужно узнать общую стоимость всех деталей, но нельзя создавать новые функции и методы. Для этого “позаимствуйте” метод из предыдущего объекта.
+
+const prod = {
+  price: 100,
+  count: 50,
+  getOverAll() {
+    return this.price * this.count;
+  }
+}
+
+const detail = {
+  price: 150,
+  count: 40
+}
+
+prod.getOverAll.call(detail);
+
+
+// 7 Даны объект и функция: Не изменяя функцию или объект, получить результат функции getSquare для объекта sizes
+
+let sizes = { width: 5, height: 10 },
+
+getSquare = function () { return this.width * this.height };
+
+getSquare.call(sizes);
+
+
+// 8 Измените функцию getElementHeight таким образом, чтобы можно было вызвать getElementHeight() и получить 25.
+
+let element = {
+  height: 25,
+
+  getHeight: function () { return this.height; }
+
+};
+
+
+
+let getElementHeight = element.getHeight.bind(element);
+
+getElementHeight(); // undefined
