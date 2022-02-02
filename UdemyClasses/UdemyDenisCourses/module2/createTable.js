@@ -23,7 +23,7 @@
 //       <!-- /.container -->
 //     </section>
 //     <!-- /.table-section -->
-//     <script src="UdemyClasses/UdemyDenisCourses/module2/createTable.js"></script>
+//     <script src="../UdemyClasses/UdemyDenisCourses/module2/createTable.js"></script>
 //   </body>
 // </html>
 
