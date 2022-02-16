@@ -5,8 +5,10 @@ function getAnimalList(animal) {
   return data.filter(item => item.type === animal);
 }
 
-function sortAnimalByAge(firstList, secondList, ...lists) {
-  
+function sortAnimalByAge(firstList, secondList) {
+  let newArr = [];
+
+  return newArr.concat(firstList.sort((a,b) => b.age - a.age), secondList.sort((a,b) => a.age - b.age))
 }
 
 // Функция которая фильтрует массив животных поцвету
@@ -65,8 +67,9 @@ console.log(task13Result(data));
 
 const task14Result = (animals) => {
   const result = [];
+  const i = animals.forEach(index => index);
   // your code here
-  return result;
+  return result = sortAnimalByAge(getAnimalList(animals[i].type.cat), getAnimalList(animals[i].type.dog));
 };
 
 console.log(task14Result(data));
@@ -74,7 +77,7 @@ console.log(task14Result(data));
 const myPowFunc = (number, n) => {
   const result = number;
   // your code here
-  return result;
+  return result ** n;
 };
 
 console.log(myPowFunc(3, 4));
@@ -82,7 +85,7 @@ console.log(myPowFunc(3, 4));
 const myFlatFunc = (inputArray) => {
   const result = inputArray;
   // your code here
-  return result;
+  return result.flat(Infinity);
 };
 
 console.log(myFlatFunc([1, 3, 5, [1, [4, 5], 'asdf', [76, [56, [66, 59]]]]]));
