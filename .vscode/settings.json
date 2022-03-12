@@ -1,3 +1,60 @@
 {
-    "git.ignoreLimitWarning": true
+    "javascript.suggest.names": false,
+    "editor.lineHeight": 16,
+    "editor.renderWhitespace": "all",
+    "editor.tabSize": 2,
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact",
+        "vue-html": "html"
+    },
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        {
+            "language": "vue",
+            "autoFix": true
+        }
+    ],
+    "emmet.triggerExpansionOnTab": true,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "files.eol": "\n",
+    "terminal.integrated.fontSize": 11,
+    "window.zoomLevel": 1.2,
+    "workbench.startupEditor": "none",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "SimonSiefke.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "files.trimTrailingWhitespace": true,
+    "editor.minimap.enabled": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "diffEditor.ignoreTrimWhitespace": true,
+    "window.titleBarStyle": "custom",
+    "breadcrumbs.enabled": false,
+    "editor.fontLigatures": true,
+    "gitlens.views.repositories.location": "scm",
+    "gitlens.views.fileHistory.location": "gitlens",
+    "gitlens.views.lineHistory.location": "gitlens",
+    "gitlens.views.compare.location": "gitlens",
+    "gitlens.views.search.location": "gitlens",
+    "workbench.activityBar.visible": true,
+    "workbench.statusBar.visible": true,
+    "workbench.editor.showTabs": true,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 500,
+    "eslint.alwaysShowStatus": true,
+    "eslint.autoFixOnSave": true,
+    "npm.enableScriptExplorer": true,
+    "editor.largeFileOptimizations": false,
+    "vsicons.dontShowNewVersionMessage": true,
+    "liveServer.settings.donotVerifyTags": true,
 }
