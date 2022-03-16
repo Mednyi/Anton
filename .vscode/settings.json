@@ -7,14 +7,6 @@
         "javascript": "javascriptreact",
         "vue-html": "html"
     },
-    "eslint.validate": [
-        "javascript",
-        "javascriptreact",
-        {
-            "language": "vue",
-            "autoFix": true
-        }
-    ],
     "emmet.triggerExpansionOnTab": true,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
@@ -38,21 +30,13 @@
     "editor.minimap.enabled": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "diffEditor.ignoreTrimWhitespace": true,
-    "window.titleBarStyle": "custom",
     "breadcrumbs.enabled": false,
     "editor.fontLigatures": true,
-    "gitlens.views.repositories.location": "scm",
-    "gitlens.views.fileHistory.location": "gitlens",
-    "gitlens.views.lineHistory.location": "gitlens",
-    "gitlens.views.compare.location": "gitlens",
-    "gitlens.views.search.location": "gitlens",
     "workbench.activityBar.visible": true,
     "workbench.statusBar.visible": true,
     "workbench.editor.showTabs": true,
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 500,
-    "eslint.alwaysShowStatus": true,
-    "eslint.autoFixOnSave": true,
     "npm.enableScriptExplorer": true,
     "editor.largeFileOptimizations": false,
     "vsicons.dontShowNewVersionMessage": true,
