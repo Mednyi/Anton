@@ -49,9 +49,9 @@ alert(`Число: ${readNumber()}`);
 
 // 4 Бесконечный цикл по ошибке
 
-let i = 0;
-while (i != 10) {
-  i += 0.2;
+let index = 0;
+while (index != 10) {
+  index += 0.2;
 }
 
 // Потому что i никогда не станет равным 10.
@@ -84,4 +84,4 @@ function randomInteger(min, max) {
   return Math.floor(rand);
 }
 
-alert( randomInteger(1, 3) ); 
+alert( randomInteger(1, 3) );

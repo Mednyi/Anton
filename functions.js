@@ -97,24 +97,6 @@ const generateYear = () => {
   return years[randomIndex];
 };
 
-// Функция отрисовки ДОМ элемента
-
-// export const renderTemplate = (container, template, place) => {
-//   container.insertAdjacentHTML(place, template);
-// };
-
-// Recursion
-// Функция вызывает саму себя
-// 1. Базовое условие(терминальное)
-// 2. Правило движения по рекурсии
-
-function factorial(n) {
-  if (n === 0) return 1;
-
-  return n * factorial(n - 1);
-}
-console.log(factorial(5));
-
 // принимает символ и возврвщвет пять его копий
 
 let counter = 0;

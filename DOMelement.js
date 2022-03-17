@@ -30,6 +30,12 @@ const renderList = function (animals) {
 
 console.log(renderList) //?
 
+// Функция отрисовки ДОМ элемента
+
+export const renderTemplate = (container, template, place) => {
+  container.insertAdjacentHTML(place, template);
+};
+
 // Мультивставка: insertAdjacentHTML и DocumentFragment
 
 // Отсортировать таблицу
