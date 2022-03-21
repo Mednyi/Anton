@@ -101,55 +101,35 @@ function extractCurrencyValue(str) {
 }
 
 
-// 6 Фильтрация по диапазону
+// Ищет в строке большие буквы
 
-// Напишите функцию filterRange(arr, a, b), которая принимает
-// массив arr, ищет в нём элементы между a и b и отдаёт массив этих элементов.
-
-// Функция должна возвращать новый массив и не изменять исходный.
-
-// Например:
-
+const bigLettersCount = (str) => {
+    // BEGIN (write your solution here)
+    return [...str].filter((char) => char.toUpperCase() === char).length;
+    // END
+};
 
 
-// let filtered = filterRange(arr, 1, 4);
+const compare = (first, second) => {
+    const firstCount = bigLettersCount(first);
+    const secondCount = bigLettersCount(second);
 
-// alert( filtered ); // 3,1 (совпадающие значения)
-
-// alert( arr ); // 5,3,8,1 (без изменений)
-let arr = [5, 3, 8, 1];
-
-function filterRange(arr, a, b) {
-    const newArr = [];
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] >= a && arr[i] <= b) {
-            newArr.push(arr[i])
-        }
+    // BEGIN (write your solution here)
+    if (firstCount > secondCount) {
+      return 1;
+    } else if (firstCount < secondCount) {
+      return -1;
+    } else {
+      return 0;
     }
-    return newArr;
-}
+    // END
+};
 
-filterRange(arr, 1, 4);
+export const greaterThan = (first, second) => (
+    compare(first, second) === 1);
 
-// 7 Фильтрация по диапазону "на месте"
+export const lessThan = (first, second) => (
+    compare(first, second) === -1);
 
-// Напишите функцию filterRangeInPlace(arr, a, b),
-// которая принимает массив arr и удаляет из него все значения кроме тех,
-// которые находятся между a и b. То есть, проверка имеет вид a ≤ arr[i] ≤ b.
-
-// Функция должна изменять принимаемый массив и ничего не возвращать.
-
-// Например:
-
-// filterRangeInPlace(arr, 1, 4); // удалены числа вне диапазона 1..4
-
-// alert( arr ); // [3, 1]
-let arr = [5, 3, 8, 1];
-
-function filterRangeInPlace(arr, a, b) {
-    for (i = 0; i < arr.length; i++) {
-        if (arr[i] < a || arr[i] > b) {
-            arr.splice(i, 1);
-        }
-    }
-}
+export const isEqual = (first, second) => (
+    compare(first, second) === 0);

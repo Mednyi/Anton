@@ -14,7 +14,7 @@ const MY_ENGLISH_SKILL = 'Advanced';
 const MY_FLAT_AREA = 74;
 const task = 'Купить кошачьей еды';
 const tasks = [ 'Купить кошачьей еды', 'Почистить лоток'];
-const sum = function (a, b) {
+const sum1 = function (a, b) {
   return a + b
 }
 
@@ -146,3 +146,57 @@ ask(
 );
 
 let ask = (question, yes, no) => confirm(question) ? yes() : no();
+
+
+// 6 Фильтрация по диапазону
+
+// Напишите функцию filterRange(arr, a, b), которая принимает
+// массив arr, ищет в нём элементы между a и b и отдаёт массив этих элементов.
+
+// Функция должна возвращать новый массив и не изменять исходный.
+
+// Например:
+
+
+
+// let filtered = filterRange(arr, 1, 4);
+
+// alert( filtered ); // 3,1 (совпадающие значения)
+
+// alert( arr ); // 5,3,8,1 (без изменений)
+let arr1 = [5, 3, 8, 1];
+
+function filterRange(arr, a, b) {
+  const newArr = [];
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] >= a && arr1[i] <= b) {
+        newArr.push(arr[i])
+    }
+  }
+  return newArr;
+}
+
+filterRange(arr, 1, 4);
+
+// 7 Фильтрация по диапазону "на месте"
+
+// Напишите функцию filterRangeInPlace(arr, a, b),
+// которая принимает массив arr и удаляет из него все значения кроме тех,
+// которые находятся между a и b. То есть, проверка имеет вид a ≤ arr[i] ≤ b.
+
+// Функция должна изменять принимаемый массив и ничего не возвращать.
+
+// Например:
+
+// filterRangeInPlace(arr, 1, 4); // удалены числа вне диапазона 1..4
+
+// alert( arr ); // [3, 1]
+let arr = [5, 3, 8, 1];
+
+function filterRangeInPlace(arr, a, b) {
+  for (i = 0; i < arr.length; i++) {
+    if (arr[i] < a || arr[i] > b) {
+        arr.splice(i, 1);
+    }
+  }
+}
