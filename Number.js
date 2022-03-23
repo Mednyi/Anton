@@ -27,3 +27,23 @@ Boolean(0);       // false
 // Конвертация булева значения в строку
 String(true);     // 'true'
 String(false);    // 'false'
+
+// Дано неотрицательное целое число num. Складывать все входящие в него цифры до тех пор, пока не останется одна цифра.
+
+const sum = (str) => {
+  let result = 0;
+  for (let i = 0; i < length(str); i += 1) {
+    result += Number(str[i]);
+  }
+
+  return result;
+};
+
+const addDigits = (num) => {
+  let result = num;
+  while (result >= 10) {
+    result = sum(String(result));
+  }
+
+  return result;
+};
