@@ -108,7 +108,7 @@ function truncate(str, maxlength) {
 // alert( extractCurrencyValue('$120') === 120 ); // true
 
 function extractCurrencyValue(str) {
-    return +str.slice(1);
+  return +str.slice(1);
 }
 
 
@@ -144,3 +144,23 @@ export const lessThan = (first, second) => (
 
 export const isEqual = (first, second) => (
   compare(first, second) === 0);
+
+
+
+// Реализуйте функцию getHiddenCard(), который принимает на вход номер
+//  кредитки (состоящий из 16 цифр) в виде строки и возвращает его скрытую
+//  версию, которая может использоваться на сайте для отображения. Если
+//   исходная карта имела номер 2034399002125581, то скрытая версия выглядит
+//    так ****5581. Другими словами, функция заменяет первые 12 символов,
+//    на звездочки. Количество звездочек регулируется вторым необязательным
+//    параметром. Значение по умолчанию — 4.
+
+const getHiddenCard = (cardNumber, starsCount = 4) => {
+  const visibleDigitsLine = cardNumber.slice(12);
+  return '*'.repeat(starsCount) + visibleDigitsLine;
+};
+
+
+// Реализуйте функцию capitalize(), которая принимает непустую строку и приводит первую букву первого слова к верхнему регистру:
+
+const capitalize = (text) => `${text[0].toUpperCase()}${text.slice(1)}`;
