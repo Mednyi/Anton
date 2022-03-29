@@ -1,3 +1,19 @@
+// Напишите для Сэма функцию whoIsThisHouseToStarks(), которая принимает на вход фамилию семьи и возвращает одно из трёх значений: 'friend', 'enemy', 'neutral'.
+
+const whoIsThisHouseToStarks = (houseName) => {
+  let status;
+
+  if (houseName === 'Karstark' || houseName === 'Tally') {
+    status = 'friend';
+  } else if (houseName === 'Lannister' || houseName === 'Frey') {
+    status = 'enemy';
+  } else {
+    status = 'neutral';
+  }
+
+  return status;
+};
+
 // 1)  Напишите "if", аналогичный "switch"
 // важность: 5
 // Напишите if..else, соответствующий следующему switch:

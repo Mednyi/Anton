@@ -1,18 +1,33 @@
+// Реализуйте функцию isPalindrome(), которая определяет, является ли слово
+// палиндромом или нет. Палиндром это слово, которое читается одинаково в обоих
+// направлениях.
+const isPalindrome = (string) => {
+  const lowerString = string.toLowerCase();
+  const reversedString = string.split('').reverse().join('');
+  return lowerString === reversedString;
+}
+
+// Реализуйте функцию isNotPalindrome(), которая проверяет что слово НЕ является
+// палиндромом:
+const isNotPalindrome = (string) => {
+  return !isPalindrome(string);
+}
+
 // Перевернуть строку циклов
 
-const reverse = (str) => {
-    let result = '';
-    for (let i = str.length - 1; i >= 0; i--) {
-      result = result += str[i];
-    }
+const reverseString = (str) => {
+  let result = '';
+  for (let i = str.length - 1; i >= 0; i--) {
+    result += str[i];
+  }
 
-    return result;
+  return result;
 }
 
 // Перевернуть строку Методами
 
-const reverseStr = (str) => {
-    return str.split("").reverse().join("");
+const reverseString2 = (str) => {
+  return str.split("").reverse().join("");
 }
 
 // Задачи из LearnJs на строки
@@ -67,9 +82,9 @@ const getFirstLetterToUppercase = (str) => {
 // }
 
 function checkSpam(str) {
-    let lowerStr = str.toLowerCase();
+  let lowerStr = str.toLowerCase();
 
-    return lowerStr.includes("viagra") || lowerStr.includes("xxx");
+  return lowerStr.includes("viagra") || lowerStr.includes("xxx");
 }
 
 // 3) Усечение строки (Truncating  the string)
@@ -86,10 +101,10 @@ function checkSpam(str) {
 // truncate("Всем привет!", 20) = "Всем привет!"
 
 function truncate(str, maxlength) {
-    if (str.length > maxlength) {
-        str.slice(0, maxlength - 1) + "...";
-    }
-    return str;
+  if (str.length > maxlength) {
+    str.slice(0, maxlength - 1) + "...";
+  }
+  return str;
 }
 
 function truncate(str, maxlength) {

@@ -59,7 +59,7 @@ const isStrongPassword = (password) => {
 
 // Ниже пример расширенной функции определения корректности пароля:
 
-const hasSpecialChars = (str) => /* проверяет содержание специальных символов в строке */;
+const hasSpecialChars = (str) => {} /* проверяет содержание специальных символов в строке */;
 
 const isStrongPassword2 = (password) => {
   const length = password.length;
