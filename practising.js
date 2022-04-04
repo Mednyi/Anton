@@ -51,9 +51,10 @@ const randomStringLength = 6
 let alphabet = 'абвгдеёжзиклмнопрстуфхцчыьъэюя'
 let randomString = ''
 
-while (randomString < randomStringLength) {
-  randomString += alphabet.Math.floor(Math.random() * alphabet.length)
-  console.log(randomString)
+while (randomString.length < randomStringLength) {
+  let randomIndex = Math.round(Math.random() * alphabet.length)
+  
+  randomString += alphabet[randomIndex];
 }
 
 // Упражнение № 3 Хакерский язык
