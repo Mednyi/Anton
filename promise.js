@@ -47,3 +47,17 @@ function promiseCreator(ms, value) {
 const prom = promiseCreator(500, 'Ok!')
 
 console.log(prom)
+
+
+// Получить данные с помощью fetch
+
+function getTodos(id) {
+  return new Promise((resolve, reject) => {
+    fetch(`https://jsonplaceholder.typicode.com/todos/${id}`)
+      .then(response => response.json())
+      .then(todo => resolve(todo))
+      .catch(err => reject(err));
+  })
+}
+
+getTodos(1).then(todo => console.log(todo));
