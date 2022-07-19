@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <title>Computed properties</title>
+  <style>
+    .title {
+      max-width: 345px;
+      margin: 0 auto;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 34px;
+      font-weight: 700;
+      color: limegreen;
+    }
+
+    .container {
+      max-width: 350px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1 class="title">{{ fullName }}</h1>
+    <div class="container">
+      <input v-model="firstName">
+      <input v-model="lastName">
+    </div>
+  </div>
+
+  <script>
+
+    let app = new Vue({
+      el: '#app',
+      data: {
+        firstName: 'Anton',
+        lastName: 'Zhilin',
+        fullName: 'Anton Zhilin'
+      },
+      watch: {
+        firstName: function(value) {
+          this.fullName = value + ' ' + this.lastName;
+        },
+        lastName: function(value) {
+          this.fullName = this.firstName + ' ' + value;
+        }
+      }
+    })
+  </script>
+
+  <div id="app2">
+    {{ fullName }}
+    <input v-model="firstName">
+    <input v-model="lastName">
+    <input v-model="fullName">
+  </div>
+
+  <script>
+
+    let app2 = new Vue({
+      el: '#app2',
+      data: {
+        firstName: 'Anton',
+        lastName: 'Zhilin'
+      },
+      computed: {
+        // fullName: function() {
+        //   return this.firstName + ' ' + this.lastName;
+        // }
+        fullName: {
+          get: function() {
+            return this.firstName + ' ' + this.lastName;
+          },
+          set: function(value) {
+            let names = value.split(' ');
+            this.firstName = names[0];
+            this.lastName = names[names.length - 1];
+          }
+        }
+      }
+    })
+  </script>
+
+</body>
+</html>

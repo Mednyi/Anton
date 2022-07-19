@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <title>Document</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .app {
+      padding: 20px;
+      width: 500px;
+      height: 375px;
+      border: 2px solid red;
+      border-radius: 20px;
+    }
+
+    .app div input {
+      margin-right: 2rem;
+      padding: 0.6rem;
+      border: none;
+      outline: 1px solid lightblue;
+      border-radius: 20px;
+    }
+
+    .app__list {
+      margin: 0;
+      margin-top: 45px;
+      padding: 0;
+      list-style: none;
+    }
+
+    button {
+      display: inline-block;
+      padding: 10px;
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 14px;
+      border: none;
+      background-color: transparent;
+      border: 1px solid lightblue;
+      border-radius: 20px;
+    }
+
+    button:hover {
+      background-color: lightblue;
+      color: blue;
+    }
+
+    .task {
+      display: flex;
+      align-items: center;
+      min-height: 38px;
+      margin-bottom: 20px;
+    }
+
+    .task:last-child {
+      margin-bottom: 0;
+    }
+
+    .task span {
+      margin-right: auto;
+    }
+
+    .task input {
+      margin: 0;
+      margin-right: 0.67rem;
+      padding: 0.45rem;
+      appearance: none;
+      outline: 1px solid grey;
+      border-radius: 20px;
+    }
+
+    .task input:checked ~ span {
+      text-decoration: line-through;
+    }
+
+    .task input:checked ~ button {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <h1>{{ message }}</h1>
+
+    <div>
+      <input v-model="todo" placeholder="Напишите задачу..">
+      <button @click="addTodo" type="button">Добавить задачу</button>
+    </div>
+
+    <ol>
+      <li v-for="(item, index) in todos" :key="item.id" class="task">
+        <input type="checkbox" name="task">
+        <span>{{ item.title }}</span>
+        <button @click="deleteTodo(index)">Delete</button>
+      </li>
+    </ol>
+  </div>
+
+  <script>
+    // Vue.component('item', {
+    //   props: [todos],
+    //   template: `<li class="task">
+    //     <input type="checkbox" name="task">
+    //     <span>{{ }}</span>
+    //     <button type="button">Удалить задачу</button>
+    //   </li>`
+    // })
+
+    var app = new Vue({
+      el: '.app',
+      data: {
+        message: 'To do list',
+        todo: '',
+        todos: [
+          {id: 1, title: 'Сходить в кино', completed: false},
+          {id: 2, title: 'Погулять с собакой', completed: false},
+          {id: 3, title: 'Встретится с Шерлоком на Бэйкер Стрит', completed: false}
+        ]
+      },
+      methods: {
+        addTodo() {
+          if (this.todo.length === 0) {
+            return;
+          }
+          this.todos.push({
+            id: Math.floor(Math.random() * 10),
+            title: this.todo
+          })
+          this.todo = ''
+        },
+        deleteTodo(index) {
+          this.todos.splice(index, 1)
+        }
+      }
+    })
+  </script>
+
+</body>
+</html>

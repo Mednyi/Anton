@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdn.rawgit.com/jgthms/minireset.css/master/minireset.css">
+		<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+		<link rel="stylesheet" href="css/debug.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900">
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	  <script src="semantic/dist/semantic.min.js"></script>
+			<style>
+
+			/* resets */
+			* { color: inherit; }
+			input { font: inherit; border: unset; background: unset; }
+			input:focus { outline: unset; }
+
+			:root {
+				font: 1rem/1.175 "BlinkMacSystemFont", -apple-system, "Roboto", sans-seri;
+			}
+
+			#app {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				width: 100vw;
+				height: 100vh;
+				font-weight: 900;
+				font-size: 8rem;
+				color: hsl(0, 0%, 100%);
+				background: hsl(240, 100%, 67%);
+			}
+
+			input { text-align: center; }
+
+			img {
+				width: 8rem;
+				height: 8rem;
+				vertical-align: calc(-0.12109375em);
+			}
+
+		</style>
+  </head>
+
+	<body>
+		<div id="app">
+			<input type="text" v-model="message2">
+			<p
+				v-html="message1.slice(0, 7) +
+								message2 +
+								message1.slice(12)
+				"></p>
+
+			<p v-html="incendio(lumos(wizard))"></p>
+
+			<p
+				v-for="wizard in wizards"
+				v-html="wizard.name + ' ' + wizard.pet"
+			></p>
+
+			<harry></harry>
+			<ron></ron>
+			<hermione></hermione>
+
+			<click-counter></click-counter>
+
+			<plan name="The Hacker"></plan>
+		</div>
+
+		<script>
+
+			"use strict"
+
+			// emojify returns the corresponding emoji image
+			function emojify(name) {
+				var out = `<img src="emojis/` + name + `.png">`
+				return out
+			}
+
+			// cast returns a spell (function) that decorates the wizard
+			function cast(emoji) {
+				if (!emoji) {
+						emoji = "¯\\_(ツ)_/¯"
+				}
+				return function (wizard) {
+					return emoji + wizard + emoji
+				}
+			}
+
+      const wizards = {
+				wizard      : "",
+			  harry       : emojify("harry"      ),
+			  hedwig      : emojify("hedwig"     ),
+			  ron         : emojify("ron"        ),
+			  scabbers    : emojify("scabbers"   ),
+			  hermione    : emojify("hermione"   ),
+			  crookshanks : emojify("crookshanks")
+			}
+
+
+			Vue.component("harry"   , { template: `<p>` + emojify("harry"   ) + `</p>` })
+			Vue.component("ron"     , { template: `<p>` + emojify("ron"     ) + `</p>` })
+			Vue.component("hermione", { template: `<p>` + emojify("hermione") + `</p>` })
+			Vue.component("click-counter", {
+				template: `<button @click="count++">{{ count }}</button>`,
+				data () {
+					return {
+						count: 0,
+					}
+				}
+			})
+			Vue.component("plan", {
+				template: `<div class="plan">
+						<div class="discription">
+							<span class="title">
+								{{ name }}
+							</span>
+						</div>
+					</div>`,
+				props: ['name']
+			})
+
+			var app = new Vue({
+				el: "#app",
+				data: {
+					message1: "Hello, World!" + emojify("celebration"),
+					message2: "Vue",
+					wizard: emojify("wizard"),
+				},
+				methods: {
+					lumos: cast(emojify("lumos")),
+					incendio: cast(emojify("incendio")),
+					wizards: function () {
+						return [
+							{ name: this.harry   , pet: this.hedwig      },
+							{ name: this.ron     , pet: this.scabbers    },
+							{ name: this.hermione, pet: this.crookshanks }
+						]
+					}
+				}
+			})
+
+		</script>
+
+	</body>
+</html>
