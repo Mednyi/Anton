@@ -121,12 +121,28 @@ alert(`Число: ${readNumber()}`);
 // alert( random(1, 5) ); // 3.7894332423
 // alert( random(1, 5) ); // 4.3435234525
 
-function randomInteger(min, max) {
-  let result;
+function generateRandomFloat(min, max) {
+  return min + Math.random() * (max - min);
+}
 
-  for (let i = 0; i < max; i++) {
-    result = Math.random()
-  }
 
-  return result;
+
+// Task 6
+
+// Случайное целое число от min до max
+// важность: 2
+// Напишите функцию randomInteger(min, max), которая генерирует случайное целое (integer) число от min до max (включительно).
+
+// Любое число из интервала min..max должно появляться с одинаковой вероятностью.
+
+// Пример работы функции:
+
+// alert( randomInteger(1, 5) ); // 1
+// alert( randomInteger(1, 5) ); // 3
+// alert( randomInteger(1, 5) ); // 5
+
+function generateRandomInteger(min, max) {
+  // случайное число от min до (max+1)
+  let rand = min + Math.random() * (max + 1 - min);
+  return Math.floor(rand);
 }

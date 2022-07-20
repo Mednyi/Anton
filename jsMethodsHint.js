@@ -83,5 +83,11 @@ function camelize(str) {
 // alert( arr ); // 5,3,8,1 (без изменений)
 
 function filterRange(arr, a, b) {
-
+  const newArr = [];
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] >= a && arr1[i] <= b) {
+        newArr.push(arr[i])
+    }
+  }
+  return newArr;
 }

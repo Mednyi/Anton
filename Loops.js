@@ -35,7 +35,7 @@ for (let today = 1; today <= days; today++) {
 
 // Task 2
 
-let days = 0
+let days1 = 0
 let initialWeight = 6000 // Исходный вес в граммах
 let targetWeight = 5000 // Желанный вес в граммах
 let persent = 0
@@ -56,7 +56,7 @@ while (targetWeight <= initialWeight) {
   persent = Math.round(initialWeight * 0.05)
   initialWeight -= persent
 
-  days++
+  days1++
 }
 /* Техническое задание
 
