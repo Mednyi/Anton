@@ -60,7 +60,7 @@ function getPow3(x, n) {
   return result;
 }
 
-// Udemy Denis course  tasts
+// Udemy Denis course  tasks
 
 function foo(x) {
   console.log(x);
@@ -102,8 +102,8 @@ function reverseString(str) {
   return reversedString;
 }
 
-// 3 
-// Создать функцию, которая в качестве аргумента принимает строку из букв и возвращает строку, где каждый символ разделен пробелом и заменен на юникод - значение символа:getCodeStringFromText(‘hello’) // “104 101 108 108 111” подсказка: для получения кода используйте специальный метод 
+// 3
+// Создать функцию, которая в качестве аргумента принимает строку из букв и возвращает строку, где каждый символ разделен пробелом и заменен на юникод - значение символа:getCodeStringFromText(‘hello’) // “104 101 108 108 111” подсказка: для получения кода используйте специальный метод
 
 function getCodeStringFromText(str) {
   let string = String(str);
@@ -117,7 +117,7 @@ function getCodeStringFromText(str) {
 
 // 4 Создать функцию угадай число. Она принимает число от 1-10 (обязательно проверить что число не больше 10 и не меньше 0). Генерирует рандомное число от 1-10 и сравнивает с заданным числом если они совпали то возвращает “Вы выиграли” если нет то “Вы не угадали ваше число 8 а выпало число 5”. Числа в строке указаны как пример вы подставляете реальные числа.
 
-function guessTheNumber(num) {
+function guessNumber(num) {
   const number = Number(num);
 
   if (typeof number !== 'number' || isNaN(number)) return new Error('Provide a valid number');

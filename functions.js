@@ -35,14 +35,14 @@ function add (a, b) {
  * @returns {*}
  */
 const addExpression = function (a, b) {
-    return a+b;
+    return a + b;
 };
 
 // arrow function expression
 const addExpressionArrow = (a, b) => {
     return a+b;
 };
-const addExpressionArrow_1 = (a, b) => a+b;
+const addExpressionArrow_1 = (a, b) => a + b;
 const addExpressionArrow_obj = (a, b) => {
     return {
         a, // equivalents a: a

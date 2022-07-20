@@ -11,12 +11,7 @@ const getStrig = (name, surname, age) =>
   `Привет ${name} ${surname} с возрастом ${age} лет`
 
 // 3
-const getSex1 = (sex) =>
-  sex
-    ? sex === 'M'
-      ? 'Ваш пол мужской'
-      : 'Ваш пол женский'
-    : 'Ваш поло не определен'
+const getSex1 = (sex) => sex ? sex === 'M' ? 'Ваш пол мужской' : 'Ваш пол женский' : 'Ваш поло не определен'
 
 const getSex2 = (sex) => {
   if (sex === 'M') {
@@ -64,7 +59,7 @@ const sayGreeting = (name) => {
   const currentTime = Object.keys(time).find(
     (item) => time[item][0] <= hour && time[item][1] >= hour,
   )
-  return `Доброе ${curentTime} ${name}`
+  return `Доброе ${currentTime} ${name}`
 }
 
 // 7

@@ -21,7 +21,7 @@ let menu = {
 const multiplyNumeric = (obj) => {
    Object.keys(obj).forEach(element => {
        if (typeof obj[element] === 'number') {
-         obj[element] *= 2; 
+         obj[element] *= 2;
        }
    });
 }

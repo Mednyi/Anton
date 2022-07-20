@@ -13,7 +13,7 @@ const isNotPalindrome = (string) => {
   return !isPalindrome(string);
 }
 
-// Перевернуть строку циклов
+// Перевернуть строку циклом
 
 const reverseString = (str) => {
   let result = '';
@@ -108,8 +108,7 @@ function truncate(str, maxlength) {
 }
 
 function truncate(str, maxlength) {
-  return (str.length > maxlength) ?
-    str.slice(0, maxlength - 1) + '…' : str;
+  return (str.length > maxlength) ? str.slice(0, maxlength - 1) + '…' : str;
 }
 
 // 4 Выделить число
