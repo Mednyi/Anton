@@ -40,25 +40,25 @@ const addExpression = function (a, b) {
 
 // arrow function expression
 const addExpressionArrow = (a, b) => {
-    return a+b;
+    return a + b;
 };
-const addExpressionArrow_1 = (a, b) => a+b;
-const addExpressionArrow_obj = (a, b) => {
+const addExpressionArrow1 = (a, b) => a + b;
+const addExpressionArrowobj = (a, b) => {
     return {
         a, // equivalents a: a
         b  // equivalents b: b
-    }
+    };
 };
-const addExpressionArrow_obj_2 = (a, b) => ({a, b}); // returns object {a:a, b:b}
+const addExpressionArrowobj2 = (a, b) => ({a, b}); // returns object {a:a, b:b}
 
 // Function invocation
 // <function name>(<argument list>);
-const returnedValue = addExpression(10,10) // will return 20
+const returnedValue = addExpression(10,10); // will return 20
 
 // IIFE
 // Immediately invoked function expression
 // (<function>)()
-const result = (function () {
+const result = (function (a, b) {
     if(a > b) { // a and be will be caught from upper level of lexical environment
         return a + b;
     } else {
@@ -70,3 +70,15 @@ const result = (function () {
 })();
 
 // Context (this) always equals to Object which has invoked the function
+
+
+const person = {
+    name: 'Anton',
+    age: 39,
+    isMarried: false
+};
+
+console.log(person.name);
+person.job = 'No job';
+
+console.log(person.job);
