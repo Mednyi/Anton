@@ -28,13 +28,13 @@ function fileterRangeInPlace(arr, a, b) {
 
 // 4 Сортировать в порядке по убыванию
 
-let arr = [5, 2, 1, -10, 8]
+let arr2 = [5, 2, 1, -10, 8];
 
 function sortArray(arr) {
   return arr.sort((a, b) => b - a);
 }
 
-sortArray(arr);
+sortArray(arr2);
 
 // 5 У нас есть массив строк arr. Нужно получить отсортированную копию, но оставить arr неизменённым. Создайте функцию copySorted(arr), которая будет возвращать такую копию
 
@@ -50,56 +50,56 @@ function copySorted(arr) {
 
 //  b) Затем добавьте метод addMethod(name, func), который добавляет в калькулятор новые операции. Он принимает оператор name и функцию с двумя аргументами func(a,b), которая описывает его.
 
- class Calculator  {
+//  class Calculator  {
 
-  #methods = {
-    '-': (a, b) => a - b,
-    '+': (a, b) => a + b
-  };
+//   // #methods = {
+//   //   '-': (a, b) => a - b,
+//   //   '+': (a, b) => a + b
+//   // };
 
-  #calculate = function(str) {
+//   #calculate = function(str) {
 
-    let split = str.split(' ');
-    let a = +split[0];
-    let op = split[1];
-    let b = +split[2];
+//     let split = str.split(' ');
+//     let a = +split[0];
+//     let op = split[1];
+//     let b = +split[2];
 
-    if (!this.methods[op] || isNaN(a) || isNaN(b)) {
-      return NaN;
-    }
+//     if (!this.methods[op] || isNaN(a) || isNaN(b)) {
+//       return NaN;
+//     }
 
-    return this.methods[op](a, b);
-  }
+//     return this.methods[op](a, b);
+//   }
 
-  #methods = function(name, func) {
-    this.methods[name] = func;
-  }
-}
+//   #methods = function(name, func) {
+//     this.methods[name] = func;
+//   }
+// }
 
 
 // 7 У вас есть массив объектов user, и в каждом из них есть user.name. Напишите код, который преобразует их в массив имён.
 
-let vasya = { name: "Вася", age: 25 };
-let petya = { name: "Петя", age: 30 };
-let masha = { name: "Маша", age: 28 };
+let vasya4 = { name: "Вася", age: 25 };
+let petya4 = { name: "Петя", age: 30 };
+let masha4 = { name: "Маша", age: 28 };
 
-let users = [ vasya, petya, masha];
+let users4 = [ vasya4, petya4, masha4];
 
-let names = users.map( user => user.name);
+let names = users4.map( user => user.name);
 
 // 8 У вас есть массив объектов user, и у каждого из объектов есть name, surname и id.
 
 // Напишите код, который создаст ещё один массив объектов с параметрами id и fullName, где fullName – состоит из name и surname.
 
-let vasya = { name: "Вася", surname: "Пупкин", id: 1 };
-let petya = { name: "Петя", surname: "Иванов", id: 2 };
-let masha = { name: "Маша", surname: "Петрова", id: 3 };
+let vasya2 = { name: "Вася", surname: "Пупкин", id: 1 };
+let petya2 = { name: "Петя", surname: "Иванов", id: 2 };
+let masha2 = { name: "Маша", surname: "Петрова", id: 3 };
 
-let users = [vasya, petya, masha];
+let users2 = [vasya2, petya2, masha2];
 
-let usersTransformed = users.map( user => [ {id: user.id, fullName: user.name + user.surname}])
+let usersTransformed = users2.map( user => [ {id: user.id, fullName: user.name + user.surname}]);
 
-let usersMapped = users.map(user => ({
+let usersMapped = users2.map(user => ({
   fullName: `${user.name} ${user.surname}`,
   id: user.id
 }));
@@ -107,20 +107,20 @@ let usersMapped = users.map(user => ({
 
 // 9 Напишите функцию sortByAge(users), которая принимает массив объектов со свойством age и сортирует их по нему.
 
-let vasya = { name: "Вася", age: 25 };
-let petya = { name: "Петя", age: 30 };
-let masha = { name: "Маша", age: 28 };
+let vasya3 = { name: "Вася", age: 25 };
+let petya3 = { name: "Петя", age: 30 };
+let masha3 = { name: "Маша", age: 28 };
 
-let arr = [vasya, petya, masha];
+let arr3 = [vasya3, petya3, masha3];
 
 function sortByAge() {
-  return arr.slice().sort((a, b) => a.age > b.age ? 1 : -1);
+  return arr3.slice().sort((a, b) => a.age > b.age ? 1 : -1);
 }
 
 // 10 Напишите функцию shuffle(array), которая перемешивает (переупорядочивает случайным образом) элементы массива.
 
 function shuffle(array) {
-  array.sort(() => Math.random() - 0.5)
+  array.sort(() => Math.random() - 0.5);
 }
 
 
@@ -135,11 +135,11 @@ function shuffle(array) {
 
 // 11 Напишите функцию getAverageAge(users), которая принимает массив объектов со свойством age и возвращает средний возраст. Формула вычисления среднего арифметического значения: (age1 + age2 + ... + ageN) / N.
 
-let vasya = { name: "Вася", age: 25 };
-let petya = { name: "Петя", age: 30 };
-let masha = { name: "Маша", age: 29 };
+let vasya5 = { name: "Вася", age: 25 };
+let petya5 = { name: "Петя", age: 30 };
+let masha5 = { name: "Маша", age: 29 };
 
-let arr = [vasya, petya, masha];
+let arr = [vasya5, petya5, masha5];
 
 function getAverageAge() {
   return arr.reduce((acc, item) => acc + item.age, 0) / arr.length;

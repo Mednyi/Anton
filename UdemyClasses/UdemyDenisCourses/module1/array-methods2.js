@@ -16,7 +16,7 @@ function doubleArray(arr) {
   return arr.concat(arr);
 }
 
-console.log(doubleArray(getArray(10)))
+console.log(doubleArray(getArray(10)));
 
 // 3
 function changeCollection() {
@@ -26,14 +26,14 @@ function changeCollection() {
     if (Array.isArray(arguments[i])) {
       const el = arguments[i].slice();
       el.shift();
-      res.push(el)
+      res.push(el);
     }
   }
 
   return res;
 }
 
-console.log(changeCollection([1,2,3]))
+console.log(changeCollection([1,2,3]));
 
 // 4
 const users = [
@@ -61,23 +61,29 @@ const users = [
     "name": "Kari Waters",
     "gender": "female"
   }
-]
+];
 
 
 function filterUsers(arr, key, value) {
-  if (!Array.isArray(arr)) return new Error('The first argument should be an array');
-  if (typeof key !== "string" || key === '') return new Error('The key should be a valid string');
-  if (value === undefined || value === null) return new Error('The value should be a valid value.');
+  if (!Array.isArray(arr)) {
+    return new Error('The first argument should be an array');
+  }
+  if (typeof key !== "string" || key === '') {
+    return new Error('The key should be a valid string');
+  }
+  if (value === undefined || value === null) {
+    return new Error('The value should be a valid value.');
+  }
 
   const res = [];
 
-  for (i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     if (arr[i][key] === value) {
-      res.push(arr[i])
+      res.push(arr[i]);
     }
   }
 
   return res;
 }
 
-console.log(filterUsers(users, "age", 36))
+console.log(filterUsers(users, "age", 36));

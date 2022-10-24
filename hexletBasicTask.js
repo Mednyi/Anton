@@ -208,8 +208,27 @@ console.log(name);
 // encrypt('go!'); // 'og!'
 
 const encrypt = (text) => {
-  let result = text.split('');
-  console.log(result);
+  let result = '';
+
+  for (let i = 0; i < text.length; i++) {
+    if (text.length % 2 === 0) {
+      result = `${result}${text[i + 1]}${text[i]}`;
+    } else {
+      result = `${result}${text[i + 1]}${text[i]}${text[text.length - 1]}`;
+    }
+  }
+
+  return result;
 };
 
-encrypt('hello');
+const encrypt2 = (str) => {
+  let result = '';
+  for (let i = 0; i < str.length; i += 2) {
+    const nextSymbol = str[i + 1] || '';
+    result = `${result}${nextSymbol}${str[i]}`;
+  }
+
+  return result;
+};
+
+encrypt2('hello');
