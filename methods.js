@@ -7,7 +7,7 @@ Number.prototype.toLocaleString('ru-RU', { style: 'currency', currency: 'RUB' })
 Number.prototype.toString(); // will convert Number to String
 
 // String
-String.length // is the length of string
-String.prototype.includes('string') // returns true if string includes substring passed as argument
-String.prototype.indexOf('string') // finds index of first occurrence of substring in string
-String.prototype.lastIndexOf('string') // finds index of last occurrence of substring in string
+// String.length;// is the length of string
+String.prototype.includes('string'); // returns true if string includes substring passed as argument
+String.prototype.indexOf('string'); // finds index of first occurrence of substring in string
+String.prototype.lastIndexOf('string'); // finds index of last occurrence of substring in string

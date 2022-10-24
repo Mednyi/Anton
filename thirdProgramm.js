@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 // Count user's salary
 
@@ -9,23 +9,23 @@ const user = [
   { name: 'Jacquelin', password: '10-858-4114', salary: 5600 },
   { name: 'Jasper', password: '88-115-7660', salary: 8900 },
   { name: 'Rodrigo', password: '59-621-5493', salary: 5400 },
-]
+];
 
-let search = 'J'
+let search = 'J';
 
 for (let i = 0; i < user.length; i++) {
   if (user[i].name[0] === search) {
-    console.log(user[i])
+    console.log(user[i]);
   }
 }
 
-let maxSalary = 0
-let userIndex = 0
+let maxSalary = 0;
+let userIndex = 0;
 
 for (let i = 0; i < user.length; i++) {
   if (user[i].salary > maxSalary) {
-    maxSalary = user[i].salary
-    userIndex = i
+    maxSalary = user[i].salary;
+    userIndex = i;
   }
 }
 
@@ -103,7 +103,7 @@ let symbols = [
   ',',
   '—',
   '!',
-]
+];
 
 // Encoded message
 let encodedSymbols = [
@@ -138,21 +138,21 @@ let encodedSymbols = [
   49,
   42,
   67,
-]
+];
 
 // Decoded message
-let decodedMessage = ''
+let decodedMessage = '';
 
 for (let i = 0; i < encodedSymbols.length; i++) {
-  decodedMessage += symbols[encodedSymbols[i]]
+  decodedMessage += symbols[encodedSymbols[i]];
 }
 
 // Records in hop jumping
 
-let qualificationDistance = 200
-let attempts = [120, 150, 160, 201, 203, 180, 202]
-let qualified = false
-let averageBest = 0
+let qualificationDistance = 200;
+let attempts = [120, 150, 160, 201, 203, 180, 202];
+let qualified = false;
+let averageBest = 0;
 
 /* Техническое задание
 
@@ -165,7 +165,7 @@ let averageBest = 0
 Квалификационное значение хранится в переменной qualificationDistance.
 
 Если среднее от лучших трёх прыжков больше квалификационного значения,
- то я прошёл квалификацию и переменная qualified должна содержать true. 
+ то я прошёл квалификацию и переменная qualified должна содержать true.
  Если квалификация не пройдена, то в qualified должно быть false.
 
 */

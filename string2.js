@@ -47,6 +47,6 @@ const convertText2 = (text) => {
   } else {
     return text;
   }
-}
+};
 
 

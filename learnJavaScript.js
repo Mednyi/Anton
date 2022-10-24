@@ -15,16 +15,16 @@ const MY_FLAT_AREA = 74;
 const task = 'Купить кошачьей еды';
 const tasks = [ 'Купить кошачьей еды', 'Почистить лоток'];
 const sum1 = function (a, b) {
-  return a + b
-}
+  return a + b;
+};
 
 const onButtonClick = function () {
   alert('Кто-то нажал на кнопку');
-}
+};
 
 const buttonClickHandler = function () {
   alert('Кто-то нажал на кнопку');
-}
+};
 
 function getSum (firstNumber, secondNumber) {
   return firstNumber + secondNumber;
@@ -34,8 +34,8 @@ getSum(10, 4);
 const result = getSum(10, 4);
 
 const sum = function (a, b) {
-  return a + b
-}
+  return a + b;
+};
 
 // Tasks from learnJS
 
@@ -43,9 +43,9 @@ const sum = function (a, b) {
 
 function checkAge(age) {
   if (age > 18) {
-    return true
+    return true;
   } else {
-    return confirm('Родители разрешили?')
+    return confirm('Родители разрешили?');
   }
 }
 
@@ -92,7 +92,7 @@ function getMin(a, b) {
   if (a < b) {
     return a;
   }
-  return b
+  return b;
 }
 
 function getMin1(a, b) {
@@ -127,7 +127,7 @@ let n = prompt("n?", '');
 if (n < 1) {
   alert(`Степень ${n} не поддерживается, используйте натуральное число`);
 } else {
-  alert( pow(x, n) );
+  alert( getPow2(x, n) );
 }
 
 // Перепишите с использованием функции-стрелки
@@ -135,8 +135,12 @@ if (n < 1) {
 // Замените код Function Expression стрелочной функцией:
 
 function ask(question, yes, no) {
-  if (confirm(question)) yes()
-  else no();
+  if (confirm(question)) {
+    yes();
+  }
+  else {
+    no();
+  }
 }
 
 ask(
@@ -145,7 +149,7 @@ ask(
   function() { alert("Вы отменили выполнение."); }
 );
 
-let ask = (question, yes, no) => confirm(question) ? yes() : no();
+let ask2 = (question, yes, no) => confirm(question) ? yes() : no();
 
 
 // 6 Фильтрация по диапазону
@@ -170,13 +174,13 @@ function filterRange(arr, a, b) {
   const newArr = [];
   for (let i = 0; i < arr1.length; i++) {
     if (arr1[i] >= a && arr1[i] <= b) {
-        newArr.push(arr[i])
+        newArr.push(arr[i]);
     }
   }
   return newArr;
 }
 
-filterRange(arr, 1, 4);
+filterRange(arr1, 1, 4);
 
 // 7 Фильтрация по диапазону "на месте"
 
@@ -191,12 +195,12 @@ filterRange(arr, 1, 4);
 // filterRangeInPlace(arr, 1, 4); // удалены числа вне диапазона 1..4
 
 // alert( arr ); // [3, 1]
-let arr = [5, 3, 8, 1];
+let arr2 = [5, 3, 8, 1];
 
-function filterRangeInPlace(arr, a, b) {
-  for (i = 0; i < arr.length; i++) {
-    if (arr[i] < a || arr[i] > b) {
-        arr.splice(i, 1);
+function filterRangeInPlace(arr2, a, b) {
+  for (let i = 0; i < arr2.length; i++) {
+    if (arr2[i] < a || arr2[i] > b) {
+        arr2.splice(i, 1);
     }
   }
 }

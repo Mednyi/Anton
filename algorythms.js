@@ -8,12 +8,12 @@ b = temp;
 
 // 2) Algo . Замена значения одной переменной на значение другой , через две переменных.
 
-let a = 2;
-let b = 5;
-let temp1 = b;
-let temp2 = a;
-a = temp1;
-b = temp2;
+let a1 = 2;
+let b1 = 5;
+let temp1 = b1;
+let temp2 = a1;
+a1 = temp1;
+b1 = temp2;
 
 // Operating with arrays from LearnJs
 
@@ -42,7 +42,7 @@ alert( fruits.length ); // 4 (fruits = ["Яблоки", "Груша", "Апел�
 
 let styles = ["Джаз","Блюз"];
 styles.push("Рок-н-ролл");
-styles[Math.floor((styles.length) - 1 / 2)];
+// styles[Math.floor((styles.length - 1 ) / 2)];
 alert(styles.shift());
 styles.unshift("Рэп", "Регги");
 
@@ -54,7 +54,7 @@ let arr = ["a", "b"];
 
 arr.push(function() {
   alert( this );
-})
+});
 
 arr[2](); // ?
 
@@ -62,13 +62,13 @@ arr[2](); // ?
 
 // Итак, у нас есть вызов функции arr[2] как метода объекта. Соответственно, он получает в качестве this объект arr и выводит массив:
 
-let arr = ["a", "b"];
+let arr2 = ["a", "b"];
 
-arr.push(function() {
+arr2.push(function() {
   alert( this );
-})
+});
 
-arr[2](); // "a","b",function
+arr2[2](); // "a","b",function
 // У массива в итоге 3 элемента: сначала их было 2, плюс функция.
 
 // 4) Сумма введённых чисел
@@ -85,7 +85,9 @@ function sumInput() {
 
   while (true) {
     let value = prompt("Введите число", 0);
-    if (value === "" || value === null || !isFinite(value)) break;
+    if (value === "" || value === null || !isFinite(value)) {
+      break;
+    }
     numbers.push(+value);
   }
   let sum;
@@ -142,7 +144,9 @@ function getMaxSubSum(arr) {
   for (let item of arr) { // для каждого элемента массива
     partialSum += item; // добавляем значение элемента к partialSum
     maxSum = Math.max(maxSum, partialSum); // запоминаем максимум на данный момент
-    if (partialSum < 0) partialSum = 0; // ноль если отрицательное
+    if (partialSum < 0) {
+      partialSum = 0;
+    } // ноль если отрицательное
   }
 
   return maxSum;

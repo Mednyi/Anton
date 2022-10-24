@@ -5,9 +5,9 @@
 // Скопируйте значение из переменной name в admin.
 // Выведите на экран значение admin, используя функцию alert (должна показать «Джон»).
 
-const admin = 'Джон';
-const name = admin;
-alert(admin);
+// let name = 'Джон';
+// let admin = name;
+// alert(admin);
 
 // 2 Придумайте правильные имена
 

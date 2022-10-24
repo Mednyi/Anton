@@ -33,10 +33,10 @@ for (let i = 0; i < trArr.length; i++) {
 
 // Максимальный четный элемент из массива
 const newArr2 = [1, 2, 9, 100, 102, 7, 21, 24];
-let maxElement = -Infinity;
+let maxElement2 = -Infinity;
 for (let i = 0; i < newArr2.length; i++) {
-  if (newArr2[i] % 2 === 0 && newArr2[i] > maxElement) {
-    maxElement = newArr2[i];
+  if (newArr2[i] % 2 === 0 && newArr2[i] > maxElement2) {
+    maxElement2 = newArr2[i];
   }
 }
 

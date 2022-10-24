@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 //loops and arrays part 2
 
@@ -33,7 +33,7 @@ const nightClubRegister = [
     age: 20,
     gender: 'male',
   },
-]
+];
 
 for (let i = 0; i < nightClubRegister.length; i++) {
   if (nightClubRegister[i].age < 21) {
@@ -42,14 +42,14 @@ for (let i = 0; i < nightClubRegister.length; i++) {
         'Sorry Mr ' +
           nightClubRegister[i].lastname +
           ', you are not old enough to attend',
-      )
+      );
     }
     if (nightClubRegister[i].gender === 'female') {
       console.log(
         'Sorry Mrs/Miss ' +
           nightClubRegister[i].lastname +
           ', you are not old enough to attend',
-      )
+      );
     }
   }
   if (nightClubRegister[i].age >= 21) {
@@ -58,14 +58,14 @@ for (let i = 0; i < nightClubRegister.length; i++) {
         'Welcome Mr ' +
           nightClubRegister[i].lastname +
           ', you are on the list!',
-      )
+      );
     }
     if (nightClubRegister[i].gender === 'female') {
       console.log(
         'Welcome Mrs/Miss ' +
           nightClubRegister[i].lastname +
           ', you are on the list!',
-      )
+      );
     }
   }
 }
@@ -75,19 +75,19 @@ for (let i = 0; i < nightClubRegister.length; i++) {
 //Using nested loops to print out addresses on a street. We need to print out the building number,
 //  then the flat number. Each building has exactly 3 flats in it.
 
-const buildings = 4
+const buildings = 4;
 
 for (let i = 0; i < buildings; i++) {
-  console.log('building ' + (i + 1))
+  console.log('building ' + (i + 1));
   for (let j = 0; j < 3; j++) {
-    console.log('building ' + (i + 1) + ' flat ' + (j + 1))
+    console.log('building ' + (i + 1) + ' flat ' + (j + 1));
   }
 }
 
 // Functions
 
-const quoteDisplay = document.querySelector('#quote')
-const button = document.querySelector('button')
+const quoteDisplay = document.querySelector('#quote');
+const button = document.querySelector('button');
 
 //Challenge: Write a function that will display a random Inspirational Quote
 //from the quotes array, when the button is pressed.
@@ -95,16 +95,16 @@ const quotes = [
   'Do something today that your future self will thankyou for',
   'Dont worry, be happy!',
   'Your limitation is only your imagination',
-]
+];
 
 function showQuote() {
   //your code
-  let randomNumber = Math.floor(Math.random() * quotes.length)
-  let randomQuote = quotes[randomNumber]
-  quoteDisplay.innerHTML = randomQuote
+  let randomNumber = Math.floor(Math.random() * quotes.length);
+  let randomQuote = quotes[randomNumber];
+  quoteDisplay.innerHTML = randomQuote;
 }
 
-button.addEventListener('click', showQuote)
+button.addEventListener('click', showQuote);
 
 // Destructuring object
 
@@ -119,9 +119,9 @@ const student = {
   projects: {
     diceGame: 'Two player dice game using JavaScript',
   },
-}
+};
 
-const {name, age, projects: { diceGame },} = student
+// const {name, age, projects: { diceGame }} = student;
 
 // Challenge - For Of Loop
 
@@ -132,27 +132,27 @@ const students = [
   { name: 'John', city: 'New York' },
   { name: 'Peter', city: 'Paris' },
   { name: 'Kate', city: 'Sidney' },
-]
+];
 
-for (student of students) {
-  console.log(`${students.name} + lives in ${students.city}`)
-}
+const text = students.forEach(student => console.log(`${student.name} + lives in ${student.city}`));
+
+console.log(text);
 
 /*
     **** Challenge ****
-    
+
     Imagine you are going out to do some grocery shopping.
     So you have an array called shoppingList with all the products you want to buy.
-    
+
     Now that you are inside of the shop, you have a basket with all the products from your list, but you want to add a few more.
-    
-    Create a new array called shoppingBasket, that will be a copy of the shoppingList array, and add some new products into it. 
+
+    Create a new array called shoppingBasket, that will be a copy of the shoppingList array, and add some new products into it.
 
 */
 
-const shoppingList = ['eggs', 'milk', 'butter']
+const shoppingList = ['eggs', 'milk', 'butter'];
 
-const shoppingBasket = [...shoppingList, 'potato', 'salad']
+const shoppingBasket = [...shoppingList, 'potato', 'salad'];
 
 // **Classes Challenge**:
 
@@ -168,35 +168,35 @@ const shoppingBasket = [...shoppingList, 'potato', 'salad']
 
 class Player {
   constructor(name, country) {
-    this.name = name
-    this.country = country
+    this.name = name;
+    this.country = country;
   }
 
   introduce() {
-    console.log(`${this.name} was born in ${this.country}`)
+    console.log(`${this.name} was born in ${this.country}`);
   }
 
   get metaData() {
-    console.log(`${this.name} was born in ${this.country}`)
+    console.log(`${this.name} was born in ${this.country}`);
   }
 }
 
-const messi = new Player('Messi', 'Argentina')
+const messi = new Player('Messi', 'Argentina');
 
 class TennisPlayer extends Player {
   constructor(name, country, age) {
-    super(name, country)
-    this.age = age
+    super(name, country);
+    this.age = age;
   }
 
   playTennis() {
     console.log(
       `${this.name} is ${this.age} years old and knows how to play ${this.game}`,
-    )
+    );
   }
 }
 
-const roger = new TennisPlayer('Roger Federer', 'Spain', 38)
+const roger = new TennisPlayer('Roger Federer', 'Spain', 38);
 
-roger.introduce()
-roger.playTennis()
+roger.introduce();
+roger.playTennis();

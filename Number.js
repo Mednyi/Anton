@@ -124,7 +124,7 @@ while (i < 11) {
 // 5 Случайное число от min до max
 
 function getRandomNum(min, max) {
-  return min + Math.random() * (max - min)
+  return min + Math.random() * (max - min);
 }
 
 // 6 Случайное целое число от min до max

@@ -5,7 +5,9 @@ const someArr = [12, 234, 345, 1023, 19];
 const getArrayMin = arr => {
   let min = arr[0]; // min = 12
   for(let item of arr) {
-    if (item < min) min = item;
+    if (item < min) {
+      min = item;
+    }
   }
   return min;
 };
@@ -18,4 +20,4 @@ const getArrayMax = (arr) => {
     }
   }
   return max;
-}
+};

@@ -20,4 +20,4 @@ const createUsers = () => {
     users.push(new User(...Object.values(usersMock[i])));
   }
   return users;
-}
+};

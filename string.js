@@ -5,13 +5,13 @@ const isPalindrome = (string) => {
   const lowerString = string.toLowerCase();
   const reversedString = string.split('').reverse().join('');
   return lowerString === reversedString;
-}
+};
 
 // Реализуйте функцию isNotPalindrome(), которая проверяет что слово НЕ является
 // палиндромом:
 const isNotPalindrome = (string) => {
   return !isPalindrome(string);
-}
+};
 
 // Перевернуть строку циклом
 
@@ -22,13 +22,13 @@ const reverseString = (str) => {
   }
 
   return result;
-}
+};
 
 // Перевернуть строку Методами
 
 const reverseString2 = (str) => {
   return str.split("").reverse().join("");
-}
+};
 
 // Задачи из LearnJs на строки
 
@@ -48,7 +48,9 @@ const reverseString2 = (str) => {
 // }
 
 function ucFirst(str) {
-  if (!str) return str;
+  if (!str) {
+    return str;
+  }
 
   return str[0].toUpperCase() + str.slice(1);
 }
@@ -58,11 +60,11 @@ const getFirstLetterToUppercase = (str) => {
   let result = '';
   for (let i = 0; i < str.length; i += 1) {
     const shouldBeBig = (i === 0 || str[i - 1] === ' ');
-    result += shouldBeBig ? toUpperCase(str[i]) : str[i];
+    result += shouldBeBig ? str[i].toUpperCase() : str[i];
   }
 
   return result;
-}
+};
 
 // 2) Проверка на спам
 
@@ -102,7 +104,7 @@ function checkSpam(str) {
 
 function truncate(str, maxlength) {
   if (str.length > maxlength) {
-    str.slice(0, maxlength - 1) + "...";
+    return `${str.slice(0, maxlength - 1)}...`;
   }
   return str;
 }

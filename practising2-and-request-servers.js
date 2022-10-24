@@ -117,7 +117,7 @@ const postData = (data) => new Promise((resolve, reject) => {
   fetch(API_POST_URL, {
     method: 'POST',
     body: data,
-  }).then((response) => response.json().then((data) => {resolve(data)}))
+  }).then((response) => response.json().then((data) => {resolve(data);}))
     .catch((error) => reject(error));
 });
 
@@ -127,7 +127,7 @@ export default {getData, postData};
 const Urls = {
   GET: 'https://22.javascript.pages.academy/kekstagram/data',
   POST: 'https://22.javascript.pages.academy/kekstagram',
-}
+};
 
 const request = (onSuccess, onError, method, data) => {
   fetch(
@@ -139,10 +139,10 @@ const request = (onSuccess, onError, method, data) => {
   )
     .then((response) => response.json())
     .then((data) => {
-      onSuccess(data)
+      onSuccess(data);
     }).catch(() => {
-      onError()
+      onError();
     });
-}
+};
 
-export {request}
+export {request};
