@@ -61,9 +61,6 @@ const convertText2 = (str) => {
 };
 
 console.log(convertText2);
-// END
-convertText1();
-console.log(convertText1());
 
 // Модифицируйте функцию printNumbers() так, чтобы она выводила числа в обратном порядке. Для этого нужно идти от верхней границы к нижней. То есть счётчик должен быть инициализирован максимальным значением, а в теле цикла его нужно уменьшать до нижней границы.
 
@@ -187,15 +184,6 @@ const makeItFunny = (str, n) => {
 };
 
 
-let number = 10;
-
-console.log(number);
-
-var name = 'Ivan';
-
-console.log(name);
-
-
 
 // Сэмвелл обнаружил, что его сообщения перехватываются в замке «Близнецы» и там читаются. Из-за этого их атаки перестали быть внезапными. Немного подумав, он разработал программу, которая бы шифровала сообщения по следующему алгоритму. Она бы брала текст и переставляла в нем каждые два подряд идущих символа.
 
@@ -221,7 +209,21 @@ const encrypt = (text) => {
   return result;
 };
 
-const encrypt2 = (str) => {
+const encrypt2 = (message) => {
+  let result = message.split("");
+  if (result.length % 2 === 0) {
+    for (let i = 0; i < result.length; i += 2) {
+      [result[i], result[i + 1]] = [result[i + 1], result[i]];
+    }
+  } else {
+      for (let i = 0; i < result.length - 1; i += 2) {
+        [result[i], result[i + 1]] = [result[i + 1], result[i]];
+      }
+  }
+  return result.join("");
+};
+
+const encrypt3 = (str) => {
   let result = '';
   for (let i = 0; i < str.length; i += 2) {
     const nextSymbol = str[i + 1] || '';
@@ -231,4 +233,4 @@ const encrypt2 = (str) => {
   return result;
 };
 
-encrypt2('hello');
+encrypt3('hello');

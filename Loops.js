@@ -16,10 +16,10 @@ let total = 0; // Общее количество протеина
 
 for (let today = 1; today <= days; today++) {
   if (today % 2 === 0) {
-    console.log('Take ' + evenDayAmount + ' gram');
+    console.log("Take " + evenDayAmount + " gram");
     console.log((total += evenDayAmount));
   } else {
-    console.log('Take ' + evenDayAmount + ' gram');
+    console.log("Take " + evenDayAmount + " gram");
     console.log((total += oddDayAmount));
   }
 }
@@ -58,14 +58,4 @@ while (targetWeight <= initialWeight) {
 
   days1++;
 }
-/* Техническое задание
 
-Мяу! Меня утомляют диета и тренировки, поэтому я хочу узнать, сколько ещё дней осталось заниматься, чтобы добиться нужного веса к мероприятию.
-
-Входные данные: вес в начале и вес в конце.
-
-Логика работы: если я тренируюсь и сижу на диете, то теряю 5% своей массы в день (на сухом корме не особо пожируешь, а тренировки суровые).
-
-Просто посчитай, сколько дней понадобится провести в таком режиме и запиши количество в переменную days.
-
-*/
