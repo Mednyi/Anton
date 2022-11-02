@@ -21,7 +21,9 @@ let order = [];
 function addToBasket(productId) {
     // TODO: добавить проверку наличия товара в заказе
     //  (при наличии выдать alert, что товар уже в корзине)
-    if (order.find(el => el.id === productId)) return alert('Товар уже в корзине');
+    if (order.find(el => el.id === productId)) {
+        return alert('Товар уже в корзине');
+    }
 
 
     // TODO: если товар еще не в корзине, добавить его из массива products
@@ -65,5 +67,5 @@ function renderCart() {
         el.innerText = item.title;
         el.onclick = () => removeFromBasket(item.id);
         cart.appendChild(el);
-    })
+    });
 }

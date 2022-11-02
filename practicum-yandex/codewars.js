@@ -1,46 +1,48 @@
 const getFirstWords = (str) => {
-  const sentenses = str.split('.')
-  return sentenses.map((sentense) => sentense.trim().split(' ')[0]).join(', ')
-}
+  const sentenses = str.split('.');
+  return sentenses.map((sentense) => sentense.trim().split(' ')[0]).join(', ');
+};
 // Reverse the string with in-built methods
 // First way to do
 function solution(str) {
-  let splitString = str.split('')
-  let reverseArray = splitString.reverse()
-  let joinArray = reverseArray.join('')
-  return joinArray
+  let splitString = str.split('');
+  let reverseArray = splitString.reverse();
+  let joinArray = reverseArray.join('');
+  return joinArray;
 }
 
 // Second way to do
 
 function reverseString(str) {
-  return str.split('').reverse().join('')
+  return str.split('').reverse().join('');
 }
-reverseString('hello')
-console.log(reverseString('hello'))
 
 // Third way to do
 // Reverse a String With a Decrementing For Loop
 
 function reverseString(str) {
-  var newString = ''
+  var newString = '';
   for (var i = str.length - 1; i >= 0; i--) {
-    newString += str[i]
+    newString += str[i];
   }
-  return newString
+  return newString;
 }
 
 // Fourth way to do
 // Reverse a String With Recursion
 function reverseString(str) {
-  if (str === '') return ''
-  else return reverseString(str.substr(1)) + str.charAt(0)
+  if (str === '') {
+    return '';
+  }
+  else {
+    return reverseString(str.substr(1)) + str.charAt(0);
+  }
 }
-reverseString('hello')
+reverseString('hello');
 
 // Conditional (Ternary) Operator:
 function reverseString(str) {
-  return str === '' ? '' : reverseString(str.substr(1)) + str.charAt(0)
+  return str === '' ? '' : reverseString(str.substr(1)) + str.charAt(0);
 }
 
 // Check to see if a string has the same amount of 'x's and 'o's.
@@ -54,16 +56,16 @@ function reverseString(str) {
 // XO("zzoo") => false
 
 function XO(str) {
-  let x = 0
-  let o = 0
+  let x = 0;
+  let o = 0;
 
   for (let i = 0; i < str.length; i++) {
     if (str[i].toLowerCase() === 'x') {
-      x++
+      x++;
     } else if (str[i].toLowerCase() === 'o') {
-      o++
+      o++;
     }
-    return x === o
+    return x === o;
   }
 }
 
@@ -76,19 +78,19 @@ function XO(str) {
 
 // version one
 function solution(str, ending) {
-  return str.endsWith(ending) // TODO: complete
+  return str.endsWith(ending); // TODO: complete
 }
 
 // second version
 const endsWith = (str, ending) => {
   for (let i = 0; i < ending.length; i++) {
     if (str[i + str.length - ending.length] !== ending[i]) {
-      return false
+      return false;
     }
   }
-  return true
-}
-console.log(endsWith('abc', 'bc'))
+  return true;
+};
+console.log(endsWith('abc', 'bc'));
 
 // The new "Avengers" movie has just been released! There are a lot of people at the cinema box office standing in a huge line. Each of them has a single 100, 50 or 25 dollar bill. An "Avengers" ticket costs 25 dollars.
 
@@ -108,33 +110,33 @@ function tickets(peopleInLine) {
     '25': 0,
     '50': 0,
     '100': 0,
-  }
+  };
 
   for (let i = 0; i < peopleInLine.length; i++) {
-    cashBox['' + peopleInLine[i]] += 1
+    cashBox['' + peopleInLine[i]] += 1;
     if (peopleInLine[i] > 25) {
       if (peopleInLine[i] === 100) {
         if (cashBox['25'] && cashBox['50']) {
-          cashBox['25'] -= 1
-          cashBox['50'] -= 1
+          cashBox['25'] -= 1;
+          cashBox['50'] -= 1;
         } else if (cashBox['25'] >= 3) {
-          cashBox['25'] -= 3
+          cashBox['25'] -= 3;
         } else {
-          return 'NO'
+          return 'NO';
         }
       } else if (peopleInLine[i] === 50 && cashBox['25']) {
-        cashBox['25'] -= 1
+        cashBox['25'] -= 1;
       } else {
-        return 'NO'
+        return 'NO';
       }
     }
   }
 
-  return 'YES'
+  return 'YES';
   // ...
 }
 
-console.log(tickets([25, 100]))
+console.log(tickets([25, 100]));
 
 // Given an array of integers.
 
@@ -147,39 +149,39 @@ console.log(tickets([25, 100]))
 
 function countPositivesSumNegatives(input) {
   if (input.length < 1) {
-    return []
+    return [];
   }
 
-  var newArray = [0, 0]
+  var newArray = [0, 0];
 
   for (var i = 0; i < input.length; i++) {
     if (input[i] > 0) {
-      newArray[0] += 1
+      newArray[0] += 1;
     } else {
-      newArray[1] += input[i]
+      newArray[1] += input[i];
     }
   }
-  return newArray
+  return newArray;
 }
 
 function countPositivesSumNegatives(input) {
-  let sumOfPositive = 0
-  let sumOfNegative = 0
+  let sumOfPositive = 0;
+  let sumOfNegative = 0;
 
   if (input == null || input.length < 1) {
-    return []
+    return [];
   } else {
     input.map((item) => {
       if (item > 0) {
-        sumOfPositive++
+        sumOfPositive++;
       } else if (item < 0) {
-        sumOfNegative += item
+        sumOfNegative += item;
       } else {
-        return []
+        return [];
       }
-    })
+    });
   }
-  return [sumOfPositive, sumOfNegative]
+  return [sumOfPositive, sumOfNegative];
 }
 
 console.log(
@@ -200,7 +202,7 @@ console.log(
     -14,
     -15,
   ]),
-)
+);
 
 // A square of squares
 // You like building blocks. You especially like building blocks that are squares. And what you even like more, is to arrange them into a square of square building blocks!
@@ -222,7 +224,7 @@ console.log(
 // 25  =>  true
 // 26  =>  false
 
-const isSquare = (n) => (n === 0 ? true : n > 0 && Math.sqrt(n) % 1 === 0)
+const isSquare = (n) => (n === 0 ? true : n > 0 && Math.sqrt(n) % 1 === 0);
 
 // Another way to solve it
 
@@ -259,16 +261,16 @@ const isSquare = (n) => (n === 0 ? true : n > 0 && Math.sqrt(n) % 1 === 0)
 // let attempts = [220, 220, 220]
 // let newArr = []
 // const middle = sortedAttempts[sortedAttempts.length - 4]
-let qualificationDistance = 200
-let attempts = [120, 150, 160, 201, 203, 180, 202]
-let qualified = false
-let averageBest = 0
-const sortedAttempts = attempts.sort((a, b) => b - a)
-const best = [sortedAttempts[0], sortedAttempts[1], sortedAttempts[2]]
+let qualificationDistance = 200;
+let attempts = [120, 150, 160, 201, 203, 180, 202];
+let qualified = false;
+let averageBest = 0;
+const sortedAttempts = attempts.sort((a, b) => b - a);
+const best = [sortedAttempts[0], sortedAttempts[1], sortedAttempts[2]];
 
 averageBest = best.reduce((a, b) => a + b) / best.length;
 
-(averageBest > qualificationDistance) ? qualified = true : qualified
+(averageBest > qualificationDistance) ? (qualified = true) : (qualified = false);
 
 // let getAverageBest = () => {
 //   for (let i = 0; i < sortedAttempts.length; i++) {
