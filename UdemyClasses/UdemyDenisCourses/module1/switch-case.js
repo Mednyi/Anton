@@ -1,14 +1,15 @@
 
 // / Записать в виде switch case следующее условие:
+const a = 0;
 
 if (a === 'block') {
-  console.log('block')
+  console.log('block');
 } else if (a === 'none') {
-  console.log('none')
+  console.log('none');
 } else if (a === 'inline') {
-  console.log('inline')
+  console.log('inline');
 } else {
-  console.log('other')
+  console.log('other');
 }
 
 switch(a) {
@@ -18,11 +19,11 @@ switch(a) {
   case 'none':
     console.log('none');
   break;
-  case 'inline': 
+  case 'inline':
     console.log('inline');
   break;
   default:
-  console.log('other'); 
+  console.log('other');
 }
 
 // Записать данное условие в виде тернарного оператора
@@ -35,7 +36,7 @@ if (b === 'hidden') {
   b = 'hidden';
 }
 
-b = b === 'hidden' ? 'visible' : 'hidden'; 
+b = b === 'hidden' ? 'visible' : 'hidden';
 
 // Записать данное условие в виде тернарного оператора
 

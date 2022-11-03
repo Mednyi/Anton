@@ -1,7 +1,9 @@
 // Функция проверяющяя число на простое
 function showPrime(n) {
   for (let i = 2; i < n; i++) {
-    if (!isPrime(i)) continue;
+    if (!isPrime(i)) {
+      continue;
+    }
 
     alert(i); // простое
   }
@@ -9,7 +11,9 @@ function showPrime(n) {
 
 function isPrime(n) {
   for (let i = 2; i < n; i++) {
-    if (n % i == 0) return false;
+    if (n % i == 0) {
+      return false;
+    }
   }
 
   return true;
@@ -71,12 +75,14 @@ function foo(x) {
   }
 }
 
-foo(11, "some string", [1, 2, 3])
+foo(11, "some string", [1, 2, 3]);
 
 // 1 Создать функцию multiply, которая будет принимать любое количество чисел и возвращать их произведение: multiply(1,2,3) = 6 (1*2*3) Если нет ни одного аргумента, вернуть ноль: multiply() // 0
 
 function multiply() {
-  if (!arguments.length) return 0;
+  if (!arguments.length) {
+    return 0;
+  }
 
   let result = 1;
 
@@ -120,13 +126,19 @@ function getCodeStringFromText(str) {
 function guessNumber(num) {
   const number = Number(num);
 
-  if (typeof number !== 'number' || isNaN(number)) return new Error('Provide a valid number');
+  if (typeof number !== 'number' || isNaN(number)) {
+    return new Error('Provide a valid number');
+  }
 
-  if (number < 0 || number > 10) return new Error('Please provide number in range 0 - 10');
+  if (number < 0 || number > 10) {
+    return new Error('Please provide number in range 0 - 10');
+  }
 
   const random = Math.ceil(Math.random() * 10);
 
-  if (random === number) return 'You win!';
+  if (random === number) {
+    return 'You win!';
+  }
 
-  return `You are lose, your number is ${number}, the random number is ${number}`
+  return `You are lose, your number is ${number}, the random number is ${number}`;
 }

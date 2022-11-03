@@ -57,38 +57,38 @@ function setRandomColor(el) {
     'gray',
     'aqua',
     'brown',
-  ]
+  ];
   // Выбираем произвольный цвет из массива
-  const randomColor = colors[Math.floor(Math.random() * colors.length)]
-  el.style.background = randomColor
+  const randomColor = colors[Math.floor(Math.random() * colors.length)];
+  el.style.background = randomColor;
 }
 
 function resetColor(el) {
-  el.style.background = ''
+  el.style.background = '';
 }
 
 function onBoxHover(e) {
   // Создаем массив элементов которые будут менять фон.
-  let elements = [e.currentTarget]
-  let currentEl = e.currentTarget
-  // Проходимся циклом по всем дочерним элементам до самого последнего
+  let elements = [e.currentTarget];
+  let currentEl = e.currentTarget;
+  // Проходимся циклом по всем доч;ерним элементам до самого последнего
   while (currentEl) {
-    elements = [...elements, ...currentEl.children]
-    currentEl = currentEl.children[currentEl.children.length - 1]
+    elements = [...elements, ...currentEl.children];
+    currentEl = currentEl.children[currentEl.children.length - 1];
   }
   // Перебираем сформированный массив и устанавливаем на каждый элемент цвет в таймауте
   elements.forEach((el, index) =>
     setTimeout(setRandomColor, 200 * (index + 1), el),
-  )
+  );
 }
 
 function onMouseLeave(e) {
-  resetColor(e.currentTarget)
+  resetColor(e.currentTarget);
 }
 
 document
   .querySelectorAll('.box')
-  .forEach((box) => box.addEventListener('mouseenter', onBoxHover))
+  .forEach((box) => box.addEventListener('mouseenter', onBoxHover));
 document
   .querySelectorAll('.box')
-  .forEach((box) => box.addEventListener('mouseleave', onMouseLeave))
+  .forEach((box) => box.addEventListener('mouseleave', onMouseLeave));

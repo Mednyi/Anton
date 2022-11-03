@@ -19,56 +19,56 @@
 // --------------------
 
 // 1
-const btn = document.querySelector('#btn-msg')
+const btn1 = document.querySelector('#btn-msg');
 
 function clickHandler(e) {
-  alert(e.currentTarget.text)
+  alert(e.currentTarget.text);
 }
 
-btn.addEventListener('click', clickHandler)
+btn1.addEventListener('click', clickHandler);
 
 // teacher's way of solving
 
-const btn = document.getElementById('btn-msg')
-btn.addEventListener('click', (e) => {
+const btn2 = document.getElementById('btn-msg');
+btn2.addEventListener('click', (e) => {
   //   alert(e.target.dataset.text);
   // или если элемент один можно обратится к нему
   //   alert(btn.dataset.text);
   // так же внутри обработчика события через this мы имеем доступ к элементу на который повешено событие
   //   alert(this.dataset.text);
   // или через currentTarget
-  alert(e.currentTarget.dataset.text)
-})
+  alert(e.currentTarget.dataset.text);
+});
 
 // 2
-const btn = document.getElementById('btn-msg')
+const btn = document.getElementById('btn-msg');
 // У событий mouseover и mouseout есть аналоги mouseenter/mouseleave
 btn.addEventListener('mouseover', (e) => {
-  btn.classList.add('bg-red')
-})
+  btn.classList.add('bg-red');
+});
 btn.addEventListener('mouseout', (e) => {
-  btn.classList.remove('bg-red')
-})
+  btn.classList.remove('bg-red');
+});
 
 // 3
-const tag = document.querySelector('#tag')
+const tag = document.querySelector('#tag');
 
 document.body.addEventListener('click', (e) => {
-  tag.textContent = `Tag: ${e.target.nodeName}`
-})
+  tag.textContent = `Tag: ${e.target.nodeName}`;
+});
 
 // 4
-const btnGenerate = document.querySelector('#btn-generate')
-const ul = document.querySelector('ul')
+const btnGenerate = document.querySelector('#btn-generate');
+const ul = document.querySelector('ul');
 
 function generateNewItem(e) {
   // get current position of item list
-  const num = ul.children.length + 1
-  const text = `Item ${num}`
-  const li = document.createElement('li')
-  li.textContent = text
+  const num = ul.children.length + 1;
+  const text = `Item ${num}`;
+  const li = document.createElement('li');
+  li.textContent = text;
 
-  ul.appendChild(li)
+  ul.appendChild(li);
 }
 
-btn.addEventListener('click', generateNewItem)
+btn.addEventListener('click', generateNewItem);
