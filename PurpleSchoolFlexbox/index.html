@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>PurpleSchool - Flexbox</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="header__nav main-navigation">
+        <div class="main-navigation__left">
+          <a href="#" class="main-navigation__logo">
+            <img src="logo.svg" width="207" height="44" alt="logo" />
+          </a>
+          <button class="main-navigation__button" href="#">
+            <img src="menu.svg" width="24" height="24" alt="logo" />
+
+            Все курсы
+          </button>
+        </div>
+        <div class="main-navigation__right">
+          <ul class="main-navigation__site-navigation site-navigation">
+            <li class="site-navigation__item">
+              <a class="site-navigation__link" href="#">Школы</a>
+            </li>
+            <li class="site-navigation__item">
+              <a class="site-navigation__link" href="#">Авторы</a>
+            </li>
+            <li class="site-navigation__item">
+              <a class="site-navigation__link" href="#">Промокоды</a>
+            </li>
+            <li class="site-navigation__item">
+              <a class="site-navigation__link" href="#">О нас</a>
+            </li>
+            <li class="site-navigation__item">
+              <a class="site-navigation__link" href="#">Блог</a>
+            </li>
+          </ul>
+          <ul class="main-navigation__user-navigation user-navigation">
+            <li class="user-navigation__item">
+              <a class="user-navigation__link" href="#">
+                <img src="search.svg" width="24" height="24" alt="search icon" />
+                Поиск
+              </a>
+            </li>
+            <li class="user-navigation__item">
+              <a class="user-navigation__link" href="#">
+                <img src="user.png" width="24" height="24" alt="search icon" />
+                 Войти
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Card -->
+
+    <section class="gallery gallery__section card card--section">
+      <ul class="gallery__list">
+        <li class="gallery__item">
+          <div class="card">
+            <div class="card__name">
+              <img src="logo2.png" alt="SkyPro">
+              <div class="card__title-wrapper">
+                <div class="card__title">Профессия «Дизайнер интерьера»</div>
+                <div class="card__school">Нетология</div>
+              </div>
+            </div>
+            <div class="card__stats">
+              <div class="card__stat">
+                <div>Рейтинг</div>
+                <div>4.90</div>
+              </div>
+              <div class="card__stat">
+                <div>Длительность</div>
+                <div>24 месяца</div>
+              </div>
+              <div class="card__stat">
+                <div>Цена</div>
+                <div>234 000 ₽</div>
+              </div>
+              <div class="card__stat">
+                <div>Рассрочка</div>
+                <div>14 768 ₽</div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="gallery__item">
+          <div class="card">
+            <div class="card__name">
+              <img src="logo2.png" alt="SkyPro">
+              <div class="card__title-wrapper">
+                <div class="card__title">Профессия «Дизайнер интерьера»</div>
+                <div class="card__school">Нетология</div>
+              </div>
+            </div>
+            <div class="card__stats">
+              <div class="card__stat">
+                <div>Рейтинг</div>
+                <div>4.90</div>
+              </div>
+              <div class="card__stat">
+                <div>Длительность</div>
+                <div>24 месяца</div>
+              </div>
+              <div class="card__stat">
+                <div>Цена</div>
+                <div>234 000 ₽</div>
+              </div>
+              <div class="card__stat">
+                <div>Рассрочка</div>
+                <div>14 768 ₽</div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="gallery__item">
+          <div class="card">
+            <div class="card__name">
+              <img src="logo2.png" alt="SkyPro">
+              <div class="card__title-wrapper">
+                <div class="card__title">Профессия «Дизайнер интерьера»</div>
+                <div class="card__school">Нетология</div>
+              </div>
+            </div>
+            <div class="card__stats">
+              <div class="card__stat">
+                <div>Рейтинг</div>
+                <div>4.90</div>
+              </div>
+              <div class="card__stat">
+                <div>Длительность</div>
+                <div>24 месяца</div>
+              </div>
+              <div class="card__stat">
+                <div>Цена</div>
+                <div>234 000 ₽</div>
+              </div>
+              <div class="card__stat">
+                <div>Рассрочка</div>
+                <div>14 768 ₽</div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="gallery__item">
+          <div class="card">
+            <div class="card__name">
+              <img src="logo2.png" alt="SkyPro">
+              <div class="card__title-wrapper">
+                <div class="card__title">Профессия «Дизайнер интерьера»</div>
+                <div class="card__school">Нетология</div>
+              </div>
+            </div>
+            <div class="card__stats">
+              <div class="card__stat">
+                <div>Рейтинг</div>
+                <div>4.90</div>
+              </div>
+              <div class="card__stat">
+                <div>Длительность</div>
+                <div>24 месяца</div>
+              </div>
+              <div class="card__stat">
+                <div>Цена</div>
+                <div>234 000 ₽</div>
+              </div>
+              <div class="card__stat">
+                <div>Рассрочка</div>
+                <div>14 768 ₽</div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="gallery__item">
+          <div class="card">
+            <div class="card__name">
+              <img src="logo2.png" alt="SkyPro">
+              <div class="card__title-wrapper">
+                <div class="card__title">Профессия «Дизайнер интерьера»</div>
+                <div class="card__school">Нетология</div>
+              </div>
+            </div>
+            <div class="card__stats">
+              <div class="card__stat">
+                <div>Рейтинг</div>
+                <div>4.90</div>
+              </div>
+              <div class="card__stat">
+                <div>Длительность</div>
+                <div>24 месяца</div>
+              </div>
+              <div class="card__stat">
+                <div>Цена</div>
+                <div>234 000 ₽</div>
+              </div>
+              <div class="card__stat">
+                <div>Рассрочка</div>
+                <div>14 768 ₽</div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="gallery__item">
+          <div class="card">
+            <div class="card__name">
+              <img src="logo2.png" alt="SkyPro">
+              <div class="card__title-wrapper">
+                <div class="card__title">Профессия «Дизайнер интерьера»</div>
+                <div class="card__school">Нетология</div>
+              </div>
+            </div>
+            <div class="card__stats">
+              <div class="card__stat">
+                <div>Рейтинг</div>
+                <div>4.90</div>
+              </div>
+              <div class="card__stat">
+                <div>Длительность</div>
+                <div>24 месяца</div>
+              </div>
+              <div class="card__stat">
+                <div>Цена</div>
+                <div>234 000 ₽</div>
+              </div>
+              <div class="card__stat">
+                <div>Рассрочка</div>
+                <div>14 768 ₽</div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="gallery__item">
+          <div class="card">
+            <div class="card__name">
+              <img src="logo2.png" alt="SkyPro">
+              <div class="card__title-wrapper">
+                <div class="card__title">Профессия «Дизайнер интерьера»</div>
+                <div class="card__school">Нетология</div>
+              </div>
+            </div>
+            <div class="card__stats">
+              <div class="card__stat">
+                <div>Рейтинг</div>
+                <div>4.90</div>
+              </div>
+              <div class="card__stat">
+                <div>Длительность</div>
+                <div>24 месяца</div>
+              </div>
+              <div class="card__stat">
+                <div>Цена</div>
+                <div>234 000 ₽</div>
+              </div>
+              <div class="card__stat">
+                <div>Рассрочка</div>
+                <div>14 768 ₽</div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="gallery__item">
+          <div class="card">
+            <div class="card__name">
+              <img src="logo2.png" alt="SkyPro">
+              <div class="card__title-wrapper">
+                <div class="card__title">Профессия «Дизайнер интерьера»</div>
+                <div class="card__school">Нетология</div>
+              </div>
+            </div>
+            <div class="card__stats">
+              <div class="card__stat">
+                <div>Рейтинг</div>
+                <div>4.90</div>
+              </div>
+              <div class="card__stat">
+                <div>Длительность</div>
+                <div>24 месяца</div>
+              </div>
+              <div class="card__stat">
+                <div>Цена</div>
+                <div>234 000 ₽</div>
+              </div>
+              <div class="card__stat">
+                <div>Рассрочка</div>
+                <div>14 768 ₽</div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="gallery__item">
+          <div class="card">
+            <div class="card__name">
+              <img src="logo2.png" alt="SkyPro">
+              <div class="card__title-wrapper">
+                <div class="card__title">Профессия «Дизайнер интерьера»</div>
+                <div class="card__school">Нетология</div>
+              </div>
+            </div>
+            <div class="card__stats">
+              <div class="card__stat">
+                <div>Рейтинг</div>
+                <div>4.90</div>
+              </div>
+              <div class="card__stat">
+                <div>Длительность</div>
+                <div>24 месяца</div>
+              </div>
+              <div class="card__stat">
+                <div>Цена</div>
+                <div>234 000 ₽</div>
+              </div>
+              <div class="card__stat">
+                <div>Рассрочка</div>
+                <div>14 768 ₽</div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="gallery__item">
+          <div class="card">
+            <div class="card__name">
+              <img src="logo2.png" alt="SkyPro">
+              <div class="card__title-wrapper">
+                <div class="card__title">Профессия «Дизайнер интерьера»</div>
+                <div class="card__school">Нетология</div>
+              </div>
+            </div>
+            <div class="card__stats">
+              <div class="card__stat">
+                <div>Рейтинг</div>
+                <div>4.90</div>
+              </div>
+              <div class="card__stat">
+                <div>Длительность</div>
+                <div>24 месяца</div>
+              </div>
+              <div class="card__stat">
+                <div>Цена</div>
+                <div>234 000 ₽</div>
+              </div>
+              <div class="card__stat">
+                <div>Рассрочка</div>
+                <div>14 768 ₽</div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="gallery__item">
+          <div class="card">
+            <div class="card__name">
+              <img src="logo2.png" alt="SkyPro">
+              <div class="card__title-wrapper">
+                <div class="card__title">Профессия «Дизайнер интерьера»</div>
+                <div class="card__school">Нетология</div>
+              </div>
+            </div>
+            <div class="card__stats">
+              <div class="card__stat">
+                <div>Рейтинг</div>
+                <div>4.90</div>
+              </div>
+              <div class="card__stat">
+                <div>Длительность</div>
+                <div>24 месяца</div>
+              </div>
+              <div class="card__stat">
+                <div>Цена</div>
+                <div>234 000 ₽</div>
+              </div>
+              <div class="card__stat">
+                <div>Рассрочка</div>
+                <div>14 768 ₽</div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="gallery__item">
+          <div class="card">
+            <div class="card__name">
+              <img src="logo2.png" alt="SkyPro">
+              <div class="card__title-wrapper">
+                <div class="card__title">Профессия «Дизайнер интерьера»</div>
+                <div class="card__school">Нетология</div>
+              </div>
+            </div>
+            <div class="card__stats">
+              <div class="card__stat">
+                <div>Рейтинг</div>
+                <div>4.90</div>
+              </div>
+              <div class="card__stat">
+                <div>Длительность</div>
+                <div>24 месяца</div>
+              </div>
+              <div class="card__stat">
+                <div>Цена</div>
+                <div>234 000 ₽</div>
+              </div>
+              <div class="card__stat">
+                <div>Рассрочка</div>
+                <div>14 768 ₽</div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </body>
+</html>

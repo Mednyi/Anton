@@ -1,0 +1,207 @@
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --primary: #0018ed;
+  --mainFont: #2d2e3a;
+  --greyFont: #696c74;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  color: var(--mainFont);
+}
+
+.header {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.main-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-navigation__logo {
+  display: flex;
+}
+
+.main-navigation__button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+  color: var(--primary);
+  background-color: transparent;
+  border: none;
+  border: 2px solid var(--primary);
+  border-radius: 32px;
+  cursor: pointer;
+}
+
+.main-navigation__all-courses img {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.main-navigation__left {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.main-navigation__right {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.site-navigation {
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-navigation__link {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 120%;
+  text-decoration: none;
+  color: var(--mainFont);
+}
+
+.user-navigation {
+  display: flex;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.user-navigation__link {
+  display: flex;
+  gap: 8px;
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 120%;
+  text-decoration: none;
+  color: var(--mainFont);
+}
+
+.user-navigation__item {
+  display: flex;
+  align-items: center;
+}
+
+/* Card */
+
+.gallery__list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gallery__item {
+  flex-grow: 1;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px;
+  border: 1px solid #d1d6e9;
+  border-radius: 12px;
+  max-width: 1440px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.gallery__section {
+  margin-top: 65px;
+}
+
+.card__name {
+  display: flex;
+  align-items: center;
+  gap: 0 24px;
+}
+
+.card__title {
+  color: var(--mainFont);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 120%;
+}
+
+.card__school {
+  color: var(--greyFont);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 120%;
+}
+
+.card__stats {
+  display: flex;
+  gap: 0 24px;
+}
+
+.card__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card__stat > div:first-child {
+  color: var(--greyFont);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 120%;
+}
+
+.card__stat > div:last-child {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+}
+
+@media screen and (max-width: 600px) {
+  .card__stats {
+    flex-wrap: wrap;
+    row-gap: 20px;
+    flex: 1;
+  }
+
+  .card__stat {
+    flex: 0 1 calc(100% / 2 - 12px);
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .card__stat {
+    flex: 0 1 100%;
+  }
+}
