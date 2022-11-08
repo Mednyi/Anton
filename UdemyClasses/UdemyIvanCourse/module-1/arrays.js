@@ -65,6 +65,10 @@ function standardizeStrings(arr) {
 // Функцию можно применить к любой строке. Если в функцию приходит не строка - вернуть сообщение "Ошибка!"
 
 function reverse(str) {
+  if (typeof(str) !== 'string') {
+    return "Ошибка!";
+  }
+
   return str.split('').revers().join('');
 }
 
@@ -99,3 +103,30 @@ const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
 // - После валюты: стоит перенос строки \n, и после каждой валюты тоже. Это важно для тестов
 
 // - Данные для первого аргумента должны приходить сразу из двух банков, причем сначала baseCurrencies, потом additionalCurrencies по порядку
+
+function availableCurr(arr, missingCurr) {
+  let i = 0;
+  let allCurruncies = baseCurrencies.concat(additionalCurrencies);
+  allCurruncies = arr;
+
+  while (i < arr.length) {
+    if (arr.length === 0 && !missingCurr) {
+      return 'Нет доступных валют';
+    } else {
+      return ` Доступные валюты: ${arr[i]} \n ${arr[i]} \n`;
+    }
+  }
+}
+
+function availableCurr(arr, missingCurr) {
+  let str = '';
+  // arr.length === 0 ? str = 'Нет доступных валют' : str = 'Доступные валюты:\n';
+
+  arr.forEach(function(curr, i) {
+    if (curr !== missingCurr) {
+      str += `${curr}\n`;
+    }
+  });
+
+  return str;
+}
