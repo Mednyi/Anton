@@ -96,16 +96,6 @@ const cloneObject = {
   ...questions
 };
 
-// Задачи:
-
-// 1) Напишите функцию showExperience, которая будет принимать в себя объект со всеми данными и возвращать строку с опытом.
-
-// Пример:
-
-// showExperience(personalPlanPeter) => '1 month'
-
-// P.S. желательно использовать деструктуризацию, но не обязательно
-
 const personalPlanPeter = {
   name: "Peter",
   age: "29",
@@ -129,6 +119,16 @@ const personalPlanPeter = {
     return str;
   }
 };
+
+// Задачи:
+
+// 1) Напишите функцию showExperience, которая будет принимать в себя объект со всеми данными и возвращать строку с опытом.
+
+// Пример:
+
+// showExperience(personalPlanPeter) => '1 month'
+
+// P.S. желательно использовать деструктуризацию, но не обязательно
 
 function showExperience(plan) {
   return `${plan.skills.exp}`;

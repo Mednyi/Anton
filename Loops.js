@@ -58,4 +58,3 @@ while (targetWeight <= initialWeight) {
 
   days1++;
 }
-
