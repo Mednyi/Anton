@@ -214,5 +214,32 @@ const shoppingMallData = {
 };
 
 function isBudgetEnough(data) {
+  let square = 0;
+  let volume = 0;
+
+  data.shops.forEach(shop => {
+    square += shop.width * shop.length;
+  });
+
+  volume = data.height * square;
+
+  if (data.budget - (volume * data.moneyPer1m3) >= 0) {
+    return 'Бюджета достаточно';
+  } else {
+    return 'Бюджета недостаточно';
+  }
+}
+
+
+// (*) Продвинутая задача на работу с объектами и массивами
+// В этой задаче мы уже усложним работу с объектами и массивами. Она необязательна и тут можно попробовать свои силы.
+
+// Учтите, что проверка кода в таких заданиях осуществляется автоматически, через программу. Поэтому нужно четко следовать инструкции.
+
+// Вы можете сначала решить у себя в редакторе кода, а потом вставить сюда.
+
+const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam'];
+
+function sortStudentsByGroups(arr) {
 
 }
