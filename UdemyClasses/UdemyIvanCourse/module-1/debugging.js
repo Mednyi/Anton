@@ -44,16 +44,17 @@ const restorantData = {
 function isOpen(prop) {
   let answer = '';
 
-  return prop.openNow ? answer = 'Открыто' : answer = 'Закрыто';
+  return prop ? answer = 'Открыто' : answer = 'Закрыто';
 }
 
 console.log(isOpen(restorantData));
 
+
 function isAverageLunchPriceTrue(fDish, sDish, average) {
-  if (+(fDish.price.slice(0, -1) + +(sDish.price)) < average) {
-    return 'Цена ниже средней';
+  if (+fDish.price.slice(0, -1) + (+sDish.price.slice(0, -1)) < +average.slice(0,-1)) {
+      return 'Цена ниже средней';
   } else {
-    return 'Цена выше средней';
+      return 'Цена выше средней';
   }
 }
 
@@ -62,7 +63,11 @@ console.log(isAverageLunchPriceTrue(restorantData.menu[0], restorantData.menu[1]
 function transferWaitors(data) {
   const copy = Object.assign({}, data);
 
-  copy.waitors[0] = {name: 'Mike', age: 32};
+  // Нам просто нужно менять весь массив данных,
+  // а не лезть напрямую менять каждого из сотрудников
+  // Так как это верхний уровень объекта, то значение
+  // будет меняться только у копии
+  copy.waitors = [{name: 'Mike', age: 32}];
   return copy;
 }
 
