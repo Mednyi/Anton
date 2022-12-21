@@ -61,3 +61,36 @@ console.log(double(13));
 // 2) Контекст у методов объекта - сам объект
 // 3) this в кострукторах и классах - это новый экземпляр объекта
 // 4) Ручная привязка this: call, apply, bind
+
+
+// Пример ручной привязки контекста
+
+const numbers1 = {
+  numberA: 5,
+  numberB: 10,
+  sum: function() {
+    console.log(this === numbers1); // => true
+    function calculate() {
+      // this is window or undefined in strict mode
+      console.log(this === numbers1); // => false
+      return this.numberA + this.numberB;
+    }
+    return calculate();
+  }
+};
+console.log(numbers1.sum()); // => NaN or throws TypeError in strict mo
+
+const numbers = {
+  numberA: 5,
+  numberB: 10,
+  sum: function() {
+    console.log(this === numbers); // => true
+    function calculate() {
+      console.log(this === numbers); // => true
+      return this.numberA + this.numberB;
+    }
+    // use .call() method to modify the context
+    return calculate.call(this);
+  }
+};
+console.log(numbers.sum()); // => 15
