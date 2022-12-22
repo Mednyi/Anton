@@ -52,15 +52,15 @@ const array4 = [23, 45, 10, 2, 6, 90, 13, 123, 209, 7];
 const ith = 3;
 const jth = 6;
 
-  console.log(array4[ith], array4[jth]);
+console.log(array4[ith], array4[jth]);
 
-  const buffer = array4[ith];
+const buffer = array4[ith];
 
-  array4[ith] = array4[jth];
+array4[ith] = array4[jth];
 
-  array4[jth] = buffer;
+array4[jth] = buffer;
 
-  // [23, 45, 10, 13, 6, 90, 2, 123, 209, 7]
+// [23, 45, 10, 13, 6, 90, 2, 123, 209, 7]
 
 
 // 5)

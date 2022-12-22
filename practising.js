@@ -20,7 +20,7 @@ if (people.name1 === 'Anton') {
 let sheepCounted = 0;
 
 while (sheepCounted < 10) {
-  console.log('Посчитано овец: '`${sheepCounted}`);
+  console.log(`Посчитано овец: ${sheepCounted}`);
   sheepCounted++;
 }
 console.log('Xxpppppp');
