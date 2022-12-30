@@ -1,4 +1,9 @@
 .App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
   text-align: center;
 }
 
@@ -35,4 +40,19 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.timer {
+  display: flex;
+}
+
+.timer__block {
+  padding: 0.6rem;
+  color: #fff;
+  background-color: tomato;
+  border-radius: 12px;
+}
+
+.timer__block:not(:last-child) {
+  margin-right: 20px;
 }
