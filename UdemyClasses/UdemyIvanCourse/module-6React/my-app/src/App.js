@@ -6,7 +6,8 @@ import React from 'react';
 import Counter from './components/counter/counter';
 import Counter2 from './components/counter-2/counter2';
 import Countdown from './components/countdown/countdown';
-import Clock from './components/clock/clock';
+// import Clock from './components/clock/clock';
+import BootstrapTest from './BootstrapTest';
 
 const Header = () => {
   return <h2>Hello World!</h2>
@@ -52,6 +53,8 @@ function App() {
       <Counter/>
       <Counter2 />
       {/* <Clock template={{ template: 'h:m:s'}}/> */}
+
+      <BootstrapTest />
     </div>
   );
 }
