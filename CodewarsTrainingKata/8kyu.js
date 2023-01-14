@@ -59,7 +59,6 @@ function makeNegative(num) {
 
 function makeNegative(num) {
   // Code?
-
   return !(-Math.abs(num) && num === 0) ? -Math.abs(num) : num;
 }
 
@@ -73,9 +72,57 @@ function makeNegative(num) {
 // 8 -> 36 (1 + 2 + 3 + 4 + 5 + 6 + 7 + 8)
 
 const summation = function (num) {
-  // Code here
+  let i = 1,
+      s = 1;
+
+  while(i++ < num) {
+    s += i;
+  }
+
+  return s;
+}
+
+// with recursion
+
+const summation2 = function (num) {
+  if (num < 1) return 0;
+  return num  + summation2(num - 1);
 }
 
 // 4 Task
 
-// 4 Task
+// This kata is about multiplying a given number by eight if it is an even number and by nine otherwise.
+
+function simpleMultiplication(number) {
+  if (number % 2 === 0) {
+    number *= 8;
+  } else {
+    number *= 9;
+  }
+
+  return number;
+}
+
+function simpleMultiplication2(number) {
+  return (number % 2 === 0) ? number *= 8 : number *= 9;
+}
+
+// 5 Task
+
+// 6 Task
+
+// 7 Task
+
+// 8 Task
+
+// 9 Task
+
+// 10 Task
+
+// 11 Task
+
+// 12 Task
+
+// 13 Task
+
+// 14 Task
