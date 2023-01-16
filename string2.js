@@ -51,4 +51,30 @@ const convertText2 = (text) => {
   }
 };
 
+// Как сделать заглавной первую букву в строке?
+// Способ первый
+
+const name = "john"
+// делим слово на отдельные буквы
+const splitted = name.split("")
+// делаем первую букву в массиве заглавной
+const first = splitted[0].toUpperCase()
+// копируем массив что бы
+// не модицицировать splitted напрямую
+// если вдрг он нам понадобиться далее
+const rest = [...splitted]
+// удаляем первую букву из массива
+rest.splice(0, 1)
+// соединияем все обратно в строку
+const result = [first, ...rest].join("")
+console.log(result)
+// John
+
+// Способ второй
+
+const name2 = "john"
+const result2 = name2.charAt(0).toUpperCase() + name2.slice(1)
+console.log(result2)
+// John
+
 

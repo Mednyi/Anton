@@ -21,7 +21,7 @@ function countSheeps(arrayOfSheep) {
     if (arrayOfSheep[i] === undefined && arrayOfSheep[i] === null) {
       return;
     } else if (arrayOfSheep[i] === true) {
-     sheepCounter++;
+      sheepCounter++;
     }
   }
 
@@ -73,9 +73,9 @@ function makeNegative(num) {
 
 const summation = function (num) {
   let i = 1,
-      s = 1;
+    s = 1;
 
-  while(i++ < num) {
+  while (i++ < num) {
     s += i;
   }
 
@@ -86,7 +86,7 @@ const summation = function (num) {
 
 const summation2 = function (num) {
   if (num < 1) return 0;
-  return num  + summation2(num - 1);
+  return num + summation2(num - 1);
 }
 
 // 4 Task
@@ -108,11 +108,135 @@ function simpleMultiplication2(number) {
 }
 
 // 5 Task
+// It's pretty straightforward. Your goal is to create a function that removes the first and last characters of a string. You're given one parameter, the original string. You don't have to worry with strings with less than two characters.
+
+function removeChar(str) {
+  //You got this!
+  let input_str = str;
+  let output_str = '';
+
+  for (var i = 1; i < input_str.length - 1; i++) {
+    output_str += input_str[i];
+  }
+
+  return output_str;
+};
+
+function removeChar(str) {
+  //You got this!
+  return str.slice(1, -1);
+};
+
 
 // 6 Task
+// Your task is to make two functions ( max and min, or maximum and minimum, etc., depending on the language ) that receive a list of integers as input, and return the largest and lowest number in that list, respectively.
+
+// Examples (Input -> Output)
+// * [4,6,2,1,9,63,-134,566]         -> max = 566, min = -134
+// * [-52, 56, 30, 29, -54, 0, -110] -> min = -110, max = 56
+// * [42, 54, 65, 87, 0]             -> min = 0, max = 87
+// * [5]                             -> min = 5, max = 5
+// Notes
+// You may consider that there will not be any empty arrays/vectors.
+
+const min = function (list) {
+  return Math.min.apply(null, list);
+}
+
+const max = function (list) {
+  return Math.max.apply(null, list);
+}
+
+const min2 = (list) => Math.min(...list);
+const max2 = (list) => Math.max(...list);
+
+const min3 = function (list) {
+  let res = list[0];
+
+  for (let i = 1; i < list.length; i++) {
+    if (list[i] < res) {
+      res = list[i];
+    }
+  }
+  return res;
+}
+
+const max3 = function (list) {
+  let res = list[0];
+
+  for (let i = 1; i < list.length; i++) {
+    if (list[i] > res) {
+      res = list[i];
+    }
+  }
+  return res;
+}
+
+const min4 = function(list){
+  let min = list[0];
+
+  for (let i of list) {
+    if (i < min) {
+      min = i;
+    }
+  }
+    return min;
+}
+
+const max4 = function(list){
+  let max = list[0];
+
+  for (let i in list) {
+    if (list[i] > max) {
+      max = list[i];
+    }
+  }
+    return max;
+}
 
 // 7 Task
+// Write function bmi that calculates body mass index (bmi = weight / height2).
 
+// if bmi <= 18.5 return "Underweight"
+
+// if bmi <= 25.0 return "Normal"
+
+// if bmi <= 30.0 return "Overweight"
+
+// if bmi > 30 return "Obese"
+
+function bmi(weight, height) {
+  const bodyMassCoefficient  = weight / (height * 2);
+
+  if (bodyMassCoefficient <= 18.5) {
+    return 'Underweight'
+  } else if (bodyMassCoefficient <= 25.0) {
+    return 'Normal';
+  } else if (bodyMassCoefficient <= 30.0) {
+    return 'Overweight';
+  } else if (bodyMassCoefficient > 30) {
+    return 'Obese';
+  }
+}
+
+function bmi2(weight, height) {
+  const bodyMassCoefficient  = weight / (height * 2);
+
+  switch (bodyMassCoefficient) {
+    case bodyMassCoefficient <= 18.5:
+      'Underweight';
+      break;
+    case bodyMassCoefficient <= 25.0:
+      'Normal';
+      break;
+    case bodyMassCoefficient <= 30.0:
+      'Overweight';
+      break;
+    case bodyMassCoefficient > 30:
+      'Obese'
+      break;
+  }
+}
 // 8 Task
 
 // 9 Task
