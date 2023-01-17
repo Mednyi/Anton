@@ -30,7 +30,7 @@ function countSheeps(arrayOfSheep) {
 
 // Second way of doing this task
 
-const countSheeps = (arrayOfSheep) => arrayOfSheep.filter(Boolean).length;
+const countSheeps2 = (arrayOfSheep) => arrayOfSheep.filter(Boolean).length;
 
 
 // 2 Task
@@ -222,26 +222,142 @@ function bmi(weight, height) {
 function bmi2(weight, height) {
   const bodyMassCoefficient  = weight / (height * 2);
 
-  switch (bodyMassCoefficient) {
+  switch (true) {
     case bodyMassCoefficient <= 18.5:
-      'Underweight';
-      break;
+      return 'Underweight';
     case bodyMassCoefficient <= 25.0:
-      'Normal';
-      break;
+      return 'Normal';
     case bodyMassCoefficient <= 30.0:
-      'Overweight';
-      break;
+      return 'Overweight';
     case bodyMassCoefficient > 30:
-      'Obese'
-      break;
+      return 'Obese'
   }
 }
+
 // 8 Task
+// Your task is to create a function that does four basic mathematical operations.
+
+// The function should take three arguments - operation(string/char), value1(number), value2(number).
+// The function should return result of numbers after applying the chosen operation.
+
+// Examples(Operator, value1, value2) --> output
+// ('+', 4, 7) --> 11
+// ('-', 15, 18) --> -3
+// ('*', 5, 5) --> 25
+// ('/', 49, 7) --> 7
+
+function basicOp(operation, value1, value2) {
+
+  if (operation === '+') {
+    return value1 + value2
+  }
+
+  if (operation === '-') {
+    return value1 - value2
+  }
+
+  if (operation === '*') {
+    return value1 * value2
+  }
+
+  if (operation === '/') {
+    return value1 / value2
+  }
+}
+
+function basicOp2(operation, value1, value2) {
+  operation = {
+    add: '+',
+    minus: '-',
+    multiplying: '*',
+    divide: '/'
+  }
+
+  switch (operation) {
+    case '+':
+      return value1 + value2;
+    case '-':
+      return value1 - value2;
+    case '*':
+      return value1 * value2;
+    case '/':
+      return value1 / value2;
+  }
+}
+
+function basicOp3(operation, value1, value2) {
+  const cases = {
+    '+': value1 + value2,
+    '-': value1 - value2,
+    '*': value1 * value2,
+    '/': value1 / value2
+  };
+
+  return cases[operation]
+}
+
 
 // 9 Task
+// Simple, remove the spaces from the string, then return the resultant string.
+
+// Solution 1.1
+// Let's start with a loopsolution.
+
+function noSpace(x) {
+    let newStr = '';
+
+    for(let i = 0; i < x.length; i++) {
+        if(x[i] !== " "){
+          newStr += x[i]
+        }
+    }
+    return newStr
+}
+// Solution 2.1
+// Let's solve it with regular expression.
+
+function noSpace(x){
+  return x.replace(/ /g, '')
+}
+
+// Solution 2.2
+function noSpace(x){
+  return x.replace(/\s/g, '')
+}
+
+// Solution 3.1
+// Let's solve it with split and join.
+
+function noSpace(x){
+  return x.split(" ").join('')
+}
+
+// Solution 3.2
+// Let's solve it with split and filter.
+
+function noSpace(x) {
+  return x.split("").filter(i => i !== ' ').join('')
+}
+
+// Solution 3.3
+// Let's solve it with split and reducer.
+
+function noSpace(x) {
+  return x.split(" ").reduce((a, c) => a + c)
+}
 
 // 10 Task
+// Introduction
+// The first century spans from the year 1 up to and including the year 100, the second century - from the year 101 up to and including the year 200, etc.
+
+// Task
+// Given a year, return the century it is in.
+
+// Examples
+// 1705 --> 18
+// 1900 --> 19
+// 1601 --> 17
+// 2000 --> 20
 
 // 11 Task
 
