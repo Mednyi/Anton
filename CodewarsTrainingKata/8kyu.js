@@ -359,9 +359,50 @@ function noSpace(x) {
 // 1601 --> 17
 // 2000 --> 20
 
+function century(year) {
+  const century = Math.ceil(year / 100);
+
+  return century;
+}
+
+const century2 = year => Math.ceil(year/100)
+
 // 11 Task
+// Complete the method that takes a boolean value and return a "Yes" string for true, or a "No" string for false.
+
+function boolToWord( bool ){
+  return bool ? 'Yes' : 'No';
+}
+
+function boolToWord2( bool ){
+  if (bool) {
+    return 'Yes';
+  } else {
+    return 'No';
+  }
+}
 
 // 12 Task
+// Create a function which answers the question "Are you playing banjo?".
+// If your name starts with the letter "R" or lower case "r", you are playing banjo!
+
+// The function takes a name as its only argument, and returns one of the following strings:
+
+// name + " plays banjo"
+// name + " does not play banjo"
+// Names given are always valid strings.
+
+function areYouPlayingBanjo(name) {
+  // Implement me
+  if (name[0].toLowerCase() === 'r') {
+    return `${name} plays banjo`
+  }
+  return `${name} does not play banjo`;
+}
+
+function areYouPlayingBanjo2(name) {
+  return (name[0].toLowerCase() === 'r') ? `${name} plays banjo` : `${name} does not play banjo`;
+}
 
 // 13 Task
 
