@@ -10,6 +10,17 @@
 // [0,1,0,1,0] should return 0, because it occurs 3 times (which is odd).
 // [1,2,2,3,3,3,4,3,3,3,2,2,1] should return 4, because it appears 1 time (which is odd).
 
-function findOdd(A) {
-  return 0;
+function findOdd(arr) {
+  const hashTable = {};
+  arr.forEach(function(el){
+    hashTable[el] ? hashTable[el]++ : hashTable[el] = 1;
+  });
+
+  for(let prop in hashTable) {
+    if(hashTable[prop] % 2 !== 0) return Number(prop);
+  }
+}
+
+function findOdd2(arr) {
+  return arr.find((item) => arr.filter(el => el == item).length % 2);
 }

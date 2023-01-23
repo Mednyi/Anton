@@ -30,10 +30,10 @@ String(false);    // 'false'
 
 // Дано неотрицательное целое число num. Складывать все входящие в него цифры до тех пор, пока не останется одна цифра.
 
-const sum = (str) => {
+const sum = (num) => {
   let result = 0;
-  for (let i = 0; i < length(str); i += 1) {
-    result += Number(str[i]);
+  for (let i = 0; i < length(num); i += 1) {
+    result += Number(num[i]);
   }
 
   return result;
