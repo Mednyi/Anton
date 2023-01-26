@@ -12,6 +12,7 @@
 
 function findOdd(arr) {
   const hashTable = {};
+  
   arr.forEach(function(el){
     hashTable[el] ? hashTable[el]++ : hashTable[el] = 1;
   });
