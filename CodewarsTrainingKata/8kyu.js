@@ -405,5 +405,116 @@ function areYouPlayingBanjo2(name) {
 }
 
 // 13 Task
+// Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
+
+function evenOrOdd(number) {
+  if (number % 2 === 0) return 'Even';
+  return 'Odd';
+}
+
+function evenOrOdd(number) {
+  return (number % 2 === 0) ? 'Even' : 'Odd';
+}
 
 // 14 Task
+// Write a function that takes an array of numbers and returns the sum of the numbers. The numbers can be negative or non-integer. If the array does not contain any numbers then you should return 0.
+
+// Examples
+// Input: [1, 5.2, 4, 0, -1]
+// Output: 9.2
+
+// Input: []
+// Output: 0
+
+// Input: [-2.398]
+// Output: -2.398
+
+function sum (numbers) {
+  "use strict";
+let result = 0;
+
+for (let i = 0; i < numbers.length; i++) {
+  if (numbers.length === 0) return;
+
+  result += numbers[i];
+}
+
+return result;
+};
+
+function sum2(numbers) {
+  return numbers.reduce((a, b) => a + b, 0);
+}
+
+
+// 15 Task
+// Implement a function which convert the given boolean value into its string representation.
+
+// Note: Only valid inputs will be given.
+
+function booleanToString(b){
+  return String(b);
+}
+
+function booleanToString2(b){
+  return b.toString();
+}
+
+function booleanToString3(b){
+  return b ? 'true' : 'false';
+}
+
+function booleanToString4(b){
+  return b+'';
+}
+
+
+// 16 Task
+
+
+// 17 Task
+
+
+// 18 Task
+
+
+// 19 Task
+
+
+// 20 Task
+
+
+// 21 Task
+
+
+// 22 Task
+
+
+// 23 Task
+
+
+// 24 Task
+
+
+// 25 Task
+
+
+// 26 Task
+
+
+// 27 Task
+
+
+// 28 Task
+
+
+// 29 Task
+
+
+// 30 Task
+
+
+// 31 Task
+
+
+// 32 Task
