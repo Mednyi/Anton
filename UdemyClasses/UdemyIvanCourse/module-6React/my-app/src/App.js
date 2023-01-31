@@ -6,6 +6,7 @@ import React from 'react';
 import Counter from './components/counter/counter';
 import Counter2 from './components/counter-2/counter2';
 import Countdown from './components/countdown/countdown';
+import Form from './components/form/form'
 // import Clock from './components/clock/clock';
 import BootstrapTest from './BootstrapTest';
 
@@ -55,6 +56,8 @@ function App() {
       {/* <Clock template={{ template: 'h:m:s'}}/> */}
 
       <BootstrapTest />
+
+      <Form/>
     </div>
   );
 }
