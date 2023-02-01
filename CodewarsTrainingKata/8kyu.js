@@ -307,22 +307,23 @@ function noSpace(x) {
     let newStr = '';
 
     for(let i = 0; i < x.length; i++) {
-        if(x[i] !== " "){
-          newStr += x[i]
-        }
+      if(x[i] !== " "){
+        newStr += x[i]
+      }
     }
+
     return newStr
 }
 // Solution 2.1
 // Let's solve it with regular expression.
 
 function noSpace(x){
-  return x.replace(/ /g, '')
+  return x.replace(/ /g, '');
 }
 
 // Solution 2.2
 function noSpace(x){
-  return x.replace(/\s/g, '')
+  return x.replace(/\s/g, '');
 }
 
 // Solution 3.1
@@ -470,9 +471,53 @@ function booleanToString4(b){
 
 
 // 16 Task
+// Write a function to split a string and convert it into an array of words.
 
+// Examples (Input ==> Output):
+// "Robin Singh" ==> ["Robin", "Singh"]
+
+// "I love arrays they are my favorite" ==> ["I", "love", "arrays", "they", "are", "my", "favorite"]
+
+function stringToArray(string){
+  return string.split(' ');
+}
+
+function stringToArray(string){
+  let array = [];
+  let temp ='';
+
+  for (let i=0; i<string.length; i++){
+    if (string[i] !== ' ') {
+      temp += string[i];
+    } else {
+      array.push(temp);
+      temp = '';
+    }
+
+    array.push(temp);
+  }
+
+  return array;
+}
 
 // 17 Task
+// All of the animals are having a feast! Each animal is bringing one dish. There is just one rule: the dish must start and end with the same letters as the animal's name. For example, the great blue heron is bringing garlic naan and the chickadee is bringing chocolate cake.
+// Write a function feast that takes the animal's name and dish as arguments and returns true or false to indicate whether the beast is allowed to bring the dish to the feast.
+// Assume that beast and dish are always lowercase strings, and that each has at least two letters. beast and dish may contain hyphens and spaces, but these will not appear at the beginning or end of the string. They will not contain numerals.
+
+function feast(beast, dish) {
+  const firstBeastLetter = beast[0];
+  const lastBeastLetter = beast.substring(beast.length - 1);
+
+  const firstDishLetter = dish[0];
+  const lastDishLetter = dish.substring(dish.length - 1);
+
+  if ((firstBeastLetter && lastBeastLetter) === (firstDishLetter && lastDishLetter)) {
+    return true;
+  }
+
+  return false;
+}
 
 
 // 18 Task

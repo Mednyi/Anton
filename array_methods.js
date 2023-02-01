@@ -95,7 +95,7 @@ const arr = [1, 2, 3, 4, 5];
 // const newNumbers = numbers.slice(2);
 // console.log(newNumbers);
 
-// 17 indeOf - возвращает индекс элемента массива
+// 17 indexOf - возвращает индекс элемента массива
 // const numbers = [1, 10, 3, 17, 5];
 // const foundId = numbers.indexOf(2);
 // console.log(foundId);

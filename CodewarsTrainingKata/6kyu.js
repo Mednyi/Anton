@@ -12,18 +12,18 @@
 
 function findOdd(arr) {
   const hashTable = {};
-  
-  arr.forEach(function(el){
-    hashTable[el] ? hashTable[el]++ : hashTable[el] = 1;
+
+  arr.forEach(function (el) {
+    hashTable[el] ? hashTable[el]++ : (hashTable[el] = 1);
   });
 
-  for(let prop in hashTable) {
-    if(hashTable[prop] % 2 !== 0) return Number(prop);
+  for (let prop in hashTable) {
+    if (hashTable[prop] % 2 !== 0) return Number(prop);
   }
 }
 
 function findOdd2(arr) {
-  return arr.find((item) => arr.filter(el => el == item).length % 2);
+  return arr.find((item) => arr.filter((el) => el == item).length % 2);
 }
 
 // 2
@@ -31,8 +31,53 @@ function findOdd2(arr) {
 
 // Given a string, detect whether or not it is a pangram. Return True if it is, False if not. Ignore numbers and punctuation.
 
-function isPangram(string){
+function isPangram(string) {
   const regexp = /[A-Z]/gi;
 
   return string.match(regexp);
+}
+
+function isPangram(string) {
+  const letters = "abcdefgijklmnopqrstuvwxyz";
+
+  let str = string.toLowerCase();
+
+  return letters.split("").every((letter) => str.includes(letter));
+}
+
+function isPangram(str) {
+  var alphabet = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+  ];
+  str = str.toLowerCase();
+  for (var i = 0; i < alphabet.length; i++) {
+    if (str.indexOf(alphabet[i]) < 0) {
+      return false;
+    }
+  }
+  return true;
 }
