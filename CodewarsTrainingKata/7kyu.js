@@ -111,3 +111,38 @@ function friend2(friends){
 
   return realFriends;
 }
+
+
+// 4
+// Welcome. In this kata, you are asked to square every digit of a number and concatenate them.
+
+// For example, if we run 9119 through the function, 811181 will come out, because 92 is 81 and 12 is 1. (81-1-1-81)
+
+// Example #2: An input of 765 will/should return 493625 because 72 is 49, 62 is 36, and 52 is 25. (49-36-35)
+
+// Note: The function accepts an integer and returns an integer.
+
+// Happy Coding!
+
+// Нужно возвести каждую цифру принимаего числа в квадрат и сконкатенировать их и вернуть
+
+function squareDigits(num){
+  if (num <= 0) return 0;
+
+  const newDigits = num.toString().split('').map(n => n * n).join('');
+
+  return +newDigits;
+}
+
+const squareDigits = num => {
+  return +Array.from(num.toString(), n => n * n).join('');
+}
+
+function squareDigits(num){
+  const string = num.toString();
+  let results = [];
+  for (let i = 0; i < string.length; i++){
+    results[i] = string[i] * string[i];
+  }
+  return Number(results.join(''));
+};

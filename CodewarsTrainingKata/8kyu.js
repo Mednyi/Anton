@@ -507,20 +507,33 @@ function stringToArray(string){
 
 function feast(beast, dish) {
   const firstBeastLetter = beast[0];
-  const lastBeastLetter = beast.substring(beast.length - 1);
+  const lastBeastLetter = beast[beast.length - 1];
 
   const firstDishLetter = dish[0];
-  const lastDishLetter = dish.substring(dish.length - 1);
+  const lastDishLetter = dish[dish.length - 1];
 
-  if ((firstBeastLetter && lastBeastLetter) === (firstDishLetter && lastDishLetter)) {
+  if (firstBeastLetter + lastBeastLetter === firstDishLetter + lastDishLetter) {
     return true;
   }
 
   return false;
 }
 
+function feast(beast, dish) {
+  return dish.startsWith(beast[0]) && dish.endsWith(beast[beast.length-1])
+}
+
+const feast = (beast, dish) => beast[0] + beast.slice(-1) === dish[0] + dish.slice(-1);
+
 
 // 18 Task
+// You will be given an array a and a value x. All you need to do is check whether the provided array contains the value.
+// Array can contain numbers or strings. X can be either.
+// Return true if the array contains the value, false if not.
+
+function check(a, x) {
+  return a.every()
+}
 
 
 // 19 Task

@@ -73,11 +73,14 @@ function isPangram(str) {
     "y",
     "z",
   ];
+
   str = str.toLowerCase();
+
   for (var i = 0; i < alphabet.length; i++) {
     if (str.indexOf(alphabet[i]) < 0) {
       return false;
     }
   }
+
   return true;
 }
