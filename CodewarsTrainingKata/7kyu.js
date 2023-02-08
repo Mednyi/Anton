@@ -146,3 +146,89 @@ function squareDigits(num){
   }
   return Number(results.join(''));
 };
+
+// 5
+// Return the number (count) of vowels in the given string.
+// We will consider a, e, i, o, u as vowels for this Kata (but not y).
+// The input string will only consist of lower case letters and/or spaces.
+
+function getCount(str) {
+  let strLower = str.toLowerCase();
+  let countVowels = 0;
+
+  for (let i = 0; i < strLower.length; i++) {
+    if (strLower[i].includes('a') || strLower[i].includes('e') || strLower[i].includes('i') || strLower[i].includes('o') || strLower[i].includes('u')) {
+      countVowels++;
+    }
+  }
+
+  return countVowels;
+}
+
+function getCount(str) {
+  var vowelsCount = 0;
+  var vowels = ["a","e","i","o","u"];
+  for(let i = 0; i < str.length; i++) {
+    for(let j = 0; j <vowels.length; j++)  {
+      if(str[i] === vowels[j]){
+        vowelsCount++;
+      }
+    }
+  }
+
+  return vowelsCount;
+}
+
+function getCount(str) {
+  let vowelsCount = 0;
+
+  for (index in str){
+    switch (str[index]) {
+      case 'a':
+      case 'e':
+      case 'i':
+      case 'o':
+      case 'u':
+      vowelsCount++;
+      break;
+    }
+  }
+  return vowelsCount;
+}
+
+function getCount(str) {
+  let vowelsCount = 0;
+
+  vowelsCount = str.split("").reduce((total, item) => {
+    if(["a","e","i","o","u"].includes(item))
+      total += 1;
+    return total
+  }, 0);
+
+  return vowelsCount;
+}
+
+
+// 6
+//  In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
+// Examples
+// highAndLow("1 2 3 4 5");  // return "5 1"
+// highAndLow("1 2 -3 4 5"); // return "5 -3"
+// highAndLow("1 9 3 4 -5"); // return "9 -5"
+// Notes
+// All numbers are valid Int32, no need to validate them.
+// There will always be at least one number in the input string.
+// Output string must be two numbers separated by a single space, and highest number is first.
+function highAndLow(numbers) {
+
+  return numbers.split(' ').map(Number).reduce((acc, item) => {
+    acc = (Math.max(item) + Math.min(item));
+  }, '');
+}
+
+function highAndLow(numbers) {
+  numbers = numbers.split(' ').map(Number);
+  const max = Math.max(...numbers);
+  const min = Math.min(...numbers);
+  return `${max} ${min}`;
+}

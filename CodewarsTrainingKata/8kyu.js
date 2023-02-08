@@ -532,17 +532,91 @@ const feast = (beast, dish) => beast[0] + beast.slice(-1) === dish[0] + dish.sli
 // Return true if the array contains the value, false if not.
 
 function check(a, x) {
-  return a.every()
+  return a.some(item => item === x);  // your code here
+}
+
+const check = (a,x) => a.includes(x);
+
+function check(a,x){
+  let foundTarget = false;
+
+  a.forEach((v,i,A)=>{
+    if (v==x) {
+      foundTarget = true
+    }
+  });
+
+  return foundTarget;
+}
+
+function check(a, x) {
+
+  for (let i = 0; i < a.length; i++) {
+    console.log(a[i]);
+    if (a[i] == x) {
+      return true
+    }
+  }
+  return false;
 }
 
 
 // 19 Task
+// Return the number (count) of vowels in the given string.
+// We will consider a, e, i, o, u as vowels for this Kata (but not y).
+// The input string will only consist of lower case letters and/or spaces.
+
+function getCountVowels(str) {
+  let countVowels = 0;
+
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === 'y') {
+      return;
+    }
+
+    if (str[i].toLowerCase().includes('a e i o u')) {
+      countVowels++;
+    }
+  }
+
+  return countVowels;
+}
 
 
 // 20 Task
+// Your classmates asked you to copy some paperwork for them. You know that there are 'n' classmates and the paperwork has 'm' pages.
+// Your task is to calculate how many blank pages do you need. If n < 0 or m < 0 return 0.
+// Example:
+// n= 5, m=5: 25
+// n=-5, m=5:  0
+
+function paperwork(n, m) {
+  if (n < 0 || m < 0) {
+    return 0;
+  }
+
+  return n * m;
+}
+
+function paperwork(n, m) {
+  return n > 0 && m > 0 ? n * m : 0
+}
 
 
 // 21 Task
+// Nathan loves cycling.
+// Because Nathan knows it is important to stay hydrated, he drinks 0.5 litres of water per hour of cycling.
+// You get given the time in hours and you need to return the number of litres Nathan will drink, rounded to the smallest value.
+// For example:
+// time = 3 ----> litres = 1
+// time = 6.7---> litres = 3
+// time = 11.8--> litres = 5
+
+function litres(time) {
+  const litresPerHour = 0.5;
+
+  return  Math.floor(litresPerHour * time);
+}
 
 
 // 22 Task
