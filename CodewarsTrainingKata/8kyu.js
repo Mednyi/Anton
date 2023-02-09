@@ -620,15 +620,96 @@ function litres(time) {
 
 
 // 22 Task
+// There was a test in your class and you passed it. Congratulations!
+// But you're an ambitious person. You want to know if you're better than the average student in your class.
+// You receive an array with your peers' test scores. Now calculate the average and compare your score!
+// Return True if you're better, else False!
+// Note:
+// Your points are not included in the array of your class's points. For calculating the average point you may add your point to the given array!
+
+function betterThanAverage(classPoints, yourPoints) {
+  const averageClassPoints = classPoints.reduce((acc, next) => acc + next) / classPoints.length;
+
+  return yourPoints > averageClassPoints ? true : false;
+}
+
+function betterThanAverage(classPoints, yourPoints) {
+  let sum = 0;
+
+  for (let i = 0; i < classPoints.length; i++){
+  	sum += classPoints[i];
+  }
+  	sum = sum / classPoints.length;
+
+  if(sum > yourPoints) {
+  	return false
+  } else {
+  	return true
+  }
+}
 
 
 // 23 Task
+// Given a string, you have to return a string in which each character (case-sensitive) is repeated once.
+// Examples (Input -> Output):
+// * "String"      -> "SSttrriinngg"
+// * "Hello World" -> "HHeelllloo  WWoorrlldd"
+// * "1234!_ "     -> "11223344!!__  "
+// Good Luck!
+
+function doubleChar(str) {
+  let newStr = '';
+
+  for (let i = 0; i < str.length; i++) {
+    newStr += str[i].repeat(2);
+  }
+
+  return newStr;
+}
+
+function doubleChar(str) {
+  return str.split(' ').map(item => item + item).join('');
+}
+
+function doubleChar(str) {
+  return str.replace(/(.)/g, "$1$1")
+}
+
+function doubleChar(str) {
+  return [...str].map(item => item + item).join('');
+}
+
 
 
 // 24 Task
+// Write a function which calculates the average of the numbers in a given list.
+// Note: Empty arrays should return 0.
+
+function findAverage(array) {
+  if (array.length === 0) {
+    return 0;
+  }
+  // your code here
+  return array.reduce((acc, next) => acc + next) / array.length;
+}
 
 
 // 25 Task
+// You were camping with your friends far away from home, but when it's time to go back, you realize that your fuel is running out and the nearest pump is 50 miles away! You know that on average, your car runs on about 25 miles per gallon. There are 2 gallons left.
+// Considering these factors, write a function that tells you if it is possible to get to the pump or not.
+// Function should return true if it is possible and false if not.
+
+const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+  return distanceToPump <= mpg * fuelLeft;
+};
+
+const zeroFuel2 = (distanceToPump, mpg, fuelLeft) => {
+  if (mpg * fuelLeft >= distanceToPump) {
+    return true;
+  } else {
+    return false;
+  }
+};
 
 
 // 26 Task

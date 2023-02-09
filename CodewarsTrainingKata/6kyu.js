@@ -84,3 +84,20 @@ function isPangram(str) {
 
   return true;
 }
+
+// 3
+// The main idea is to count all the occurring characters in a string. If you have a string like aba, then the result should be {'a': 2, 'b': 1}.
+// What if the string is empty? Then the result should be empty object literal, {}.
+
+function count (string) {
+  const arrString = string.split(' ');
+  let count = 0;
+
+  if (string.length === 0) {
+    return {};
+  }
+
+  return Object.assign({}, arrString.map(item => ({
+    [(item === (item + 1))]: count++
+  })));
+}

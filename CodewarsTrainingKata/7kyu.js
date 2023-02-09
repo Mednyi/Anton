@@ -221,8 +221,8 @@ function getCount(str) {
 // Output string must be two numbers separated by a single space, and highest number is first.
 function highAndLow(numbers) {
 
-  return numbers.split(' ').map(Number).reduce((acc, item) => {
-    acc = (Math.max(item) + Math.min(item));
+  return numbers.split(' ').map(Number).reduce( item => {
+    `${Math.max(item)} ${Math.min(item)}`;
   }, '');
 }
 
@@ -231,4 +231,27 @@ function highAndLow(numbers) {
   const max = Math.max(...numbers);
   const min = Math.min(...numbers);
   return `${max} ${min}`;
+}
+
+function highAndLow(numbers){
+  numbers = numbers.split(' ');
+  return `${Math.max(...numbers)} ${Math.min(...numbers)}`;
+}
+
+
+// 7
+// Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.
+// Examples:
+// Input: 42145 Output: 54421
+// Input: 145263 Output: 654321
+// Input: 123456789 Output: 987654321
+
+function descendingOrder(n){
+  return parseInt(n.toString().split('').sort((max, min) => min - max).join(''));
+}
+
+function descendingOrder(n){
+  return parseInt(n.toString().split('').sort(function(a, b){
+    return b - a;
+  }).join(''));
 }
