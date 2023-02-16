@@ -713,21 +713,210 @@ const zeroFuel2 = (distanceToPump, mpg, fuelLeft) => {
 
 
 // 26 Task
+// Description
+// We need a function that can transform a string into a number. What ways of achieving this do you know?
+// Note: Don't worry, all inputs will be strings, and every string is a perfectly valid representation of an integral number.
+// Examples
+// "1234" --> 1234
+// "605"  --> 605
+// "1405" --> 1405
+// "-7" --> -7
 
+const stringToNumber = function(str){
+  // put your code here
+  return Number(str);
+}
+
+var stringToNumber2 = function(str){
+  return parseInt(str);
+}
+
+var stringToNumber3 = function(str){
+  return +str;
+}
+
+// the alternative method without parse
+const stringToNumber4 = function(str, arr = [...str], out = 0){
+  if( arr[0] === '-' ){ arr.shift() }
+  arr.reverse()
+
+  const nums = {1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 0: 0};
+
+  for (let i = 0; i < arr.length; i++){
+    out += nums[arr[i]] * (10**i)
+  }
+  return str[0] === '-' ? -out : out
+}
 
 // 27 Task
+// We need a function that can transform a number (integer) into a string.
+// What ways of achieving this do you know?
+// Examples (input --> output):
+// 123  --> "123"
+// 999  --> "999"
+// -100 --> "-100"
+
+function numberToString(num) {
+  return num.toString();
+}
+
+function numberToString(num) {
+  return String(num);
+}
+
+function numberToString(num) {
+  return '' + num;
+}
+
+const numberToString = num => `${num}`;
 
 
 // 28 Task
+// Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.
+// Return your answer as a number.
+
+function sumMix(x) {
+  const numbers = [...x].map(item => Number(item));
+
+  console.log(numbers);
+
+  return numbers.reduce((acc, item) => acc + item);
+}
+
+function sumMix(x){
+  let result = 0;
+
+  for (let n of x) {
+    result += parseInt(n);
+  }
+
+  return result;
+}
+
+function sumMix(x){
+  return x.map(a => +a).reduce((a, b) => a + b);
+}
 
 
 // 29 Task
+// When provided with a number between 0-9, return it in words.
+// Input :: 1
+// Output :: "One".
 
+function switchItUp(number){
+  switch(number) {
+    case 0:
+      return 'Zero';
+    case 1:
+      return 'One';
+    case 2:
+      return 'Two';
+    case 3:
+      return 'Three';
+    case 4:
+      return  'Four';
+    case 5:
+      return 'Five';
+    case 6:
+      return 'Six';
+    case 7:
+      return 'Seven';
+    case 8:
+      return 'Eight';
+    case 9:
+      return 'Nine';
+    default:
+      return 'Unknown number';
+  }
+}
+
+function switchItUp(number){
+  return  ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'][number];
+}
 
 // 30 Task
+// Complete the function so that it finds the average of the three scores passed to it and returns the letter value associated with that grade.
+// Numerical Score	Letter Grade
+// 90 <= score <= 100	'A'
+// 80 <= score < 90	'B'
+// 70 <= score < 80	'C'
+// 60 <= score < 70	'D'
+// 0 <= score < 60	'F'
+// Tested values are all between 0 and 100. Theres is no need to check for negative values or values greater than 100.
+
+function getGrade (s1, s2, s3) {
+  const averageGrade = Math.floor((s1 + s2 + s3) / 3);
+
+  switch(true) {
+    case (averageGrade >= 90):
+      return 'A';
+    case (averageGrade >= 80):
+      return 'B';
+    case (averageGrade >= 70):
+      return 'C';
+    case (averageGrade >= 60):
+      return 'D';
+    default:
+      return 'F';
+  }
+}
+
+function getGrade (s1, s2, s3) {
+  const score = (s1 + s2 + s3) / 3;
+
+  if (score >= 90) {
+    return 'A';
+  } else if (score >= 80) {
+    return 'B';
+  } else if (score >= 70) {
+    return 'C';
+  } else if (score >= 60) {
+    return 'D';
+  } else {
+    return 'F';
+  }
+}
 
 
 // 31 Task
+// Your start-up's BA has told marketing that your website has a large audience in Scandinavia and surrounding countries. Marketing thinks it would be great to welcome visitors to the site in their own language. Luckily you already use an API that detects the user's location, so this is an easy win.
+// The Task
+// Think of a way to store the languages as a database (eg an object). The languages are listed below so you can copy and paste!
+// Write a 'welcome' function that takes a parameter 'language' (always a string), and returns a greeting - if you have it in your database. It should default to English if the language is not in the database, or in the event of an invalid input.
+
+function greet(language) {
+  let result = ``;
+
+  const dbLang = [
+    {english: 'Welcome'},
+    {czech: 'Vitejte'},
+    {danish: 'Velkomst'},
+    {dutch: 'Welkom'},
+    {estonian: 'Tere tulemast'},
+    {finnish: 'Tervetuloa'},
+    {flemish: 'Welgekomen'},
+    {french: 'Bienvenue'},
+    {german: 'Willkommen'},
+    {irish: 'Failte'},
+    {italian: 'Benvenuto'},
+    {latvian: 'Gaidits'},
+    {lithuanian: 'Laukiamas'},
+    {polish: 'Witamy'},
+    {spanish: 'Bienvenido'},
+    {swedish: 'Valkommen'},
+    {welsh: 'Croeso'},
+  ];
+
+  const keys = dbLang.map((item) => Object.keys(item));
+
+  for (let key of keys) {
+    if (language === key) {
+      result = `${language}`
+    }
+  }
+
+  return result;
+}
 
 
 // 32 Task

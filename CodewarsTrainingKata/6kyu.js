@@ -98,6 +98,21 @@ function count (string) {
   }
 
   return Object.assign({}, arrString.map(item => ({
-    [(item === (item + 1))]: count++
+
   })));
+}
+
+function count (string) {
+  return string.split('').reduce(function (acc, c) {
+    return acc[c] = (acc[c] || 0) + 1, acc;
+  }, {});
+}
+
+function count (string) {
+  let a = {};
+
+  for (let i = 0; i < string.length; i++) {
+    a[string[i]] ? a[string[i]]++ : a[string[i]]=1;
+  }
+  return a;
 }
