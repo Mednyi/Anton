@@ -887,36 +887,147 @@ function getGrade (s1, s2, s3) {
 function greet(language) {
   let result = ``;
 
-  const dbLang = [
-    {english: 'Welcome'},
-    {czech: 'Vitejte'},
-    {danish: 'Velkomst'},
-    {dutch: 'Welkom'},
-    {estonian: 'Tere tulemast'},
-    {finnish: 'Tervetuloa'},
-    {flemish: 'Welgekomen'},
-    {french: 'Bienvenue'},
-    {german: 'Willkommen'},
-    {irish: 'Failte'},
-    {italian: 'Benvenuto'},
-    {latvian: 'Gaidits'},
-    {lithuanian: 'Laukiamas'},
-    {polish: 'Witamy'},
-    {spanish: 'Bienvenido'},
-    {swedish: 'Valkommen'},
-    {welsh: 'Croeso'},
-  ];
-
-  const keys = dbLang.map((item) => Object.keys(item));
-
-  for (let key of keys) {
-    if (language === key) {
-      result = `${language}`
-    }
+  const dbLang = {
+    english: 'Welcome',
+    czech: 'Vitejte',
+    danish: 'Velkomst',
+    dutch: 'Welkom',
+    estonian: 'Tere tulemast',
+    finnish: 'Tervetuloa',
+    flemish: 'Welgekomen',
+    french: 'Bienvenue',
+    german: 'Willkommen',
+    irish: 'Failte',
+    italian: 'Benvenuto',
+    latvian: 'Gaidits',
+    lithuanian: 'Laukiamas',
+    polish: 'Witamy',
+    spanish: 'Bienvenido',
+    swedish: 'Valkommen',
+    welsh: 'Croeso'
   }
+
+const { english, czech, danish, dutch, estonian, finnish, flemish, french, german, irish, italian, latvian, lithuanian, polish, spanish, swedish, welsh } = dbLang;
+
+if (language === 'english') {
+  result = `${english}`;
+} else if (language === 'czech') {
+  result = `${czech}`;
+} else if (language === 'danish') {
+  result = `${danish}`;
+} else if (language === 'dutch') {
+  result = `${dutch}`;
+} else if (language === 'estonian') {
+  result = `${estonian}`;
+} else if (language === 'finnish') {
+  result = `${finnish}`
+} else if (language === 'flemish') {
+  result = `${flemish}`
+} else if (language === 'french') {
+  result = `${french}`
+} else if (language === 'german') {
+  result = `${german}`
+} else if (language === 'irish') {
+  result = `${irish}`
+} else if (language === 'italian') {
+  result = `${italian}`
+} else if (language === 'latvian') {
+  result = `${latvian}`
+} else if (language === 'lithuanian') {
+  result = `${lithuanian}`
+} else if (language === 'polish') {
+  result = `${polish}`
+} else if (language === 'spanish') {
+  result = `${spanish}`
+} else if (language === 'swedish') {
+  result = `${swedish}`
+} else if (language === 'welsh') {
+  result = `${welsh}`
+} else {
+  result = `${english}`
+}
 
   return result;
 }
 
+function greet(language) {
+	const welcomes = {
+    english: 'Welcome',
+    czech: 'Vitejte',
+    danish: 'Velkomst',
+    dutch: 'Welkom',
+    estonian: 'Tere tulemast',
+    finnish: 'Tervetuloa',
+    flemish: 'Welgekomen',
+    french: 'Bienvenue',
+    german: 'Willkommen',
+    irish: 'Failte',
+    italian: 'Benvenuto',
+    latvian: 'Gaidits',
+    lithuanian: 'Laukiamas',
+    polish: 'Witamy',
+    spanish: 'Bienvenido',
+    swedish: 'Valkommen',
+    welsh: 'Croeso'
+  };
+
+  return language in welcomes ? welcomes[language] : welcomes.english;
+};
+
+function greet(language) {
+
+	switch(language){
+    case "english": return "Welcome";
+    case "czech": return "Vitejte";
+    case "danish": return "Velkomst";
+    case "dutch": return "Welkom";
+    case "estonian": return "Tere tulemast";
+    case "finnish": return "Tervetuloa";
+    case "flemish": return "Welgekomen";
+    case "french": return "Bienvenue";
+    case "german": return "Willkommen";
+    case "irish": return "Failte";
+    case "italian": return "Benvenuto";
+    case "latvian": return "Gaidits";
+    case "lithuanian": return "Laukiamas";
+    case "polish": return "Witamy";
+    case "spanish": return "Bienvenido";
+    case "swedish": return "Valkommen";
+    case "welsh": return "Croeso";
+    default: return "Welcome";
+  }
+
+}
+
 
 // 32 Task
+
+// 33 Task
+
+// 34 Task
+
+// 35 Task
+
+// 36 Task
+
+// 37 Task
+
+// 38 Task
+
+// 39 Task
+
+// 40 Task
+
+// 41 Task
+
+// 42 Task
+
+// 43 Task
+
+// 44 Task
+
+// 45 Task
+
+// 46 Task
+
+// 47 Task
