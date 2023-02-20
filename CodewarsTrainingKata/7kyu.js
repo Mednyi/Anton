@@ -269,9 +269,29 @@ function descendingOrder(n){
 // Output: "even"
 
 function oddOrEven(array) {
-  if (array.length === 0) {
+  if (array.length == 0) {
     return 'even';
+  } else {
+    const sumOfElements = array.reduce((previousValue, currentValue) => previousValue + currentValue);
+
+    return (sumOfElements % 2 === 0) ? 'even' : 'odd';
+  }
+}
+
+function oddOrEven(arr) {
+  return arr.reduce((a, b) => a + b, 0) % 2 ? 'odd' : 'even';
+}
+
+function oddOrEven(array) {
+  let result = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    result+=array[i];
   }
 
-  
+  if (result % 2 == 0) {
+    return "even";
+  } else {
+    return "odd";
+  }
 }
