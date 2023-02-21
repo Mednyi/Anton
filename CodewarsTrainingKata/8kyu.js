@@ -1026,14 +1026,134 @@ function positiveSum (arr) {
 }
 
 // 33 Task
+// Given a month as an integer from 1 to 12, return to which quarter of the year it belongs as an integer number.
+// For example: month 2 (February), is part of the first quarter; month 6 (June), is part of the second quarter; and month 11 (November), is part of the fourth quarter.
+// Constraint:
+// 1 <= month <= 12
+
+const quarterOf = (month) => {
+  if (month == 1 || month == 2 || month == 3) {
+    return 1;
+  } else if (month == 4 || month == 5 || month == 6) {
+    return 2;
+  } else if (month == 7 || month == 8 || month == 9) {
+    return 3;
+  } else {
+    return 4;
+  }
+}
+
+const quarterOf2 = (month) => {
+  if (month <= 3) {
+    return 1
+  } else if (month <= 6) {
+    return 2
+  } else if (month <= 9) {
+    return 3
+  } else if (month <= 12) {
+    return 4
+  }
+}
+
+const quarterOf3 = (month, quarter = 4) => {
+	switch (month) {
+		case 1:
+		case 2:
+		case 3:
+			quarter = 1;
+			break;
+		case 4:
+		case 5:
+		case 6:
+			quarter = 2;
+			break;
+		case 7:
+		case 8:
+		case 9:
+			quarter = 3;
+			break;
+	}
+	return quarter;
+};
 
 // 34 Task
+// Can you find the needle in the haystack?
+// Write a function findNeedle() that takes an array full of junk but containing one "needle"
+// After your function finds the needle it should return a message (as a string) that says:
+// "found the needle at position " plus the index it found the needle, so:
+// Example(Input --> Output)
+// ["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"] --> "found the needle at position 5"
+
+function findNeedle(haystack) {
+  let result = '';
+
+  for (let i = 0; i < haystack.length; i++) {
+    if (haystack[i] === 'needle') {
+      result = `found the needle at position ${i}`
+    }
+  }
+
+  return result;
+}
+
+
+function findNeedle(haystack) {
+  return "found the needle at position " + haystack.indexOf("needle");
+}
 
 // 35 Task
+// Create a function that gives a personalized greeting. This function takes two parameters: name and owner.
+// Use conditionals to return the proper message:
+// case	return
+// name equals owner	'Hello boss'
+// otherwise	'Hello guest'
+
+function greet (name, owner) {
+  if (name === owner) {
+    return `Hello boss`
+  } else {
+    return `Hello guest`
+  }
+}
+
+function greet (name, owner) {
+  return name === owner ? 'Hello boss' : 'Hello guest';
+}
 
 // 36 Task
+// This function should test if the factor is a factor of base.
+// Return true if it is a factor or false if it is not.
+// About factors
+// Factors are numbers you can multiply together to get another number.
+// 2 and 3 are factors of 6 because: 2 * 3 = 6
+// You can find a factor by dividing numbers. If the remainder is 0 then the number is a factor.
+// You can use the mod operator (%) in most languages to check for a remainder
+// For example 2 is not a factor of 7 because: 7 % 2 = 1
+// Note: base is a non-negative number, factor is a positive number.
+
+function checkForFactor (base, factor) {
+  return  base % factor === 0 ? true : false;
+}
+
+function checkForFactor (base, factor) {
+  let check = base % factor;
+
+  if(check == 0){
+    return true
+  }
+    return false
+}
 
 // 37 Task
+// Terminal game move function
+// In this game, the hero moves from left to right. The player rolls the dice and moves the number of spaces indicated by the dice two times.
+// Create a function for the terminal game that takes the current position of the hero and the roll (1-6) and return the new position.
+// Example:
+// move(3, 6) should equal 15
+
+function move (position, roll) {
+  // return the new position
+}
 
 // 38 Task
 
