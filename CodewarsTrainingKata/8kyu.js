@@ -1152,10 +1152,28 @@ function checkForFactor (base, factor) {
 // move(3, 6) should equal 15
 
 function move (position, roll) {
-  // return the new position
+  return position + roll + roll;
 }
 
+
+
 // 38 Task
+// Take an array and remove every second element from the array. Always keep the first element and start removing with the next element.
+// Example:
+// ["Keep", "Remove", "Keep", "Remove", "Keep", ...] --> ["Keep", "Keep", "Keep", ...]
+// None of the arrays will be empty, so you don't have to worry about that!
+
+function removeEveryOther(arr) {
+  let result = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] + 1) {
+      result += arr[i];
+    }
+  }
+
+  return result;
+}
 
 // 39 Task
 
