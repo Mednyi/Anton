@@ -42,17 +42,17 @@
 // P.S. Подсказка: используйте split, чтобы разбить строку на массив символов, потом переделайте всё как нужно и методом join соедините обратно.
 
 function camelize(str) {
-    let parsedStr = str.split('');
-    let word, index;
+  let parsedStr = str.split('');
+  let word, index;
 
-    for (let i = 0; i < parsedStr.length; i++) {
-      if (index == 0) {
-          return word;
-      } else {
-          return word[0].toUpperCase() + word.slice(1);
-      }
+  for (let i = 0; i < parsedStr.length; i++) {
+    if (index == 0) {
+      return word;
+    } else {
+      return word[0].toUpperCase() + word.slice(1);
     }
-    return parsedStr.join ('');
+  }
+  return parsedStr.join ('');
 }
 
 function camelize(str) {

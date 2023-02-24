@@ -1166,16 +1166,44 @@ function move (position, roll) {
 function removeEveryOther(arr) {
   let result = [];
 
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] + 1) {
-      result += arr[i];
-    }
+  for (let i = 0; i < arr.length; i += 2) {
+    result.push(arr[i]);
   }
 
   return result;
 }
 
+function removeEveryOther(arr) {
+  return arr.filter((_, index) => index % 2 === 0);
+}
+
 // 39 Task
+// In this simple exercise, you will create a program that will take two lists of integers, a and b. Each list will consist of 3 positive integers above 0, representing the dimensions of cuboids a and b. You must find the difference of the cuboids' volumes regardless of which is bigger.
+// For example, if the parameters passed are ([2, 2, 3], [5, 4, 1]), the volume of a is 12 and the volume of b is 20. Therefore, the function should return 8.
+// Your function will be tested with pre-made examples as well as random ones.
+// If you can, try writing it in one line of code.
+
+function findDifference(a, b) {
+  const aSum = a.map(Number);
+  const bSum = b.map(Number);
+
+  return aSum > bSum ? aSum - bSum : bSum - aSum;
+}
+
+function findDifference(a, b) {
+  let aSum = 0;
+  let bSum = 0;
+
+  for (let item of a) {
+    aSum *= item;
+  }
+
+  for (let item of b) {
+    bSum *= item;
+  }
+
+  return aSum > bSum ? aSum - bSum : bSum - aSum;
+}
 
 // 40 Task
 

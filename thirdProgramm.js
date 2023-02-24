@@ -153,6 +153,10 @@ let qualificationDistance = 200;
 let attempts = [120, 150, 160, 201, 203, 180, 202];
 let qualified = false;
 let averageBest = 0;
+const bestFirstJump = Math.max(...attempts);
+const bestSecondJump = Math.max(...bestFirstJump);
+const bestThirdJump = Math.max(...bestSecondJump);
+averageBest = ( bestFirstJump + bestSecondJump + bestThirdJump ) / 3;
 
 /* Техническое задание
 
@@ -169,3 +173,9 @@ let averageBest = 0;
  Если квалификация не пройдена, то в qualified должно быть false.
 
 */
+
+if (averageBest > qualificationDistance) {
+  return qualified = true;
+} else {
+  return qualified = false;
+}
