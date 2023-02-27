@@ -1184,10 +1184,10 @@ function removeEveryOther(arr) {
 // If you can, try writing it in one line of code.
 
 function findDifference(a, b) {
-  const aSum = a.map(Number);
-  const bSum = b.map(Number);
+  const aSum = a.reduce((acc, item) => acc * item);
+  const bSum = b.reduce((acc, item) => acc * item);
 
-  return aSum > bSum ? aSum - bSum : bSum - aSum;
+  return (Number(aSum) - Number(bSum)) < 0 ? Number(bSum) - Number(aSum) : Number(aSum) - Number(bSum);
 }
 
 function findDifference(a, b) {
@@ -1202,10 +1202,34 @@ function findDifference(a, b) {
     bSum *= item;
   }
 
-  return aSum > bSum ? aSum - bSum : bSum - aSum;
+  return Number(aSum) - Number(bSum);
+}
+
+function findDifference(a, b) {
+  let num1 = a[0];
+  let num2 = b[0];
+
+  for (let i = 1; i < 3; i++) {
+    num1 = num1 * a[i];
+    num2 = num2 * b[i];
+  }
+
+  if (num1 > num2) {
+    return num1 - num2
+  }
+  return num2 - num1;
 }
 
 // 40 Task
+// Given a set of numbers, return the additive inverse of each. Each positive becomes negatives, and the negatives become positives.
+// invert([1,2,3,4,5]) == [-1,-2,-3,-4,-5]
+// invert([1,-2,3,-4,5]) == [-1,2,-3,4,-5]
+// invert([]) == []
+// You can assume that all values are integers. Do not mutate the input array/list.
+
+function invert(array) {
+  return array.reverse();
+}
 
 // 41 Task
 
