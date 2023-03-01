@@ -1266,13 +1266,72 @@ function invert(array) {
 // *Use Comparison and Logical Operators.
 
 function finalGrade (exam, projects) {
-  return // final grade
+  if (exam > 90 || projects > 10) {
+    return 100;
+  } else if (exam > 75 && projects >= 5) {
+    return 90;
+  } else if (exam > 50 && projects >= 2) {
+    return 75;
+  } else {
+    return 0;
+  }
+}
+
+function finalGrade (exam, projects) {
+  switch (true) {
+    case exam > 90 || projects > 10:
+      return 100;
+    case exam > 75 && projects >= 5:
+      return 90;
+    case exam > 50 && projects >= 2:
+      return 75;
+    default:
+      return 0
+  }
 }
 
 // 42 Task
+// Write a function that takes an array of words and smashes them together into a sentence and returns the sentence. You can ignore any need to sanitize words or add punctuation, but you should add spaces between each word. Be careful, there shouldn't be a space at the beginning or the end of the sentence!
+// Example
+// ['hello', 'world', 'this', 'is', 'great']  =>  'hello world this is great'
+
+function smash (words) {
+  if (words.length === 0) return '';
+
+  let sentence = ' ';
+
+  for (let word of words) {
+    sentence += ` ${word}`;
+  }
+
+  return sentence.trim();
+};
+
+function smash (words) {
+  if (words.length === 0) return '';
+
+  return words.map(item => `${item}`).join(' ');
+};
+
+function smash1 (words){
+  return words.length != 0 ? words.reduce((res,v) =>  res+= ` ${v}`) : ''
+};
 
 // 43 Task
+// Messi is a soccer player with goals in three leagues:
+// LaLiga
+// Copa del Rey
+// Champions
+// Complete the function to return his total number of goals in all three leagues.
+// Note: the input will always be valid.
+// For example:
+// 5, 10, 2  -->  17
 
+function goals (laLigaGoals, copaDelReyGoals, championsLeagueGoals) {
+  return laLigaGoals + copaDelReyGoals + championsLeagueGoals;
+}
+
+const goals = (...goalsArray) => goalsArray.reduce((a, b) => a + b);
 // 44 Task
 
 // 45 Task

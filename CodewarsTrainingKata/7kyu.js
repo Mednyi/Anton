@@ -166,10 +166,11 @@ function getCount(str) {
 }
 
 function getCount(str) {
-  var vowelsCount = 0;
-  var vowels = ["a","e","i","o","u"];
+  let vowelsCount = 0;
+  let vowels = ["a","e","i","o","u"];
+
   for(let i = 0; i < str.length; i++) {
-    for(let j = 0; j <vowels.length; j++)  {
+    for(let j = 0; j < vowels.length; j++)  {
       if(str[i] === vowels[j]){
         vowelsCount++;
       }
@@ -286,7 +287,7 @@ function oddOrEven(array) {
   let result = 0;
 
   for (let i = 0; i < array.length; i++) {
-    result+=array[i];
+    result += array[i];
   }
 
   if (result % 2 == 0) {
@@ -294,4 +295,32 @@ function oddOrEven(array) {
   } else {
     return "odd";
   }
+}
+
+// 9
+// Simple, given a string of words, return the length of the shortest word(s).
+// String will never be empty and you do not need to account for different data types.
+
+// function findShort(str) {
+//   if (str.length === 0) return;
+
+//   let newStr = [];
+
+//   for (let i = 0; i < newStr.length; i++) {
+//     newStr = [...newStr[i]];
+
+//     for (let j = 0; j < i; j++) {
+//       if () {
+
+//       }
+//     }
+//   }
+// }
+
+function findShort(str) {
+  if (str.length === 0) return;
+
+  let newStr = [...str];
+
+  return newStr.filter(item => parseInt(Math.min(item))).length;
 }
