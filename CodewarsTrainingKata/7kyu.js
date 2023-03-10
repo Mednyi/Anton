@@ -301,26 +301,41 @@ function oddOrEven(array) {
 // Simple, given a string of words, return the length of the shortest word(s).
 // String will never be empty and you do not need to account for different data types.
 
-// function findShort(str) {
-//   if (str.length === 0) return;
+function findShort(str) {
+  if (str.length === 0) return;
 
-//   let newStr = [];
+  let newStr = [];
 
-//   for (let i = 0; i < newStr.length; i++) {
-//     newStr = [...newStr[i]];
+  for (let i = 0; i < newStr.length; i++) {
+    newStr = [...newStr[i]];
 
-//     for (let j = 0; j < i; j++) {
-//       if () {
-
-//       }
-//     }
-//   }
-// }
+    for (let j = 0; j < i; j++) {
+      
+    }
+  }
+}
 
 function findShort(str) {
   if (str.length === 0) return;
 
-  let newStr = [...str];
+  let newStr = str.split(' ');
 
   return newStr.filter(item => parseInt(Math.min(item))).length;
+}
+
+function findShort(s) {
+
+  let newStr = s.split(' ');
+  let shortest = Infinity;
+
+//   return newStr.filter(item => Math.min(+item)).length;
+  for (let i = 0; i < newStr.length; i++) {
+    let wordLength = newStr[i].length;
+
+    if (wordLength < shortest) {
+      shortest = wordLength;
+    }
+  }
+
+  return shortest;
 }
