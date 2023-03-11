@@ -1342,7 +1342,11 @@ const goals = (...goalsArray) => goalsArray.reduce((a, b) => a + b);
 // array = [1, 2, 3] and N = 3, but N is outside of the array, so the result is -1.
 
 function index(array, n){
-  //your code here
+  for (let i = 0; i < array.length; i++) {
+    if (i < n) return -1;
+
+    
+  }
 }
 
 // 45 Task
