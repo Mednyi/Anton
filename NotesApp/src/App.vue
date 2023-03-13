@@ -56,7 +56,7 @@ const addNote = () => {
   showModal.value = false;
   newNote.value = '';
   errorMessage.value = '';
-}
+};
 </script>
 
 
