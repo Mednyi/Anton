@@ -6,7 +6,7 @@ const sqrEq = (a ,b ,c) => {
         const x2 = (-b - D**(1/2))/2*a;
         console.log(x1, x2);
     } else {
-        console.log('Не решений');
+        console.log('Нет решений');
     }
 };
 // insight
