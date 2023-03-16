@@ -466,7 +466,7 @@ function booleanToString3(b){
 }
 
 function booleanToString4(b){
-  return b+'';
+  return b + '';
 }
 
 
@@ -1342,15 +1342,93 @@ const goals = (...goalsArray) => goalsArray.reduce((a, b) => a + b);
 // array = [1, 2, 3] and N = 3, but N is outside of the array, so the result is -1.
 
 function index(array, n){
-  for (let i = 0; i < array.length; i++) {
-    if (i < n) return -1;
+  if(n > array.length - 1) {
+    return -1;
+  } else {
+    return Math.pow(array[n], n);
+  }
+}
 
-    
+function index(array, n){
+  for(let i = 0; i < array.length; i++){
+    if(array.length <= n){
+      return -1;
+    }else{
+      return array[n] ** n;
+    }
   }
 }
 
 // 45 Task
+// Create a function called shortcut to remove the lowercase vowels (a, e, i, o, u ) in a given string.
+// Examples
+// "hello"     -->  "hll"
+// "codewars"  -->  "cdwrs"
+// "goodbye"   -->  "gdby"
+// "HELLO"     -->  "HELLO"
+// don't worry about uppercase vowels
+// y is not considered a vowel for this kata
+
+function shortcut(string) {
+
+  let result = '';
+  const vowels = {
+      a: 'alpha',
+      e: 'echo',
+      i: 'india',
+      o: 'oscar',
+      u: 'uniform'
+  }
+
+  for (let i = 0; i < string.length; i++) {
+
+      if (!vowels[string[i]]) {
+
+        result += string[i];
+      }
+
+  }
+
+  return result;
+}
+
+function shortcut (string) {
+  return string.replace(/[aeiou]/gi, '')
+}
+
+function shortcut(str) {
+  return str.split('').filter(function(e) {
+    return ['a', 'e', 'i', 'o', 'u'].indexOf(e) == -1
+  }).join('')
+}
 
 // 46 Task
+// You ask a small girl,"How old are you?" She always says, "x years old", where x is a random number between 0 and 9.
+// Write a program that returns the girl's age (0-9) as an integer.
+// Assume the test input string is always a valid string. For example, the test input may be "1 year old" or "5 years old". The first character in the string is always a number.
+
+function getAge(inputString){
+  // return the girl's correct age as an integer. Happy coding :)
+  return parseInt(inputString[0]);
+}
+
+function getAge(inputString){
+  return +inputString[0];
+}
 
 // 47 Task
+// Write a function that takes a list of strings as an argument and returns a filtered list containing the same elements but with the 'geese' removed.
+// The geese are any strings in the following array, which is pre-populated in your solution:
+// ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"]
+// For example, if this array were passed as an argument:
+// ["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]
+// Your function would return the following array:
+// ["Mallard", "Hook Bill", "Crested", "Blue Swedish"]
+// The elements in the returned array should be in the same order as in the initial array passed to your function, albeit with the 'geese' removed. Note that all of the strings will be in the same case as those provided, and some elements may be repeated.
+
+function gooseFilter (birds) {
+  const geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+
+  // return an array containing all of the strings in the input array except those that match strings in geese
+  return birds.filter( bird => !geese.includes(bird));
+};
