@@ -1432,3 +1432,79 @@ function gooseFilter (birds) {
   // return an array containing all of the strings in the input array except those that match strings in geese
   return birds.filter( bird => !geese.includes(bird));
 };
+
+// 48
+// Create a function that takes 2 integers in form of a string as an input, and outputs the sum (also as a string):
+// Example: (Input1, Input2 -->Output)
+// "4",  "5" --> "9"
+// "34", "5" --> "39"
+// "", "" --> "0"
+// "2", "" --> "2"
+// "-5", "3" --> "-2"
+// Notes:
+// If either input is an empty string, consider it as zero.
+// Inputs and the expected output will never exceed the signed 32-bit integer limit (2^31 - 1)
+
+function sumStr(a,b) {
+  if ( a.length && b.length === 0) return 0;
+
+  let sum = parseInt(a) + parseInt(b);
+
+  return String(sum);
+}
+
+function sumStr(a,b) {
+  return BigInt(a) + BigInt(b) + ''
+}
+
+function sumStr(a,b) {
+  return ((+a) + (+b)).toString();
+}
+
+function sumStr(a,b) {
+  return String(Number(a) + Number(b));
+}
+
+
+// 49
+// Task:
+// Complete function saleHotdogs/SaleHotDogs/sale_hotdogs, function accepts 1 parameter:n, n is the number of hotdogs a customer will buy, different numbers have different prices (refer to the following table), return how much money will the customer spend to buy that number of hotdogs.
+// number of hotdogs	price per unit (cents)
+// n < 5	100
+// n >= 5 and n < 10	95
+// n >= 10
+
+function saleHotdogs(n){
+  if (n < 5) return n * 100;
+
+  if (n >= 5 && n < 10) return n * 95;
+
+  if (n >= 10) return n * 90;
+}
+
+const saleHotdogs = (n) => {
+  switch (true) {
+    case n < 5: return n * 100;
+    case n < 10: return n * 95;
+    default: return n * 90;
+  }
+}
+
+
+// 50
+// Remove an exclamation mark from the end of a string. For a beginner kata, you can assume that the input data is always a string, no need to verify it.
+
+const remove = string => string.replace(/!$/, '');
+
+function remove(string){
+  if(string[string.length-1] == '!'){
+    return string.split('').slice(0, string.split('').length - 1).join('');
+  } else {
+    return string;
+  }
+}
+
+function remove(string) {
+  return string.endsWith('!') ? string.slice(0, -1) : string;
+}
+
