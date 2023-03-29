@@ -6,8 +6,8 @@ console.log(userName.length);
 console.log(userName.indexOf('P'));
 console.log(userName.lastIndexOf('a'));
 console.log(userName.includes('upk')); /* return true */
-console.log(userName.slice(5)); /* return true */
-console.log(userName.slice(5, 8)); /* return true */
+console.log(userName.slice(5));
+console.log(userName.slice(5, 8)); 
 
 
 // TASK
