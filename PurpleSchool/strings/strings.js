@@ -7,7 +7,7 @@ console.log(userName.indexOf('P'));
 console.log(userName.lastIndexOf('a'));
 console.log(userName.includes('upk')); /* return true */
 console.log(userName.slice(5));
-console.log(userName.slice(5, 8)); 
+console.log(userName.slice(5, 8));
 
 
 // TASK
@@ -40,7 +40,7 @@ userName.trimEnd();
 userName.trim();
 
 
-// TASK  Задание: проверить является ли это номером телефона России
+// TASK  Задание: проверить является ли этот номером телефона России
 /* верные */
 const num1 = '89103235356';
 const num2 = '+79103235356';
