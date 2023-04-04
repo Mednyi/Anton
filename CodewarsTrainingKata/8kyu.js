@@ -1497,7 +1497,7 @@ const saleHotdogs = (n) => {
 const remove = string => string.replace(/!$/, '');
 
 function remove(string){
-  if(string[string.length-1] == '!'){
+  if(string[string.length - 1] == '!') {
     return string.split('').slice(0, string.split('').length - 1).join('');
   } else {
     return string;
@@ -1508,3 +1508,70 @@ function remove(string) {
   return string.endsWith('!') ? string.slice(0, -1) : string;
 }
 
+
+// 51
+// Create a function which translates a given DNA string into RNA.
+// For example:
+// "GCAT"  =>  "GCAU"
+// The input string can be of arbitrary length - in particular, it may be empty. All input is guaranteed to be valid, i.e. each input string will only ever consist of 'G', 'C', 'A' and/or 'T'.
+
+function DNAtoRNA(dna) {
+  return dna.replaceAll('T', 'U');
+}
+
+function DNAtoRNA(dna) {
+  return dna.split("T").join("U");
+}
+
+DNAtoRNA = dna => dna.split('').map( i =>  i == 'T' ? i = 'U' : i).join('');
+
+
+// 52
+// Let's play! You have to return which player won! In case of a draw return Draw!.
+
+// Examples(Input1, Input2 --> Output):
+
+// "scissors", "paper" --> "Player 1 won!"
+// "scissors", "rock" --> "Player 2 won!"
+// "paper", "paper" --> "Draw!"
+
+const rps = (p1, p2) => {
+  if (p1 == 'scissors' && p2 == 'paper') {
+    return 'Player 1 won!';
+  } else if (p1 == 'scissors' && p2 == 'rock') {
+    return 'Player 2 won!';
+  } else if (p1 == 'rock' && p2 == 'scissors') {
+    return 'Player 1 won!';
+  } else if (p1 == 'scissors' && p2 == 'paper') {
+    return 'Player 1 won!';
+  } else if (p1 == 'paper' && p2 == 'rock') {
+    return 'Player 1 won!';
+  } else if (p1 == 'scissors' && p2 == 'rock') {
+    return 'Player 2 won!';
+  } else if (p1 == 'paper' && p2 == 'scissors') {
+    return 'Player 2 won!';
+  } else if (p1 == 'rock' && p2 == 'paper') {
+    return 'Player 2 won!';
+  } else if (p1 == 'paper' && p2 == 'paper' || p1 == 'scissors' && p2 == 'scissors' || p1 == 'rock' && p2 == 'rock') {
+    return 'Draw!';
+  }
+};
+
+const rps2 = (p1, p2) => {
+  const rules = {
+    'scissors': 'paper',
+    'rock': 'scissors',
+    'paper': 'rock'
+  };
+  return rules[p1] === p2 ? 'Player 1 won!' : p1 === p2 ? 'Draw!' : 'Player 2 won!';
+};
+
+
+// 53
+// Timmy & Sarah think they are in love, but around where they live, they will only know once they pick a flower each. If one of the flowers has an even number of petals and the other has an odd number of petals it means they are in love.
+// Write a function that will take the number of petals of each flower and return true if they are in love and false if they aren't.
+
+function lovefunc(flower1, flower2){
+  const isInLove = false;
+  
+}
