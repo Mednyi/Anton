@@ -1572,6 +1572,35 @@ const rps2 = (p1, p2) => {
 // Write a function that will take the number of petals of each flower and return true if they are in love and false if they aren't.
 
 function lovefunc(flower1, flower2){
-  const isInLove = false;
-  
+  return flower1 % 2 !== flower2 % 2;
+}
+
+// 54
+// Write a function named setAlarm which receives two parameters. The first parameter, employed, is true whenever you are employed and the second parameter, vacation is true whenever you are on vacation.
+// The function should return true if you are employed and not on vacation (because these are the circumstances under which you need to set an alarm). It should return false otherwise. Examples:
+// setAlarm(true, true) -> false
+// setAlarm(false, true) -> false
+// setAlarm(false, false) -> false
+// setAlarm(true, false) -> true
+
+function setAlarm(employed, vacation){
+  return  employed && !vacation ? true : false;
+}
+
+function setAlarm(employed, vacation){
+  return employed && !vacation;
+}
+
+function setAlarm(employed, vacation){
+  return employed > vacation
+}
+
+// 55
+// Task
+// Given the a list of numbers, return a fixed list so that the values increment by 1 for each index from the minimum value up to the maximum value (both included).
+// Example
+// Input:  1,3,5,6,7,8 Output: 1,2,3,4,5,6,7,8
+
+function pipeFix(numbers){
+
 }

@@ -1,17 +1,20 @@
 'use strict'
 
-function DNAtoRNA(dna) {
-  // create a function which returns an RNA sequence from the given DNA sequence
-  const upperDNA = dna.toUpperCase().split('');
-  let result = [];
+function pipeFix(numbers){
 
-  for (let char of upperDNA) {
-    if (char == 'T' && upperDNA.at(-1) == 'T') {
-      result.push('U');
-    }
-  }
-
-  return result.join('');
 }
 
-console.log(DNAtoRNA('GCAT'));
+console.log(pipeFix([1,4]));
+
+
+let weatherMap4 = new Map([
+  ['London', '10'],
+  ['Moskow', '7'],
+  ['Paris', '14']
+]);
+
+console.log(weatherMap4);
+
+for (const [key, value] of weatherMap4) {
+  [key, value] = [value, key];
+}
