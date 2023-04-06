@@ -63,3 +63,36 @@ let weatherMap4 = new Map([
   ['Paris', '14']
 ]);
 
+weatherMap4  = new Map([...weatherMap4].map(el => el.reverse()));
+
+
+// WeakMap
+
+let a = {a: 1};
+let b = {b: 1};
+
+const map = new WeakMap();
+map.set(a, 'testA');
+map.set(b, 'testB');
+map.get(a);
+map.has(a);
+
+
+a = null;
+setTimeout(() => {
+  console.log(map);
+}, 1000);
+
+
+// A simple cash realisation
+
+let cash = new WeakMap();
+
+function getValue(obj) {
+  if (!cash.has(obj)) {
+    const res = 1;
+    cash.set(obj, res);
+  }
+  return cash.get(obj);
+}
+
