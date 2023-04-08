@@ -310,7 +310,7 @@ function findShort(str) {
     newStr = [...newStr[i]];
 
     for (let j = 0; j < i; j++) {
-      
+
     }
   }
 }
@@ -339,3 +339,19 @@ function findShort(s) {
 
   return shortest;
 }
+
+// 10
+// Write a function that takes a single string (word) as argument. The function must return an ordered list containing the indexes of all capital letters in the string.
+// Example
+// Test.assertSimilar( capitals('CodEWaRs'), [0,3,4,6] );
+
+const capitals = function (word) {
+	// Write your code here
+  const newWord = word.split('');
+
+  for (let i = 0; i < newWord.length; i++) {
+    if (newWord[i].toUpperCase() === i) {
+      return newWord.indexOf()
+    }
+  }
+};

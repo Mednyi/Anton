@@ -1622,4 +1622,15 @@ function pipeFix(numbers){
 
 function mouthSize(animal) {
   // code here
+  if (animal.toLowerCase() === 'alligator') {
+    return 'small';
+  }
+  return 'wide';
 }
+
+function mouthSize(animal) {
+  return animal.toLowerCase() == 'alligator' ? 'small' : 'wide';
+}
+
+// 57
+// 
