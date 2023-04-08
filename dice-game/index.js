@@ -4,7 +4,7 @@ let player1Turn = true;
 
 const player1Dice = document.getElementById('player1Dice');
 const player2Dice = document.getElementById('player2Dice');
-const player1ScortBoard = document.getElementById('player1ScoreBoard')
+const player1ScoreBoard = document.getElementById('player1ScoreBoard')
 const player2ScoreBoard = document.getElementById('player2ScoreBoard');
 const message = document.getElementById('message');
 const rollBtn = document.getElementById('rollBtn');
@@ -17,7 +17,7 @@ function showDisplayButton() {
 
 rollBtn.addEventListener("click", function () {
     const randomNumber = Math.floor(Math.random() * 6) + 1;
-    
+
     if (player1Turn) {
         player1Score += randomNumber;
         player1Scoreboard.textContent = player1Score;
@@ -27,7 +27,7 @@ rollBtn.addEventListener("click", function () {
         message.textContent = "Player 2 Turn";
     } else {
         player2Score += randomNumber;
-        player2Scoreboard.textContent = player2Score;
+        player2ScoreBoard.textContent = player2Score;
         player2Dice.textContent = randomNumber;
         player2Dice.classList.remove("active");
         player1Dice.classList.add("active");
@@ -48,11 +48,11 @@ rollBtn.addEventListener("click", function () {
 resetBtn.addEventListener("click", function(){
     reset();
 })
- 
+
 function reset() {
     message.textContent = "Player 1 Turn";
-    player1Scoreboard.textContent = 0;
-    player2Scoreboard.textContent = 0;
+    player1ScoreBoard.textContent = 0;
+    player2ScoreBoard.textContent = 0;
     player1Dice.textContent = '-';
     player2Dice.textContent = '-';
     player1Score = 0;
@@ -61,5 +61,5 @@ function reset() {
     resetBtn.style.display = "none";
     rollBtn.style.display = "block";
     player2Dice.classList.remove("active");
-    player1Dice.classList.add("active"); 
+    player1Dice.classList.add("active");
 }
