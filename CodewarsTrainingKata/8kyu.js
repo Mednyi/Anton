@@ -1633,4 +1633,28 @@ function mouthSize(animal) {
 }
 
 // 57
-// 
+// Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
+
+function removeExclamationMarks(s) {
+  let result = '';
+
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] !== '!') {
+      result += s[i];
+    }
+  }
+
+  return result;
+}
+
+function removeExclamationMarks(s) {
+  return s.replace(/!/gi, '');
+}
+
+function removeExclamationMarks(s) {
+  return s.split('!').join('');
+}
+
+const removeExclamationMarks = (s) => {
+  return s.split('').filter((letter) => letter !== '!').join('');
+}

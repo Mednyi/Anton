@@ -348,10 +348,67 @@ function findShort(s) {
 const capitals = function (word) {
 	// Write your code here
   const newWord = word.split('');
+  let result = [];
 
   for (let i = 0; i < newWord.length; i++) {
-    if (newWord[i].toUpperCase() === i) {
-      return newWord.indexOf()
+    if (newWord[i] === newWord[i].toUpperCase()) {
+      result.push(newWord.indexOf(newWord[i]));
     }
   }
+  return result;
 };
+
+const capitals2 = function (word) {
+  return word.split('').map(w => w === w.toUpperCase ? w.indexOf(w) : null);
+};
+
+
+// 11
+// Write a function that returns both the minimum and maximum number of the given list/array.
+// Examples (Input --> Output)
+// [1,2,3,4,5] --> [1,5]
+// [2334454,5] --> [5,2334454]
+// [1]         --> [1,1]
+
+function minMax(arr){
+  const maxEl = Math.max(...arr);
+  const minEl = Math.min(...arr);
+
+  return [minEl, maxEl]; // fix me!
+}
+
+function minMax(arr){
+  return [Math.min(...arr), Math.max(...arr)];
+}
+
+
+// 12
+// ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but exactly 4 digits or exactly 6 digits.
+// If the function is passed a valid PIN string, return true, else return false.
+// Examples (Input --> Output)
+// "1234"   -->  true
+// "12345"  -->  false
+// "a234"   -->  false
+
+function validatePIN (pin) {
+    let newArray = [];
+
+    for(let i = 0; i < pin.length; i++){
+      newArray.push(parseInt(pin[i]))
+    }
+
+    if(newArray.includes(NaN)) return false
+    if(newArray.length < 4 || newArray.length > 6  || newArray.length === 5) return false
+
+    return true
+  //wow that was hard one for begginer
+}
+
+function validatePIN (pin) {
+  var pattern1 = /^\d{4}$/
+  var pattern2 = /^\d{6}$/
+  if(pin.match(pattern1)||pin.match(pattern2)){
+    return true
+  }
+  return false
+}
