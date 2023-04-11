@@ -30,11 +30,14 @@ console.log(capitals('CodEWaRs'));
 // request(2);
 // request(3);
 
-fetch('https://dummyjson.com/products/categories')
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-  });
+function nameShuffler(str) {
+  const newStr = [...str];
+  console.log(newStr);
+  //Shuffle It
+  return newStr.reverse().join(' ');
+}
+
+nameShuffler('john McClane');
 
 
 

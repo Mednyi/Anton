@@ -1658,3 +1658,91 @@ function removeExclamationMarks(s) {
 const removeExclamationMarks = (s) => {
   return s.split('').filter((letter) => letter !== '!').join('');
 }
+
+// 58
+//You are given two interior angles (in degrees) of a triangle.
+// Write a function to return the 3rd.
+//   Note: only positive integers will be tested.
+
+function otherAngle(a, b) {
+  if (a < 0 && b < 0) {
+    return;
+  }
+  return 180 - (a + b);
+}
+
+const otherAngle = (a, b) => 180 - a - b
+
+
+// 59
+// Your function takes two arguments:
+// 1. current father's age (years)
+// 2. current age of his son(years)
+// Сalculate how many years ago the father was twice as old as his son(or in how many years he will be twice as old).The answer is always greater or equal to 0, no matter if it was in the past or it is in the future.
+
+function twiceAsOld(dadYearsOld, sonYearsOld) {
+  return Math.abs((dadYearsOld - sonYearsOld) - sonYearsOld);
+}
+
+// 60
+// Write a function that returns a string in which firstname is swapped with last name.
+// Example(Input-- > Output)
+// "john McClane" -- > "McClane john"
+
+function nameShuffler(str) {
+  let res = [];
+  let strR = str.split(' ');
+  for (let i = strR.length - 1; i > -1; i--) {
+    res.push(strR[i]);
+  }
+  return res.join(' ');
+}
+
+function nameShuffler(str) {
+  //Shuffle It
+  return str.split(' ').reverse().join(' ');
+}
+
+// 61
+// You need to write a function that reverses the words in a given string. A word can also fit an empty string. If this is not clear enough, here are some examples:
+// As the input may have trailing spaces, you will also need to ignore unneccesary whitespace.
+//   Example(Input-- > Output)
+// "Hello World" -- > "World Hello"
+// "Hi There." -- > "There. Hi"
+
+function reverse(s) {
+  const strArr = s.split(' ');
+  const res = [];
+
+  for (let i = strArr.length - 1; i >= 0; i -= 1) {
+    res.push(strArr[i]);
+  }
+  return res.join(' ');
+}
+
+function reverse(string) {
+  return string.split(' ').reverse().join(' ');
+}
+
+function reverse(string) {
+  // validate input
+  if (typeof (string) !== 'string') throw new Error('reverse: parameter is not a string!');
+  // just use the dumb way out since it's jabbascripps
+  return string.split(' ').reverse().join(' ');
+}
+
+function reverse(string) {
+  return string.trim().split(/ +/).reverse().join(' ');
+}
+
+
+// 62
+// Your task is to find the first element of an array that is not consecutive.
+// By not consecutive we mean not exactly 1 larger than the previous element of the array.
+//   E.g.If we have an array[1, 2, 3, 4, 6, 7, 8] then 1 then 2 then 3 then 4 are all consecutive but 6 is not, so that's the first non-consecutive number.
+// If the whole array is consecutive then return null2.
+// The array will always have at least 2 elements1 and all elements will be numbers.The numbers will also all be unique and in ascending order.The numbers could be positive or negative and the first non - consecutive could be either too!
+
+function firstNonConsecutive(arr) {
+
+}
