@@ -1743,6 +1743,52 @@ function reverse(string) {
 // If the whole array is consecutive then return null2.
 // The array will always have at least 2 elements1 and all elements will be numbers.The numbers will also all be unique and in ascending order.The numbers could be positive or negative and the first non - consecutive could be either too!
 
-function firstNonConsecutive(arr) {
 
+function firstNonConsecutive(arr) {
+  for (let i = 0; i < arr.length - 1; ++i) {
+    if (arr[i] + 1 !== arr[i + 1]) {
+      return arr[i + 1]
+    }
+  }
+  return null;
+}
+
+function firstNonConsecutive(arr) {
+  const result = arr
+    .find((element, i) => {
+      if (i < 1) {
+        return false
+      }
+      if ((element - arr[i - 1]) !== 1) {
+        return true;
+      }
+    })
+  if (result !== undefined) {
+    return result
+  }
+  return null;
+}
+
+
+// 63
+// I have a cat and a dog.
+// I got them at the same time as kitten / puppy.That was humanYears years ago.
+// Return their respective ages now as [humanYears, catYears, dogYears]
+
+// NOTES:
+
+// humanYears >= 1
+// humanYears are whole numbers only
+// Cat Years
+// 15 cat years for first year
+//   + 9 cat years for second year
+//     + 4 cat years for each year after that
+// Dog Years
+// 15 dog years for first year
+//   + 9 dog years for second year
+//     + 5 dog years for each year after that
+
+var humanYearsCatYearsDogYears = function (humanYears) {
+  // Your code here!
+  return [0, 0, 0];
 }
