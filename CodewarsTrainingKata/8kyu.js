@@ -1845,5 +1845,25 @@ function humanYearsCatYearsDogYears(humanYears) {
 // So the maximum value that you can obtain is 9.
 
 function expressionMatter(a, b, c) {
-  return // highest achievable result
+  const case1 = a * (b + c);
+  const case2 = a * b * c;
+  const case3 = a + b * c;
+  const case4 = (a + b) * c;
+
+  return case1 || case2 || case3 || case4; // highest achievable result
+}
+
+function expressionMatter(a, b, c) {
+  return Math.max(a + b + c, a * b * c, a * (b + c), (a + b) * c, a + b * c, a * b + c);
+}
+
+function expressionMatter(a, b, c) {
+  let arr = [];
+  arr.push(a + b + c);
+  arr.push(a * b * c);
+  arr.push(a + b * c);
+  arr.push(a * b + c);
+  arr.push((a + b) * c);
+  arr.push(a * (b + c));
+  return arr.reduce((a, b) => Math.max(a, b));
 }
