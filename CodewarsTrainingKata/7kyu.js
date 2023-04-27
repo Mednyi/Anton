@@ -425,3 +425,36 @@ function sortByLength(array) {
   // Return an array containing the same strings, ordered from shortest to longest
   return array.sort((a, b) => a.length - b.length);
 };
+
+function sortByLength(array) {
+  let res = [];
+  let i = 0;
+  let j = 0;
+  let sorted = array.map(el => el.length).sort((a, b) => a - b);
+  for (let i of sorted) {
+    for (let j of array) {
+      if (i == j.length) {
+        res.push(j);
+      }
+    }
+  }
+  return res;
+}
+
+// 14
+// You are given an odd-length array of integers, in which all of them are the same, except for one single number.
+// Complete the method which accepts such an array, and returns that single different number.
+// The input array will always be valid!(odd - length >= 3)
+// Examples
+// [1, 1, 2] ==> 2
+// [17, 17, 3, 17, 17, 17, 17] ==> 3
+
+function stray(numbers) {
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] == numbers[i + 1]) {
+      break;
+    } else {
+      return numbers[i];
+    }
+  }
+}
