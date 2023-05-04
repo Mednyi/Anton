@@ -1880,6 +1880,52 @@ function getChar(c) {
 }
 
 // 67
+// Напишите функцию, которая разложит массив с целыми числами на чётные и нечётные и вернёт объект вида:
+// {
+//   even: [2, 4, 6],
+//     odd: [1, 3, 5]
+// }
+
+const numbers = [1, 2, 3, 4, 5, 6];
+
+separateArray(numbers);
+// должен вернуть { even: [2, 4, 6], odd: [1, 3, 5] }
+
+function separateArray(array) {
+  // Ваш код здесь
+  const odd = array.filter(item => item % 2 === 1);
+  const even = array.filter(item => item % 2 === 0);
+
+  return {
+    odd,
+    even
+  }
+}
+
+function separateArray(numbers) {
+  let odd = [];
+  let even = [];
+
+  for (const number of numbers) {
+    if (number % 2 === 0) {
+      // number is even
+      even.push(number);
+    } else {
+      // number is not even (=odd)
+      odd.push(number);
+    }
+  }
+
+  // create an object with the odd and even array in it
+  const returnObject = {
+    odd,
+    even,
+  };
+
+  return returnObject;
+}
+
+// 68
 // Complete the function which converts a binary number (given as a string) to a decimal number.
 
 function binToDec(bin) {
