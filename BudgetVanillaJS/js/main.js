@@ -47,7 +47,7 @@ expensesBtn.addEventListener('click', function() {
 
   for (let i = 0; i < expensesItem.length; i++) {
     let a = expensesItem[i].value, /* Get data from user */
-      b = expensesItem[++i].value; /* Get data from user */
+      b = expensesItem[++i].value; /* next element of expensesItem */
 
     if (typeof (a) === 'string' && typeof (a) != null && typeof (b) != null && a != "" && b != "" && a.length < 50) {
 
@@ -64,6 +64,33 @@ expensesBtn.addEventListener('click', function() {
   expensesValue.textContent = sum;
 });
 
+optionalExpensesBtn.addEventListener('click', function() {
+  for (let i = 0; i <= optionalExpensesItem.length; i++) {
+    let opt = optionalExpensesItem[i].value;
+    appData.optionalExpenses[i] = opt;
+    optionalExpensesValue.textContent += appData.optionalExpenses[i] + ' ';
+  }
+});
+
+countBtn.addEventListener('click', function() {
+  if (appData.budget != undefined) {
+    appData.moneyPerDay = (appData.budget / 30).toFixed();
+    dayBudgetValue.textContent = appData.moneyPerDay;
+
+    if (appData.moneyPerDay < 100) {
+      levelValue.textContent = "Это минимальный уровень достатка!";
+    } else if (appData.moneyPerDay > 100 && appData.moneyPerDay < 2000) {
+      levelValue.textContent = "Это средний уровень достатка!";
+    } else if (appData.moneyPerDay > 2000) {
+      levelValue.textContent = "Это высокий уровень достатка!";
+    } else {
+      levelValue.textContent = "Ошибочка...!";
+    }
+  } else {
+    dayBudgetValue.textContent = "Ошибочка...!"
+  }
+});
+
 let appData = {
   budget: money,
   timeData: time,
@@ -71,23 +98,12 @@ let appData = {
   optionalExpenses: {},
   income: [],
   savings: true,
-  chooseExpenses: function () {
-
-  },
   detectDayBudget: function () {
-    appData.moneyPerDay = (appData.budget / 30).toFixed();
+
     alert("Бюджет на 1 день составляет " + appData.moneyPerDay + "руб.");
   },
   detectLevel: function () {
-    if (appData.moneyPerDay < 100) {
-      console.log("Это минимальный уровень достатка!");
-    } else if (appData.moneyPerDay > 100 && appData.moneyPerDay < 2000) {
-      console.log("Это средний уровень достатка!");
-    } else if (appData.moneyPerDay > 2000) {
-      console.log("Это высокий уровень достатка!");
-    } else {
-      console.log("Ошибочка...!");
-    }
+
   },
   checkSavings: function () {
     if (appData.savings == true) {
@@ -99,11 +115,7 @@ let appData = {
     }
   },
   chooseOptExpenses: function () {
-    for (let i = 1; i <= 3; i++) {
-      let questionOptExpenses = prompt("Статья необязательных расходов?");
-      appData.optionalExpenses[i] = questionOptExpenses;
-      console.log(appData.optionalExpenses);
-    }
+
   },
   chooseIncome: function () {
 
