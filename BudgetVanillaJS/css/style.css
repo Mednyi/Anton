@@ -56,7 +56,8 @@ a:active {
 .main {
   display: flex;
   margin: 0 10%;
-  padding-top: 40px
+  padding-top: 40px;
+  padding-bottom: 60px;
 }
 
 .data .choose-expenses,
