@@ -279,11 +279,33 @@ header ul li:before {
   margin-top: 40px;
 }
 .content .timer-numbers {
+  display: flex;
+  justify-content: center;
   margin-top: 40px;
   font-size: 90px;
   color: #c78030;
 }
-.content .timer-numbers:after {
+.content .timer-numbers-wrapper {
+  display: flex;
+  gap: 5px;
+}
+.content .days {
+  display: flex;
+  min-width: 109px;
+}
+.content .hours {
+  display: flex;
+  min-width: 109px;
+}
+.content .minutes {
+  display: flex;
+  min-width: 98px;
+}
+.content .seconds {
+  display: flex;
+  min-width: 109px;
+}
+/* .content .timer-numbers:after {
   content: '';
   display: block;
   width: 20%;
@@ -291,7 +313,7 @@ header ul li:before {
   background-color: #c78030;
   margin: 0 auto;
   margin-top: 4px;
-}
+} */
 .content .slider {
   margin-top: 150px;
   position: relative;
@@ -487,9 +509,9 @@ header ul li:before {
   appearance: none;
   margin: 0;
 }
-.content .counter input[type=number] {
+/* .content .counter input[type=number] {
   -moz-appearance: textfield;
-}
+} */
 .content .more {
   display: block;
   margin: 0 auto;
