@@ -115,4 +115,41 @@ window.addEventListener('DOMContentLoaded', function() {
     more.classList.remove('more-splash');
     document.body.style.overflow = '';
   });
+
+  /**
+   * Send data from form to serve
+   */
+
+  let message = {
+    loading: 'Загрузка...',
+    success: 'Спасибо! Мы скоро с вами свяжемся!',
+    failure: 'Что-то пошло не так!'
+  }
+
+  let form = document.querySelector('.main-form'),
+      input = form.getElementsByTagName('input'),
+      statusMessage = document.createElement('div');
+
+      statusMessage.classList.add('status');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    form.appendChild(statusMessage);
+
+    let request = new XMLHttpRequest();
+    request.open('POST', 'server.php'); /** настройки запроса */
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    let formData = new FormData(form);
+    request.send(formData);
+    request.addEventListener('readystatechange', function() {
+      if (request.readyState < 4) {
+        statusMessage.innerHTML = message.loading;
+      } else if (request.readyState === 4 && request.status === 200) {
+        statusMessage.innerHTML = message.success;
+      } else {
+        statusMessage.innerHTML = message.failure;
+      }
+    });
+  });
 });
