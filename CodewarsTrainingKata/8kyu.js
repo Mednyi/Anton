@@ -1930,4 +1930,14 @@ function separateArray(numbers) {
 
 function binToDec(bin) {
   // ...
+  let converted = '';
+  for (let i = 0; i < bin.length; i++) {
+    converted += bin[i];
+  }
+
+  return parseInt(converted, 2)
+}
+
+function binToDec(bin) {
+  return parseInt(bin, 2);
 }

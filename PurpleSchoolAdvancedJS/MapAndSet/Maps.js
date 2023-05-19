@@ -15,6 +15,20 @@ wheatherMap.delete('London');
 
 wheatherMap.clear();
 
+const notepad = new Map();
+notepad.set("Anton", "7-925-739-86-12");
+notepad.set("Denis", "7-916-494-88-89");
+
+console.log(notepad);
+console.log(notepad.get("Denis"));
+console.log(notepad.size);
+console.log(typeof notepad);
+console.log(notepad.keys);
+
+for (const [key, value] of notepad) {
+  console.log(`Key: ${key} \n Value: ${value}`);
+}
+
 // Use Map
 
 const weatherMap = new Map([
@@ -63,8 +77,7 @@ let weatherMap4 = new Map([
   ['Paris', '14']
 ]);
 
-weatherMap4  = new Map([...weatherMap4].map(el => el.reverse()));
-
+console.log(weatherMap4 = new Map([...weatherMap4].map(el => el.reverse())));
 
 // WeakMap
 

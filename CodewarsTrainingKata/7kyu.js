@@ -463,3 +463,41 @@ function stray(numbers) {
 }
 
 const stray = numbers => numbers.find(num => numbers.indexOf(num) === numbers.lastIndexOf(num));
+
+// 15
+// In mathematics, the factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n. For example: 5! = 5 * 4 * 3 * 2 * 1 = 120. By convention the value of 0! is 1.
+// Write a function to calculate factorial for a given input.If input is below 0 or above 12 throw an exception of type ArgumentOutOfRangeException (C#) or IllegalArgumentException(Java) or RangeException(PHP) or throw a RangeError(JavaScript) or ValueError(Python) or return -1(C).
+
+
+function factorial(n) {
+  // Calculate the factorial here
+  const min = 0;
+  const max = 12;
+
+  if (n < min || n > max) {
+    throw new RangeError('Параметр должен быть между ' + min + ' и ' + max);
+  }
+
+  return n > 1 ? n * factorial(n - 1) : 1;
+}
+
+function factorial(n) {
+  if (n < 0 || n > 12) throw RangeError();
+  var f = 1;
+  while (n > 1) f *= n--;
+  return f;
+}
+
+// 16
+//Create a function that returns the sum of the two lowest positive numbers given an array of minimum 4 positive integers. No floats or non-positive integers will be passed.
+// For example, when an array is passed like[19, 5, 42, 2, 77], the output should be 7.
+// [10, 343445353, 3453445, 3453545353453] should return 3453455.
+
+function sumTwoSmallestNumbers(numbers) {
+  //Code here
+  const min1 = Number([...numbers].slice(Math.min(...numbers)));
+
+  console.log(min1);
+}
+
+sumTwoSmallestNumbers([5, 8, 12, 19, 22]);
