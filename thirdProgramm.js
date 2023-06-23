@@ -174,8 +174,11 @@ averageBest = ( bestFirstJump + bestSecondJump + bestThirdJump ) / 3;
 
 */
 
-if (averageBest > qualificationDistance) {
-  return qualified = true;
-} else {
-  return qualified = false;
-}
+// if (averageBest > qualificationDistance) {
+//   return qualified = true;
+// } else {
+//   return qualified = false;
+// }
+
+
+

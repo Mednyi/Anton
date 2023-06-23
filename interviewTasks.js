@@ -225,3 +225,106 @@ function getValidSib(cord) {
 
 console.log(checkPath({ x: 3, y: 0 }, { x: 5, y: 5 }));
 console.log(maze);
+
+// 6 Посчитать сколько раз элемент встречается в массиве
+// {kiwi: 3, apple: 2, orange: 1}
+
+
+const fruits = ['kiwi', 'apple', 'kiwi', 'orange', 'kiwi', 'orange', 'apple', 'orange', 'kiwi', 'apple'];
+
+const countFruits = (arr) => {
+  const count = {};
+
+  for (let item of arr) {
+    if (!count[item]) {
+      count[item] = 1;
+    } else {
+      count[item]++;
+    }
+  }
+
+  return count;
+};
+
+console.log(countFruits(fruits));
+
+const countFruits2 = (arr) => {
+  const count = {};
+
+  return arr.reduce((acc, current) => {
+    if (!count[current]) {
+
+    }
+  }, {});
+};
+
+
+// 7 Создать массив, который содержит только уникальные значения
+
+const fruits2 = ['kiwi', 'apple', 'kiwi', 'orange', 'kiwi', 'orange', 'apple', 'orange', 'kiwi', 'apple'];
+
+const newFruits = new Set(fruits2);
+
+console.log(Array.from(newFruits));
+
+// const fruits2 = ['kiwi', 'apple', 'kiwi', 'orange', 'kiwi', 'orange', 'apple', 'orange', 'kiwi', 'apple'];
+
+// const uniqueItems = (array) => {
+//   const unique = {};
+
+//   array.forEach(item => {
+//     unique[item] = true;
+//   });
+
+//   return Object.keys(unique);
+// }
+
+// console.log(uniqueItems(fruits2));
+
+
+
+// 8 Создать функцию, которая сгруппирует студентов по возрасту.
+// На выходе получить объект, где ключ - возраст,
+// а значение - массив студентов
+// {
+//   '20': [{ name: 'alex', age: 20 }, { name: 'masha', age: 20 }],
+//   '24': [{ name: 'mike', age: 24 }],
+//   '18': [{ name: 'stas', age: 18 }],
+// }
+const students = [
+  { name: 'alex', age: 20 },
+  { name: 'mike', age: 24 },
+  { name: 'masha', age: 20 },
+  { name: 'stas', age: 18 },
+];
+
+
+
+// 9. Написать функцию, которая принимает два аргумента:
+// массив из уникальных целых чисел и сумму в виде целого числа.
+// Если сумма двух любых чисел массива из аргумента равна числу,
+// которое приходит вторым аргументом, функция должна
+// вернуть новый массив из этих двух чисел в любом порядке.
+// Если решения нет, вернуть пустой массив.
+
+// [-1, 11] или [11, -1] - так как -1 + 11 = 10;
+
+const myNumbers = [3, 5, -4, 8, 11, 1, -1, 6];
+const sum = 10;
+
+
+
+// 10. Получить единый массив из любимых пицц каждого друга
+// ['cheese', 'pepperoni', 'meat', 'fish']
+const friends = [
+  { name: 'alex', pizzas: ['cheese', 'pepperoni'] },
+  { name: 'mike', pizzas: ['salami', 'margarita'] },
+  { name: 'stas', pizzas: ['meat'] },
+  { name: 'anna', pizzas: ['fish'] }
+];
+
+
+
+// 11. Записать строку (символы строки) в обратном порядке (2 способа)
+// pizza => azzip
+const myStr = 'pizza';
