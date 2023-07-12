@@ -1941,3 +1941,65 @@ function binToDec(bin) {
 function binToDec(bin) {
   return parseInt(bin, 2);
 }
+
+//69 Inspired by the development team at Vooza, write the function that
+// accepts the name of a programmer, and
+// returns the number of lightsabers owned by that person.
+// The only person who owns lightsabers is Zach, by the way.He owns 18, which is an awesome number of lightsabers.Anyone else owns 0.
+
+// Note: your function should have a default parameter.
+
+// For example(Input-- > Output):
+
+// "anyone else" -- > 0
+// "Zach" -- > 18
+
+function howManyLightsabersDoYouOwn(name) {
+  return name != 'Zach' ? 0 : 18;
+}
+
+const howManyLightsabersDoYouOwn = function (name) {
+  if (name === "Zach") {
+    return 18;
+  } else {
+    return 0;
+  }
+}
+
+
+// 70 Alex just got a new hula hoop, he loves it but feels discouraged because his little brother is better than him
+// Write a program where Alex can input(n) how many times the hoop goes round and it will return him an encouraging message:)
+// If Alex gets 10 or more hoops, return the string "Great, now move on to tricks".
+// If he doesn't get 10 hoops, return the string "Keep at it until you get it".
+
+function hoopCount(n) {
+  //your code goes here
+
+  if (n >= 10) {
+    return 'Great, now move on to tricks';
+  } else {
+    return 'Keep at it until you get it';
+  }
+}
+
+function hoopCount2(n) {
+  return n >= 10 ? 'Great, now move on to tricks' : 'Keep at it until you get it';
+}
+
+
+// 71 altERnaTIng cAsE <=> ALTerNAtiNG CaSe
+// Define String.prototype.toAlternatingCase(or a similar function/ method such as to_alternating_case / toAlternatingCase / ToAlternatingCase in your selected language; see the initial solution for details) such that each lowercase letter becomes uppercase and each uppercase letter becomes lowercase.For example:
+
+// "hello world".toAlternatingCase() === "HELLO WORLD"
+// "HELLO WORLD".toAlternatingCase() === "hello world"
+// "hello WORLD".toAlternatingCase() === "HELLO world"
+// "HeLLo WoRLD".toAlternatingCase() === "hEllO wOrld"
+// "12345".toAlternatingCase() === "12345"                   // Non-alphabetical characters are unaffected
+// "1a2b3c4d5e".toAlternatingCase() === "1A2B3C4D5E"
+// "String.prototype.toAlternatingCase".toAlternatingCase() === "sTRING.PROTOTYPE.TOaLTERNATINGcASE"
+// As usual, your function/method should be pure, i.e. it should not mutate the original string.
+
+String.prototype.toAlternatingCase = function () {
+  // Define your method here :)
+  
+}

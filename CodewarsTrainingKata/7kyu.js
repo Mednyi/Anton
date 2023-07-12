@@ -494,10 +494,16 @@ function factorial(n) {
 // [10, 343445353, 3453445, 3453545353453] should return 3453455.
 
 function sumTwoSmallestNumbers(numbers) {
-  //Code here
-  const min1 = Number([...numbers].slice(Math.min(...numbers)));
-
-  console.log(min1);
+  return numbers.sort((a, b) => a - b).slice(0, 2).reduce((a, b) => a + b);
 }
 
+function sumTwoSmallestNumbers2(numbers) {
+  //Code here
+  let sorted = numbers.sort((a, b) => a - b);
+  return sorted[0] + sorted[1];
+};
+
 sumTwoSmallestNumbers([5, 8, 12, 19, 22]);
+
+
+// 17 
