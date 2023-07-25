@@ -43,17 +43,67 @@ const modals = () => {
     });
   }
 
-  function showModalByTime(selector, time) {
-    setTimeout(function () {
-      document.querySelector(selector).style.display = 'block';
-      document.body.style.overflow = 'hidden';
-    }, time);
-  }
+  // function showModalByTime(selector, time) {
+  //   setTimeout(function() {
+  //     document.querySelector(selector).style.display = 'block';
+  //     document.body.style.overflow = 'hidden';
+  //   }, time);
+  // }
+
   bindModal('.popup_engineer_btn', '.popup_engineer', '.popup_engineer .popup_close');
   bindModal('.phone_link', '.popup', '.popup .popup_close');
-  showModalByTime('.popup', 3000);
+  // showModalByTime('.popup', 3000);
 };
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modals);
+
+/***/ }),
+
+/***/ "./src/js/modules/tabs.js":
+/*!********************************!*\
+  !*** ./src/js/modules/tabs.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const tabs = (headerSelector, tabSelector, contentSelector, active) => {
+  const header = document.querySelector(headerSelector),
+    tab = document.querySelectorAll(tabSelector),
+    content = document.querySelectorAll(contentSelector);
+  function hideContent() {
+    content.forEach(item => {
+      item.style.display = 'none';
+    });
+    tab.forEach(item => {
+      item.classList.remove(active);
+    });
+  }
+  function showContent() {
+    let index = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+    content[index].style.display = 'block';
+    tab[index].classList.add(active);
+  }
+  hideContent();
+  showContent();
+
+  // We use a delegation event to parentNode of the tabs
+  header.addEventListener('click', event => {
+    const target = event.target;
+    if (target && (target.classList.contains(tabSelector.replace(/\./, '')) || target.parentNode.classList.contains(tabSelector.replace(/\./, '')))) {
+      tab.forEach((item, index) => {
+        if (target == item || target.parentNode == item) {
+          hideContent();
+          showContent(index);
+        }
+      });
+    }
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (tabs);
 
 /***/ }),
 
@@ -13957,10 +14007,14 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./slider */ "./src/js/slider.js");
 /* harmony import */ var _modules_modals__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/modals */ "./src/js/modules/modals.js");
+/* harmony import */ var _modules_tabs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/tabs */ "./src/js/modules/tabs.js");
+
 
 
 window.addEventListener('DOMContentLoaded', () => {
   (0,_modules_modals__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  (0,_modules_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.glazing_slider', '.glazing_block', '.glazing_content', 'active');
+  (0,_modules_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.decoration_slider', '.no_click', '.decoration_content > div > div', 'after_click');
   console.log('Hi, my name is Anton and I am the best frontend developer ever');
 });
 })();
