@@ -25,15 +25,38 @@ const changeModalState = state => {
   function bindActionToElem(event, elem, prop) {
     elem.forEach((item, i) => {
       item.addEventListener(event, () => {
-        if (elem.length > 1) {
-          state[prop] = i;
-        } else {
-          state[prop] = item.value;
+        switch (item.nodeName) {
+          case 'SPAN':
+            state[prop] = i;
+            break;
+          case 'INPUT':
+            if (item.getAttribute('type') === 'checkbox') {
+              i === 0 ? state[prop] = 'Холодное' : state[prop] = 'Теплое';
+              elem.forEach((box, j) => {
+                box.checked = false;
+                if (i == j) {
+                  box.checked = true;
+                }
+              });
+            } else {
+              state[prop] = item.value;
+            }
+            break;
+          case 'SELECT':
+            state[prop] = item.value;
+            break;
         }
         console.log(state);
+        // if (elem.length > 1) {
+        //   state[prop] = i;
+        // } else {
+        //   state[prop] = item.value;
+        // }
+        // console.log(state);
       });
     });
   }
+
   bindActionToElem('click', windowForm, 'form');
   bindActionToElem('input', windowHeight, 'height');
   bindActionToElem('input', windowWidth, 'width');
@@ -81,7 +104,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _checkNumInputs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./checkNumInputs */ "./src/js/modules/checkNumInputs.js");
 
-const forms = () => {
+const forms = state => {
   const form = document.querySelectorAll('form'),
     input = document.querySelectorAll('input');
   (0,_checkNumInputs__WEBPACK_IMPORTED_MODULE_0__["default"])('input[name="user_phone"]');
@@ -111,11 +134,15 @@ const forms = () => {
       statusMessage.classList.add('.status');
       item.appendChild(statusMessage);
       const formData = new FormData(item);
-      console.log(...formData);
-      console.log(typeof formData);
+      if (item.getAttribute('data-calc') === 'end') {
+        for (let key in state) {
+          formData.append(key, state[key]);
+        }
+      }
       postData('assets/server.php', formData).then(result => {
         console.log(result);
         statusMessage.textContent = message.success;
+        console.log(state);
       }).catch(() => statusMessage.textContent = message.failure).finally(() => {
         clearInputs();
         setTimeout(() => {
@@ -14166,7 +14193,7 @@ window.addEventListener('DOMContentLoaded', () => {
   (0,_modules_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.glazing_slider', '.glazing_block', '.glazing_content', 'active');
   (0,_modules_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.decoration_slider', '.no_click', '.decoration_content > div > div', 'after_click');
   (0,_modules_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.balcon_icons', '.balcon_icons_img', '.big_img > img', 'do_image_more', 'inline-block');
-  (0,_modules_forms__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  (0,_modules_forms__WEBPACK_IMPORTED_MODULE_3__["default"])(modalState);
   console.log('Hi, my name is Anton and I am the best frontend developer ever');
 });
 })();
