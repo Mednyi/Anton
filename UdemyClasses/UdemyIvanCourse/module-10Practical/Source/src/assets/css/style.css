@@ -316,6 +316,7 @@ textarea:focus {
 .main {
   padding: 10rem 0;
   background: #ffffff url(../img/main/bg.png) 0 0 no-repeat;
+  background-size: cover;
 }
 
 .main h1 {
@@ -701,7 +702,7 @@ textarea:focus {
 }
 .numbers1 {
   display: block;
-  float: left;  
+  float: left;
   color: white;
   font-size: 40px;
   margin-right: 10px;

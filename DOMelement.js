@@ -1,3 +1,22 @@
+// Напишите функцию, которая будет возвращать коллекцию DOM-узлов на основании переданного селектора в виде Array (не NodeList).
+
+function getDomNodesBySelector(selector) {
+  // Ваш код
+  const collection = document.querySelectorAll(selector);
+
+  return [...collection];
+}
+
+console.log(getDomNodesBySelector('.price-value'));
+
+function getDomNodesBySelector(selector) {
+  return Array.from(document.querySelectorAll(selector));
+}
+
+
+//
+
+
 const myTraining = document.querySelector('.button__training')
 myTraining.addEventlistener('click', buttonClose())
 
