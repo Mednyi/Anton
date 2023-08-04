@@ -1,26 +1,26 @@
-const initialState = { value: 0 };
+const initialState = { counter: 1 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case "INC":
       return {
         ...state,
-        value: state.value + 1
+        counter: state.counter + 1
       };
     case "DEC":
       return {
         ...state,
-        value: state.value - 1
+        counter: state.counter - 1
       };
     case "RND":
       return {
         ...state,
-        value: state.value * action.payload
+        counter: state.counter * action.payload
       };
     case 'RES':
       return {
         ...state,
-        value: state.value = 0
+        counter: state.counter = 0
       }
     default:
       return state;
