@@ -50,6 +50,8 @@ function caseInsensitivePalindrome(str) {
   return caselessStr === reversedCarelessStr;
 }
 
+caseInsensitivePalindrome('myHome');
+
 /**
  * Test Suite
  */
